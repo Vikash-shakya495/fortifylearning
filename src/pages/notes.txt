@@ -1,667 +1,192 @@
-  import React, { useState } from "react";
-  import { CiMenuKebab } from "react-icons/ci";
-  import { FaBars, FaSearch, FaUser } from "react-icons/fa";
-  import { MdOutlineTopic } from "react-icons/md";
-  import { AiOutlineMenuUnfold } from "react-icons/ai";
-  import { IoIosArrowDown } from "react-icons/io";
-  import { BiSolidBookmarkAlt, BiSolidRightArrow } from "react-icons/bi";
-  const Forum = () => {
-    const [activeTab, setActiveTab] = useState(null); // Track the active tab
-    const [isCategoryDropdownVisible, setIsCategoryDropdownVisible] = useState(false);
-    const [searchTerm, setSearchTerm] = useState('');
-    const [activeCategory, setActiveCategory] = useState(null);
-    const [isTagDropdownVisible, setIsTagDropdownVisible] = useState(false);
-    const [tagSearchTerm, setTagSearchTerm] = useState('');
+  import React, { useEffect } from "react";
 
-    // Categories data
-    const categories = [
-      { category: "Career Paths", total: 4, div: 'bg-fuchsia-400', message: "this is very helpful to your job." },
-      { category: "Cert Prep", total: 2, div: 'bg-blue-400', message: "this is very helpful to your career." },
-      { category: "Stay Ahead", total: 2, div: 'bg-cyan-400', message: "stay updated with industry trends." },
-      { category: "Career Advice", total: 3, div: 'bg-red-400', message: "get expert tips and advice." },
-      { category: "Industry News", total: 1, div: 'bg-green-400', message: "latest news in the industry." }
-    ];
+  const CategoriesTagsReviews = ({
+    activeTab,
+    isCategoryDropdownVisible,
+    isTagDropdownVisible,
+    filteredCategories,
+    filteredTags,
+    searchTerm,
+    tagSearchTerm,
+    setSearchTerm,
+    setTagSearchTerm,
+    categories,
+    tags,
+    reviews,
+    activeCategory,
+    activeTag,
+    setActiveCategory,
+    setActiveTag,
+    setIsCategoryDropdownVisible,
+    setIsTagDropdownVisible,
+    filteredReviews,
+  }) => {
+    // Filter reviews based on selected category, tag, and active tab
+    const getFilteredReviews = () => {
+      let allReviews = Object.values(reviews).flat(); // Combine all reviews into one array
 
-    const tags = ["Learning", "Mentor", "a-plus", "security-plus", "aws-ccp", ];
-
-    const reviews = {
-      "Career Paths": [
-        {
-          topic: "Welcome to Cybrary!",
-          replies: 1,
-          views: "2.5k",
-          activity: "Dec 2023",
-          tags: ["Learning", "Career Paths"]
-        },
-        {
-          topic: "Career Path Task 1",
-          replies: 5,
-          views: "1.1k",
-          activity: "Nov 2023",
-          tags: ["Learning", "Career Paths", "security-plus"]
-        },
-        {
-          topic: "Career Path Insights",
-          replies: 2,
-          views: "500",
-          activity: "Oct 2023",
-          tags: ["Mentor", "Career Paths"]
-        },
-        {
-          topic: "Career Development Tips",
-          replies: 7,
-          views: "3k",
-          activity: "Sep 2023",
-          tags: ["Learning", "Career Advice"]
-        }
-      ],
-      "Cert Prep": [
-        {
-          topic: "Access Control Basics Task 1",
-          replies: 13,
-          views: "399",
-          activity: "6h",
-          tags: ["Cert Prep", "security-plus"]
-        },
-        {
-          topic: "Cert Prep Discussion",
-          replies: 8,
-          views: "800",
-          activity: "3h",
-          tags: ["Cert Prep", "aws-ccp"]
-        }
-      ],
-      "Stay Ahead": [
-        {
-          topic: "Industry Trends 2024",
-          replies: 4,
-          views: "200",
-          activity: "Jan 2024",
-          tags: ["Stay Ahead", "Learning", "Tech"]
-        },
-        {
-          topic: "Tech Innovations",
-          replies: 10,
-          views: "1k",
-          activity: "Dec 2023",
-          tags: ["Stay Ahead", "Mentor"]
-        }
-      ],
-      "Career Advice": [
-        {
-          topic: "How to Advance in Your Career",
-          replies: 12,
-          views: "1.5k",
-          activity: "Feb 2024",
-          tags: ["Career Advice", "Mentor"]
-        },
-        {
-          topic: "Networking Tips",
-          replies: 5,
-          views: "700",
-          activity: "Jan 2024",
-          tags: ["Career Advice", "Learning"]
-        },
-        {
-          topic: "Job Search Strategies",
-          replies: 8,
-          views: "400",
-          activity: "Dec 2023",
-          tags: ["Career Advice", "a-plus"]
-        }
-      ],
-      "Industry News": [
-        {
-          topic: "New Security Vulnerability",
-          replies: 2,
-          views: "5k",
-          activity: "Jan 2024",
-          tags: ["Industry News", "security-plus"]
-        }
-      ]
-    };
-    
-    // Filter categories and tags based on search term
-    const filteredCategories = categories.filter(cate =>
-      cate.category.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    const filteredTags = tags.filter(tag =>
-      tag.toLowerCase().includes(tagSearchTerm.toLowerCase())
-    );
-
-    // Handle tab clicks
-    const handleTabClick = (tab) => {
-      if (tab === "categories") {
-        setIsCategoryDropdownVisible((prev) => !prev); // Toggle category dropdown visibility
-        setIsTagDropdownVisible(false); // Close tags dropdown when categories are clicked
-      } else if (tab === "tags") {
-        setIsTagDropdownVisible((prev) => !prev); // Toggle tags dropdown visibility
-        setIsCategoryDropdownVisible(false); // Close category dropdown when tags are clicked
-      } else {
-        setIsCategoryDropdownVisible(false); // Close dropdowns for other tabs
-        setIsTagDropdownVisible(false);
+      // Filter by category if activeCategory is selected
+      if (activeCategory) {
+        allReviews = allReviews.filter((review) =>
+          review.tags.includes(activeCategory)
+        );
       }
-      setActiveTab(tab); // Set active tab
+
+      // Further filter by tag if activeTag is selected
+      if (activeTag) {
+        allReviews = allReviews.filter((review) =>
+          review.tags.includes(activeTag)
+        );
+      }
+
+      if (activeTab === "hot") {
+        return allReviews.sort(
+          (a, b) =>
+            parseInt(b.views.replace("k", "000")) -
+            parseInt(a.views.replace("k", "000"))
+        );
+      }
+      if (activeTab === "latest") {
+        return allReviews.sort(
+          (a, b) => new Date(b.activity) - new Date(a.activity)
+        );
+      }
+
+      return allReviews;
     };
 
-
-    const handleCategoryClick = (category) => {
-      setActiveCategory(category); // Set the active category
-    };
+    // Close dropdowns when clicking outside
+    useEffect(() => {
+      const handleClickOutside = (e) => {
+        const categoryDropdown = document.querySelector(".category-dropdown");
+        const tagDropdown = document.querySelector(".tag-dropdown");
+    
+        // Check if click is outside both dropdowns
+        if (
+          (categoryDropdown && !categoryDropdown.contains(e.target)) &&
+          (tagDropdown && !tagDropdown.contains(e.target))
+        ) {
+          setIsCategoryDropdownVisible(false);
+          setIsTagDropdownVisible(false);
+        }
+      };
+    
+      document.addEventListener("click", handleClickOutside);
+    
+      return () => {
+        document.removeEventListener("click", handleClickOutside);
+      };
+    }, [setIsCategoryDropdownVisible, setIsTagDropdownVisible]);
 
     return (
-      <div className="bg-gray-800">
-        <header className="py-6 flex justify-between bg-black w-full items-center">
-          <div className="flex items-center space-x-4">
-            <FaBars size={24} />
-            <h1 className="text-2xl font-bold">FortifyLearning</h1>
-          </div>
-          <div className="flex items-center space-x-4">
-            <div className="relative">
-              <FaSearch className="absolute left-3 top-2 text-gray-400" />
-              <input
-                type="text"
-                placeholder="Search..."
-                className="bg-gray-800 text-gray-300 pl-10 pr-4 py-2 rounded-lg"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-            </div>
-            <button className="flex items-center space-x-2 bg-blue-600 px-4 py-2 rounded-lg">
-              <FaUser />
-              <span>Log In</span>
-            </button>
-          </div>
-        </header>
-        <div className="flex bg-gray-900 text-gray-200 pb-6">
-          {/* Sidebar */}
-          <aside className="w-1/4 bg-gray-900 pl-20 pr-4 pt-4">
-            <ul>
-              <li className="dropdown-hover flex gap-2 py-2 px-4 items-center rounded hover:bg-gray-800">
-                <MdOutlineTopic /> Topics
-              </li>
-              <li className="dropdown-hover flex gap-2 py-2 px-4 items-center rounded hover:bg-gray-800">
-                <CiMenuKebab /> More
-              </li>
-            </ul>
-            <h2 className="flex items-center gap-2 text-lg font-semibold mt-2">
-              <IoIosArrowDown /> Categories
-            </h2>
-            <ul>
-              {categories.map((cate, index) => (
+      <>
+        {/* Selected Filters Display */}
+        <div className="mb-4">
+          {activeCategory && (
+            <span className="bg-fuchsia-600 text-white px-2 py-1 rounded-lg mr-2">
+              Category: {activeCategory}{" "}
+              <button
+                onClick={() => setActiveCategory(null)}
+                className="ml-2 text-gray-200"
+              >
+                ✕
+              </button>
+            </span>
+          )}
+          {activeTag && (
+            <span className="bg-blue-600 text-white px-2 py-1 rounded-lg">
+              Tag: {activeTag}{" "}
+              <button
+                onClick={() => setActiveTag(null)}
+                className="ml-2 text-gray-200"
+              >
+                ✕
+              </button>
+            </span>
+          )}
+        </div>
+
+        {/* Categories Dropdown */}
+        {isCategoryDropdownVisible && activeTab === "categories" && (
+          <div className="absolute bg-gray-800 rounded-lg shadow-lg mt-2 py-2 px-4 category-dropdown">
+            <input
+              type="text"
+              className="w-full p-2 mb-2 rounded-lg bg-gray-900 text-white"
+              placeholder="Search Categories"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+            <ul className="flex flex-col h-42 overflow-y-auto">
+              {filteredCategories.map((cate, index) => (
                 <li
                   key={index}
-                  className="dropdown-hover flex gap-2 py-2 px-4 items-center rounded hover:bg-gray-800"
+                  className="py-1 px-2 hover:bg-gray-600 rounded-lg cursor-pointer"
+                  onClick={() => {
+                    setActiveCategory(cate.category); // Only set category
+                  }}
                 >
-                  <div className={`${cate.div} h-3 w-3`}></div>
-                  {cate.category}
+                  <h1 className="flex items-center gap-2">
+                    <div className={`${cate.div} h-3 w-3`}></div>
+                    {cate.category} x {cate.total}
+                  </h1>
+                  <div className="text-gray-500">{cate.message}</div>
                 </li>
               ))}
-              <li className="text-gray-400 dropdown-hover flex gap-2 py-2 px-4 mb-2 items-center rounded hover:bg-gray-800">
-                <AiOutlineMenuUnfold /> All Categories
-              </li>
             </ul>
-            <h2 className="flex items-center gap-2 text-lg font-semibold mt-2">
-              <IoIosArrowDown /> Tags
-            </h2>
-            <ul>
-            {tags.map((tag, index) => (
-                <li key={index} className="dropdown-hover flex gap-2 py-2 px-4 items-center rounded hover:bg-gray-800">
-                  <BiSolidBookmarkAlt /> {tag}
+          </div>
+        )}
+
+        {/* Tags Dropdown */}
+        {isTagDropdownVisible && activeTab === "tags" && (
+          <div className="absolute bg-gray-700 rounded-lg shadow-lg mt-2 py-2 px-4 tag-dropdown">
+            <input
+              type="text"
+              className="w-full p-2 mb-2 rounded-lg bg-gray-800 text-white"
+              placeholder="Search Tags"
+              value={tagSearchTerm}
+              onChange={(e) => setTagSearchTerm(e.target.value)}
+            />
+            <ul className="flex flex-col h-42 overflow-y-auto">
+              {filteredTags.map((tag, index) => (
+                <li
+                  key={index}
+                  className="py-1 px-2 hover:bg-gray-600 rounded-lg cursor-pointer"
+                  onClick={() => {
+                    setActiveTag(tag); // Only set tag
+                  }}
+                >
+                  {tag}
                 </li>
               ))}
-              <li className="text-gray-400 dropdown-hover flex gap-2 py-2 px-4 mb-2 items-center rounded hover:bg-gray-800">
-                <AiOutlineMenuUnfold /> All tags
-              </li>
             </ul>
-          </aside>
+          </div>
+        )}
 
-          {/* Main Content */}
-          <main className="flex-1 border-l pr-24 pl-4">
-            {/* Topics */}
-            <section>
-              <ul className="flex py-4 gap-4">
-                {/* Categories */}
-                <li
-                  className={`rounded-lg p-2 flex items-center gap-2 border cursor-pointer ${activeTab === "categories" ? "border-blue-500" : ""}`}
-                  onClick={() => handleTabClick("categories")}
-                >
-                  Categories <BiSolidRightArrow />
-                </li>
-
-                {/* Tags Tab */}
-                <li
-                  className={`rounded-lg p-2 flex items-center gap-2 border cursor-pointer ${activeTab === "tags" ? "border-blue-500" : ""}`}
-                  onClick={() => handleTabClick("tags")}
-                >
-                  Tags <BiSolidRightArrow />
-                </li>
-
-                {/* Latest Tab */}
-                <li
-                  className={`border-b-2 flex items-center ${activeTab === "latest" ? "border-blue-500 text-blue-500" : "border-none"} cursor-pointer`}
-                  onClick={() => handleTabClick("latest")}
-                >
-                  Latest
-                </li>
-
-                {/* Hot Tab */}
-                <li
-                  className={`border-b-2 flex items-center ${activeTab === "hot" ? "border-blue-500 text-blue-500" : "border-none"} cursor-pointer`}
-                  onClick={() => handleTabClick("hot")}
-                >
-                  Hot
-                </li>
-              </ul>
-              {isCategoryDropdownVisible && (
-                <div className="absolute bg-gray-800 rounded-lg shadow-lg mt-2 py-2 px-4">
-                  <input
-                    type="text"
-                    className="w-full p-2 mb-2 rounded-lg bg-gray-900 text-white"
-                    placeholder="Search Categories"
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)} // Update search term
-                  />
-                  <ul className="flex flex-col h-42 overflow-y-auto">
-                    {filteredCategories.map((cate, index) => (
-                      <li key={index} className="py-1 px-2 hover:bg-gray-600 rounded-lg cursor-pointer"
-                      onClick={() => handleCategoryClick(cate.category)}>
-                        <h1 className="flex items-center gap-2">
-                          <div className={`${cate.div} h-3 w-3`}></div>
-                          {cate.category} x {cate.total}
-                        </h1>
-                        <div className="text-gray-500">{cate.message}</div>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-              {isTagDropdownVisible && (
-                <div className="absolute bg-gray-700 rounded-lg shadow-lg mt-2 py-2 px-4">
-                  <input
-                    type="text"
-                    className="w-full p-2 mb-2 rounded-lg bg-gray-800 text-white"
-                    placeholder="Search Tags"
-                    value={tagSearchTerm}
-                    onChange={(e) => setTagSearchTerm(e.target.value)} // Update tag search term
-                  />
-                  <ul className="flex flex-col h-42 overflow-y-auto">
-                    {filteredTags.map((tag, index) => (
-                      <li key={index} className="py-1 px-2 hover:bg-gray-600 rounded-lg cursor-pointer">
-                        {tag}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {/* Table for displaying reviews */}
-              {activeCategory && (
-                <table className="w-full border-collapse mt-4">
-                  <thead>
-                    <tr className="bg-gray-900">
-                      <th className="p-2 text-left">Topic</th>
-                      <th className="p-2">Replies</th>
-                      <th className="p-2">Views</th>
-                      <th className="p-2">Activity</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {reviews[activeCategory]?.map((review, index) => (
-                      <tr key={index} className="border-b border-gray-700">
-                        <td className="p-2">{review.topic}</td>
-                        <td className="p-2 text-center">{review.replies}</td>
-                        <td className="p-2 text-center">{review.views}</td>
-                        <td className="p-2 text-center">{review.activity}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              )}
-            </section>
-          </main>
-        </div>
-      </div>
+        {/* Reviews Table */}
+        {(activeCategory || activeTag || activeTab === "hot" || activeTab === "latest") && (
+          <table className="w-full border-collapse mt-4">
+            <thead>
+              <tr className="bg-gray-900">
+                <th className="p-2 text-left">Topic</th>
+                <th className="p-2">Replies</th>
+                <th className="p-2">Views</th>
+                <th className="p-2">Activity</th>
+              </tr>
+            </thead>
+            <tbody>
+              {getFilteredReviews().map((review, index) => (
+                <tr key={index} className="border-b border-gray-700">
+                  <td className="p-2">{review.topic}</td>
+                  <td className="p-2 text-center">{review.replies}</td>
+                  <td className="p-2 text-center">{review.views}</td>
+                  <td className="p-2 text-center">{review.activity}</td>
+                </tr>
+              ))}
+            </tbody>  
+          </table>
+        )}
+      </>
     );
   };
 
-  export default Forum;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-import React, { useState } from "react";
-import {
-    RiArrowRightSLine,
-    RiGraduationCapFill,
-    //   RiUserCommunityFill,
-    RiTeamLine,
-    RiCommunityLine,
-} from "react-icons/ri";
-import { RxDiscordLogo } from "react-icons/rx";
-import { LiaChartBarSolid } from "react-icons/lia";
-import { PiBuildingsBold, PiCertificateLight } from "react-icons/pi";
-import { GiSkills } from "react-icons/gi";
-import { NavLink } from "react-router-dom";
-import PricingPlans from './pricing/PricingPlans';
-import SignupComponent from "../components/home/SignupComponent";
-// import {  } from "react-icons/ri";
-
-
-function Pricing() {
-    const plansData = {
-        Overview: [
-            { feature: "Course & Labs Library", free: "Limited Access", pro: "✔", teams: "✔", enterprise: "✔" },
-            { feature: "Career Paths", free: "Limited Access", pro: "✔", teams: "✔", enterprise: "✔" },
-            { feature: "Skill Paths", free: "Limited Access", pro: "✔", teams: "✔", enterprise: "✔" },
-            { feature: "Certification Prep Paths", free: "Limited Access", pro: "✔", teams: "✔", enterprise: "✔" },
-            { feature: "Cyber Threat-Readiness", free: "✘", pro: "✔", teams: "✔", enterprise: "✔" },
-            { feature: "Community", free: "✘", pro: "✔", teams: "✔", enterprise: "✔" },
-            { feature: "Baseline & Benchmark", free: "✘", pro: "✘", teams: "✔", enterprise: "✔" },
-            { feature: "Team Insights & Analytics", free: "✘", pro: "✘", teams: "✔", enterprise: "✔" },
-        ],
-        Core: [
-            { feature: "Video Library", free: "✔", pro: "✔", teams: "✔", enterprise: "✔" },
-            { feature: "Assessments", free: "✔", pro: "✔", teams: "✔", enterprise: "✔" },
-            { feature: "Badges, XP & Levels", free: "✔", pro: "✔", teams: "✔", enterprise: "✔" },
-            { feature: "Hands-on Labs", free: "✘", pro: "✔", teams: "✔", enterprise: "✔" },
-            { feature: "Practice Tests", free: "✘", pro: "✔", teams: "✔", enterprise: "✔" },
-            { feature: "Digtial Credentials", free: "✘", pro: "✔", teams: "✔", enterprise: "✔" },
-        ],
-        "Career Paths": [
-            { feature: "IT & Cybersecurity", free: "✘", pro: "✔", teams: "✔", enterprise: "✔" },
-            { feature: "SOC Analyst", free: "✘", pro: "✔", teams: "✔", enterprise: "✔" },
-            { feature: "Penetration Tester", free: "✘", pro: "✔", teams: "✔", enterprise: "✔" },
-            { feature: "Security Engineer", free: "✘", pro: "coming soon", teams: "coming soon", enterprise: "coming soon" },
-            { feature: "Leadership and Management", free: "✘", pro: "coming soon", teams: "coming soon", enterprise: "coming soon" },
-            { feature: "GRC Analyst", free: "✘", pro: "coming soon", teams: "coming soon", enterprise: "coming soon" },
-            { feature: "Custom Career Paths", free: "✘", pro: "✘", teams: "✔", enterprise: "✔" },
-        ],
-        "Cyber Skills": [
-            { feature: "IT Basics", free: "✘", pro: "✔", teams: "✔", enterprise: "✔" },
-            { feature: "Offensive Security", free: "✘", pro: "✔", teams: "✔", enterprise: "✔" },
-            { feature: "Defensive Security", free: "✘", pro: "✔", teams: "✔", enterprise: "✔" },
-            { feature: "Cloud Security", free: "✘", pro: "✔", teams: "✔", enterprise: "✔" },
-            { feature: "MITRE ATT&CK", free: "✘", pro: "✔", teams: "✔", enterprise: "✔" },
-            { feature: "Baseline & Benchmark", free: "✘", pro: "✘", teams: "✔", enterprise: "✔" },
-        ],
-        "Certification Prep": [
-            { feature: "40+ Certification Video Courses", free: "✔", pro: "✔", teams: "✔", enterprise: "✔" },
-            { feature: "CEUs/CPEs (Continuing Education)", free: "✔", pro: "✔", teams: "✔", enterprise: "✔" },
-            { feature: "Test Readiness Programs (Labs & Practice Tests)", free: "✘", pro: "✔", teams: "✔", enterprise: "✔" },
-            { feature: "Certification Insights", free: "✘", pro: "✘", teams: "✔", enterprise: "✔" },
-        ],
-        "Cyber Threat-Readiness": [
-            { feature: "CVE Emulation", free: "✘", pro: "✔", teams: "✔", enterprise: "✔" },
-            { feature: "Threat Actor Campaigns", free: "✘", pro: "✔", teams: "✔", enterprise: "✔" },
-            { feature: "MITRE ATT&CK", free: "✘", pro: "✔", teams: "✔", enterprise: "✔" },
-            { feature: "Threat Readiness Insights", free: "✘", pro: "✘", teams: "✔", enterprise: "✔" },
-        ],
-        Community: [
-            { feature: "Forums", free: "✔", pro: "✔", teams: "✔", enterprise: "✔" },
-            { feature: "Mentor & Career Coaching", free: "✘", pro: "✔", teams: "✔", enterprise: "✔" },
-        ],
-        Teams: [
-            { feature: "Onboard New Team Members", free: "✘", pro: "✘", teams: "✔", enterprise: "✔" },
-            { feature: "Create & Customize Career Paths", free: "✘", pro: "✘", teams: "✔", enterprise: "✔" },
-            { feature: "50+ Out-of-the-Box Training Paths", free: "✘", pro: "✘", teams: "✔", enterprise: "✔" },
-            { feature: "Baseline & Benchmark Skill Capabilities  (NEW)", free: "✘", pro: "✘", teams: "✔", enterprise: "✔" },
-            { feature: "Align to Industry Frameworks (ATT&CK, NICE CWF, DoD 8140, MITRE)", free: "✘", pro: "✘", teams: "✔", enterprise: "✔" },
-            { feature: "Scheduled Reporting", free: "✘", pro: "✘", teams: "✔", enterprise: "✔" },
-            { feature: "Data Export", free: "✘", pro: "✘", teams: "✔", enterprise: "✔" },
-            { feature: "Usage & Management Analytics", free: "✘", pro: "✘", teams: "✔", enterprise: "✔" },
-            { feature: "User Roles & Permissions", free: "✘", pro: "✘", teams: "✔", enterprise: "✔" },
-            { feature: "Group Management", free: "✘", pro: "✘", teams: "✔", enterprise: "✔" },
-            { feature: "Cybersecurity Training Advisor", free: "✘", pro: "✘", teams: "✔ 10+ Team members", enterprise: "✔" },
-            { feature: "Single Sign-On (SSO)", free: "✘", pro: "✘", teams: "✔ 10+ Team members", enterprise: "✔" },
-            { feature: "LMS Integration", free: "✘", pro: "✘", teams: "✔ 10+ Team members", enterprise: "✔" },
-            { feature: "Data API", free: "✘", pro: "✘", teams: "✔ 10+ Team members", enterprise: "✔" },
-        ],
-    };
-
-    const sectionIcons = {
-        Overview: <RiGraduationCapFill className="text-2xl z-10" />,
-        Core: <RxDiscordLogo className="text-2xl z-10" />,
-        "Career Paths": <LiaChartBarSolid className="text-2xl z-10" />,
-        "Cyber Skills": <GiSkills className="text-2xl z-10" />,
-        "Certification Prep": <PiCertificateLight className="text-2xl z-10" />,
-        "Cyber Threat-Readiness": <PiBuildingsBold className="text-2xl z-10" />,
-        Community: <RiCommunityLine className="text-2xl z-10" />,
-        Teams: <RiTeamLine className="text-2xl z-10" />,
-    };
-
-
-    const [openSections, setOpenSections] = useState(["Overview"]);
-
-    const toggleSection = (section) => {
-        setOpenSections((prev) =>
-            prev.includes(section)
-                ? prev.filter((s) => s !== section) // Close section
-                : [...prev, section] // Open section
-        );
-    };
-
-
-    return (
-        <div className='mt-40'>
-            <PricingPlans />
-            <div className="mt-24 w-full bg-cover bg-center bg-opacity-50" style={{ backgroundImage: "url('https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/65ae205da78ed7f6ff3adec2_8.png')" }}>
-                <div className="w-4/5 mx-auto py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-20">
-                    <div>
-                        <h2 className='text-5xl'>
-                            What are the differences between an <span className='text-pink-500'>Insider Pro &</span>
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-pink-600 to-fuchsia-600">Teams Plan?</span>
-                        </h2>
-                    </div>
-                    <div>
-                        <h2 className='text-5xl flex flex-wrap'>
-                            FortifyLearning<span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-fuchsia-600">Insider Pro</span>
-                        </h2>
-                        <p className='text-gray-100 font-semibold text-xl mt-4'>For Individuals</p>
-                        <p className='text-lg mt-4 text-gray-400'>
-                            <span className='text-gray-100 font-semibold'>FortifyLearning Insider Pro </span>
-                            (CIP) contains the tools and resources individuals need to effectively prepare for cybersecurity jobs.
-                            CIPs have access to industry framework aligned Career Paths, Skill Paths, and Certification Prep, as well as Credly-validated digital badges, threat-informed content, and much more!
-                        </p>
-                        <NavLink to='/insider-pro'>
-                            <button className="px-6 py-3 w-full flex items-center justify-center mt-10 text-lg bg-transparent border rounded-2xl">
-                                Explore more <RiArrowRightSLine />
-                            </button>
-                        </NavLink>
-                    </div>
-                    <div>
-                        <h2 className='text-5xl flex flex-wrap'>
-                            FortifyLearning<span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-fuchsia-600">For Teams</span>
-                        </h2>
-                        <p className='text-lg mt-4 text-gray-400'>
-                            <span className='text-gray-100 font-semibold'>FortifyLearning For Teams </span>
-                            includes all that CIP offers, plus the tools and functionality to build, manage, and scale a cybersecurity training program across an organization.
-                        </p>
-                        <ul className="mt-4 space-y-2 text-gray-100">
-                            <li className='flex items-center font-semibold'>
-                                <img className='h-5 w-5 mr-2' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/668bdbd0cefcee5c0bdce079_Group%20313.svg" alt="" />
-                                Utilize and customize repeatable onboarding programs
-                            </li>
-                            <li className='flex items-center font-semibold'>
-                                <img className='h-5 w-5 mr-2' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/668bdbd0cefcee5c0bdce079_Group%20313.svg" alt="" />
-                                Baseline and benchmark your team's skills
-                            </li>
-                            <li className='flex items-center font-semibold'>
-                                <img className='h-5 w-5 mr-2' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/668bdbd0cefcee5c0bdce079_Group%20313.svg" alt="" />
-                                Easily remediate skill gaps
-                            </li>
-                            <li className='flex items-center font-semibold'>
-                                <img className='h-5 w-5 mr-2' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/668bdbd0cefcee5c0bdce079_Group%20313.svg" alt="" />
-                                Prepare your team for certifications
-                            </li>
-                            <li className='flex items-center font-semibold'>
-                                <img className='h-5 w-5 mr-2' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/668bdbd0cefcee5c0bdce079_Group%20313.svg" alt="" />
-                                Assign tailored coursework aligned to key industry frameworks
-                            </li>
-                            <li className='flex items-center font-semibold'>
-                                <img className='h-5 w-5 mr-2' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/668bdbd0cefcee5c0bdce079_Group%20313.svg" alt="" />
-                                Stay ahead of existing threats and better protect your organization
-                            </li>
-                        </ul>
-                        <NavLink to='/for-teams'>
-                            <button className="px-6 py-3 w-full flex items-center justify-center mt-10 text-lg bg-transparent border rounded-2xl">
-                                Explore more <RiArrowRightSLine />
-                            </button>
-                        </NavLink>
-                    </div>
-                </div>
-            </div>
-
-            <div className="flex flex-col lg:flex-row w-4/5 items-center mx-auto mt-20 gap-10 lg:gap-20">
-                <div className="w-full lg:w-2/5 text-center lg:text-left">
-                    <h2 className="text-4xl sm:text-5xl flex flex-wrap">
-                        FortifyLearning
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-fuchsia-600">
-                            Risk Impact
-                        </span>
-                    </h2>
-                    <p className="text-gray-400 mt-4">
-                        How does your team's activity on Cybrary reduce your company's cyber risk?
-                        To decrease your risk impact by 2%, your team needs to average just 4 hours of learning per month.
-                    </p>
-                </div>
-                <div className="w-full lg:w-3/5">
-                    <img
-                        src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/67325bea05c0f86df8ac7d33_Frame%2096093-min-p-1080.png"
-                        alt=""
-                        className="w-full h-auto"
-                    />
-                </div>
-            </div>
-
-            <div className="mt-20 mx-auto bg-gradient-to-b from-gray-900 to-black text-white p">
-                <h1 className="text-4xl sm:text-5xl text-center mb-6 mt-10">Compare our plans</h1>
-                <div className="w-11/12 w-5/5 sm:w-4/5 mx-auto bg-gray-900 p-2 sm:p-10 rounded-3xl overflow-y-auto">
-                    <div className="overflow-x-auto">
-                        <table className="w-full mt-3 border-b-2 mb-4 border-gray-700">
-                            <thead>
-                                <tr className="">
-                                    <th className="border-gray-700 p-2 text-left">Plan Features</th>
-                                    <th className="border-gray-700 p-2">
-                                        <h2 className="flex flex-col text-left">
-                                            FortifyLearning
-                                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-fuchsia-600">
-                                                Free Edition
-                                            </span>
-                                        </h2>
-                                    </th>
-                                    <th className="border-gray-700 p-2">
-                                        <h2 className="flex flex-col text-left">
-                                            FortifyLearning
-                                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-fuchsia-600">
-                                                Insider Pro
-                                            </span>
-                                        </h2>
-                                    </th>
-                                    <th className="border-gray-700 p-2">
-                                        <h2 className="flex flex-col text-left">
-                                            FortifyLearning
-                                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-fuchsia-600">
-                                                For Teams
-                                            </span>
-                                        </h2>
-                                    </th>
-                                    <th className="border-gray-700 p-2">
-                                        <h2 className="flex flex-col text-left">
-                                            FortifyLearning
-                                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-fuchsia-600">
-                                                For Enterprise
-                                            </span>
-                                        </h2>
-                                    </th>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
-                    {Object.entries(plansData).map(([section, plans]) => (
-                        <div key={section} className="mb-4">
-                            <button
-                                onClick={() => toggleSection(section)}
-                                className="w-full py-4 rounded-lg flex gap-4 sm:gap-6 items-center"
-                            >
-                                <span>
-                                    <RiArrowRightSLine className="text-pink-500 text-2xl sm:text-3xl" />
-                                </span>
-                                <div className="flex items-center gap-3">
-                                    <div className="w-8 h-8 sm:w-10 sm:h-10 relative flex justify-center items-center rounded-3xl">
-                                        <img
-                                            className="absolute top-0 left-0 z-2"
-                                            src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/64369e04d29c9d9b21942d66_home-icon-background.webp"
-                                            alt="Star"
-                                        />
-                                        {sectionIcons[section]}
-                                    </div>
-                                    <span className="font-semibold text-sm sm:text-base">{section}</span>
-                                </div>
-                            </button>
-                            {openSections.includes(section) && (
-                                <div className="overflow-x-auto">
-                                    <table className="w-full mt-3  border-collapse">
-                                        <tbody className="text-center">
-                                            {plans.map((plan, index) => (
-                                                <tr key={index}>
-                                                    <td className="px-4 sm:px-8 py-2 text-left text-sm sm:text-base">{plan.feature}</td>
-                                                    <td className="px-4 sm:px-8 py-2 text-sm sm:text-base">{plan.free}</td>
-                                                    <td className="px-4 sm:px-8 py-2 text-sm sm:text-base">{plan.pro}</td>
-                                                    <td className="px-4 sm:px-8 py-2 text-sm sm:text-base">{plan.teams}</td>
-                                                    <td className="px-4 sm:px-8 py-2 text-sm sm:text-base">{plan.enterprise}</td>
-                                                </tr>
-                                            ))}
-                                        </tbody>
-                                    </table>
-                                </div>
-                            )}
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-            <div className="w-full mt-24 flex justify-center">
-                <SignupComponent />
-            </div>
-        </div>
-    )
-}
-
-export default Pricing;
+  export default CategoriesTagsReviews;

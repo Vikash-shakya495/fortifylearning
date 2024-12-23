@@ -59,7 +59,7 @@ function SignupComponent() {
                     </span>
                 </div>
                 <div className="w-full flex justify-between text-lg p-6 mt-8 border-t">
-                    <NavLink to="/login2" className="hover:underline">Sign in</NavLink>
+                    <NavLink to="/login" className="hover:underline">Sign in</NavLink>
                     <span className="hover:underline " onClick={() => dispatch(togglePopup())}>View all SSO options</span>
                 </div>
             </div>

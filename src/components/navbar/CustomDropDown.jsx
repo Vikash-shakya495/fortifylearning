@@ -18,8 +18,8 @@ function CustomDropDown() {
     const [isHovered, setIsHovered] = useState(false);
     return (
         <div className='w-full flex justify-evenly items-center p-2 dropdowns'
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
+            onMouseEnter={() => setIsHovered(!true)}
+            onMouseLeave={() => setIsHovered(!false)}
             >
             <Dropdown title='Catalog ↴' className="dropdown-container "
                 menuClassName="dropdown-menu p-2 catalog"

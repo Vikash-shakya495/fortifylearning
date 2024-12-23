@@ -1,10 +1,10 @@
 import React from 'react';
 import reactLogo from '../assets/logo.svg';
 
-function Login2() {
+function Login() {
   return (
     <>
-      <div className="min-h-screen flex flex-col items-center justify-between bg-gray-50 sm:bg-transparent px-4 sm:px-8">
+      <div className="mt-40 min-h-screen flex flex-col items-center justify-between bg-gray-50 sm:bg-transparent px-4 sm:px-8">
         {/* Logo */}
         <div className="mb-4 text-center">
           <img
@@ -128,7 +128,7 @@ function Login2() {
         <div className="mt-5 text-center">
           <p className="text-lg">
             Don't have an account?{' '}
-            <a href="/signup" className="text-pink-600 hover:text-pink-700 underline">
+            <a href="/register" className="text-pink-600 hover:text-pink-700 underline">
               Sign Up »
             </a>
           </p>
@@ -147,4 +147,4 @@ function Login2() {
   );
 }
 
-export default Login2;
+export default Login;
