@@ -191,7 +191,7 @@ function SupplyChain() {
                         <div className='w-full '>
                             <div className='flex flex-col md:flex-row items-center bg-gray-900 p-8 w-full gap-12'>
                                 <div key={index} className="bg-gray-900 md:w-1/3 rounded-sm  transition duration-500 hover:rounded-2xl shadow-lg hover:shadow-xl border border-gray-600 ">
-                                    <img src={course.img} alt="" className='h-[200px] w-full object-cover rounded-lg transition duration-700 rounded-sm hover:rounded-tl-2xl hover:rounded-tr-2xl' />
+                                    <img src={course.img} alt="" className='h-[200px] w-full object-cover transition duration-700 rounded-sm hover:rounded-tl-2xl hover:rounded-tr-2xl' />
                                     <div className='p-6'>
                                         <h3 className="text-2xl font-semibold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-pink-600 to-fuchsia-600">{course.title}</h3>
                                         <p className="text-gray-400 mb-4">{course.overview}</p>

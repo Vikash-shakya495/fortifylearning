@@ -13,7 +13,7 @@ import { GrDatabase } from "react-icons/gr";
 import { TbPointFilled } from "react-icons/tb";
 import TestimonialsCarousel from "../../components/home/TestimonialsCarousel";
 
-function AzureCloud() {
+function IncidentHandler() {
   const salesforceCourses = [
     {
       img: "https://isodoc.co.uk/wp-content/uploads/2023/06/training-procedure.jpg",
@@ -357,4 +357,4 @@ function AzureCloud() {
   );
 }
 
-export default AzureCloud;
+export default IncidentHandler;

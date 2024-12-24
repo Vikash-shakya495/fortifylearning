@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CategoriesTagsReviews from "./CategoriesTagsReviews";
 import { CiMenuKebab } from "react-icons/ci";
 import {
@@ -11,6 +11,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { BiSolidBookmarkAlt, BiSolidRightArrow } from "react-icons/bi";
 import { SiBiome } from "react-icons/si";
 import { GiLaurels, GiMedal } from "react-icons/gi";
+import { NavLink } from "react-router-dom";
 
 const Forum = () => {
   const [activeTab, setActiveTab] = useState("latest"); // Default to latest tab
@@ -35,10 +36,29 @@ const Forum = () => {
     setIsOpen(!isOpen);
   };
 
+  // Update screen width on resize
   const [isSidebarVisible, setIsSidebarVisible] = useState(true);
+  
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setIsSidebarVisible(false); // Hide sidebar on small screens
+      } else {
+        setIsSidebarVisible(true); // Show sidebar on larger screens
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Call it initially to set the correct state
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+  
   const toggleSidebar = () => {
     setIsSidebarVisible((prev) => !prev);
   };
+    
 
   const categories = [
     { category: "Career Paths", total: 4, div: 'bg-fuchsia-400', message: "this is very helpful to your job." },
@@ -224,8 +244,43 @@ const Forum = () => {
     cate.category.toLowerCase().includes(searchTerm.toLowerCase())
   );
   const filteredTags = tags.filter(tag =>
-    tag.toLowerCase().includes(tagSearchTerm.toLowerCase())
+    tag.toLowerCase().includes((tagSearchTerm.toLowerCase()) ? tagSearchTerm.toLowerCase() : searchTerm)
   );
+
+  const handleSearchInput = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleSearchIconClick = () => {
+    // 1. Filter categories and tags based on searchTerm
+    const filteredCategories = categories.filter(cate =>
+      cate.category.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    const filteredTags = tags.filter(tag =>
+      tag.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  
+    // 2. Update the state to reflect the filtered data
+    if (filteredCategories.length > 0) {
+      setActiveCategory(filteredCategories[0].category); // Set the first matching category
+      setActiveTag(null); // Clear active tag
+    } else if (filteredTags.length > 0) {
+      setActiveTag(filteredTags[0]); // Set the first matching tag
+      setActiveCategory(null); // Clear active category
+    } else {
+      setActiveCategory(null); // Clear active category if no match
+      setActiveTag(null); // Clear active tag if no match
+    }
+  
+    // 3. Decide the active tab based on filtering results
+    if (filteredCategories.length > 0) {
+      setActiveTab('categories');
+    } else if (filteredTags.length > 0) {
+      setActiveTab('tags');
+    } else {
+      setActiveTab('latest');
+    }
+  };
 
   // Handle tab clicks
   const handleTabClick = (tab) => {
@@ -237,7 +292,10 @@ const Forum = () => {
       setIsTagDropdownVisible((prev) => !prev); // Toggle tags dropdown visibility
       setIsCategoryDropdownVisible(false); // Close category dropdown when tags are clicked
       setActiveItem(null);
-    } else {
+    } else if(tab==searchTerm.toLowerCase()){
+      searchTerm
+    }
+    else {
       setIsCategoryDropdownVisible(false); // Close dropdowns for other tabs
       setIsTagDropdownVisible(false);
       setActiveItem(null);
@@ -247,7 +305,7 @@ const Forum = () => {
 
 
   const filteredReviews = () => {
-    if (!activeCategory && !activeTag) return [];
+    if (!activeCategory && !activeTag) return Object.values(reviews).flat();
     if (activeCategory && !activeTag) return reviews[activeCategory] || [];
     if (!activeCategory && activeTag)
       return Object.values(reviews)
@@ -273,7 +331,7 @@ const Forum = () => {
             {/* Admin Section */}
             <div className="mb-10">
               <h2 className="text-2xl font-bold mb-4">Our Admins</h2>
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {['CalmQuail2332', 'WillCAboutThat1', 'btallbot', 'AmandaCybrary', 'bjamz', 'WillCAboutThat'].map(
                   (name, index) => (
                     <div
@@ -291,7 +349,7 @@ const Forum = () => {
             {/* Moderator Section */}
             <div className="mb-10">
               <h2 className="text-2xl font-bold mb-4">Our Moderators</h2>
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {['JosephWhite', 'markinibert', 'LeakeyFaucet', 'Pat_P', 'LoriP', 'CitizenFortress', 'Analyse', 'EfficientMastodon6267', 'CyberAngel'].map(
                   (name, index) => (
                     <div
@@ -427,52 +485,52 @@ const Forum = () => {
       case "Group":
         return (
           <div className="p-4 bg-gray-800 rounded-lg mb-4">
-      <h2 className="text-xl font-bold text-white mb-4">Group</h2>
-      <div className="flex items-center gap-4 mb-2">
-        <div className="flex-1">
-          <input
-            type="text"
-            placeholder="All Groups"
-            className="w-full px-4 py-2 rounded-lg bg-gray-900 text-white focus:outline-none"
-            
-          />
-        </div>
-        <div className="relative">
-          <button
-            onClick={() => setDropdownOpen(!dropdownOpen)}
-            className="px-4 py-2 bg-gray-900 text-white rounded-lg flex items-center justify-between gap-2 focus:outline-none border border-blue-500"
-          >
-            {selectedGroup}
-            <span className={`transform ${dropdownOpen ? "rotate-180" : ""}`}>
-              ▼
-            </span>
-          </button>
-          {dropdownOpen && (
-            <ul className="absolute top-full left-0 mt-2 w-full bg-gray-900 text-white rounded-lg shadow-lg overflow-hidden z-10">
-              <li
-                onClick={() => handleSelect("Filter by group type")}
-                className="px-4 py-2 hover:bg-gray-700 cursor-pointer"
-              >
-                Filter by group type
-              </li>
-              <li
-                onClick={() => handleSelect("Public Groups")}
-                className="px-4 py-2 hover:bg-gray-700 cursor-pointer"
-              >
-                Public Groups
-              </li>
-              <li
-                onClick={() => handleSelect("Closed Groups")}
-                className="px-4 py-2 hover:bg-gray-700 cursor-pointer"
-              >
-                Closed Groups
-              </li>
-            </ul>
-          )}
-        </div>
-      </div>
-      <p className="text-white">There are no visible groups.</p>
-    </div>
+            <h2 className="text-xl font-bold text-white mb-4">Group</h2>
+            <div className="flex items-center gap-4 mb-2">
+              <div className="flex-1">
+                <input
+                  type="text"
+                  placeholder="All Groups"
+                  className="w-full px-4 py-2 rounded-lg bg-gray-900 text-white focus:outline-none"
+
+                />
+              </div>
+              <div className="relative">
+                <button
+                  onClick={() => setDropdownOpen(!dropdownOpen)}
+                  className="px-4 py-2 bg-gray-900 text-white rounded-lg flex items-center justify-between gap-2 focus:outline-none border border-blue-500"
+                >
+                  {selectedGroup}
+                  <span className={`transform ${dropdownOpen ? "rotate-180" : ""}`}>
+                    ▼
+                  </span>
+                </button>
+                {dropdownOpen && (
+                  <ul className="absolute top-full left-0 mt-2 w-full bg-gray-900 text-white rounded-lg shadow-lg overflow-hidden z-10">
+                    <li
+                      onClick={() => handleSelect("Filter by group type")}
+                      className="px-4 py-2 hover:bg-gray-700 cursor-pointer"
+                    >
+                      Filter by group type
+                    </li>
+                    <li
+                      onClick={() => handleSelect("Public Groups")}
+                      className="px-4 py-2 hover:bg-gray-700 cursor-pointer"
+                    >
+                      Public Groups
+                    </li>
+                    <li
+                      onClick={() => handleSelect("Closed Groups")}
+                      className="px-4 py-2 hover:bg-gray-700 cursor-pointer"
+                    >
+                      Closed Groups
+                    </li>
+                  </ul>
+                )}
+              </div>
+            </div>
+            <p className="text-white">There are no visible groups.</p>
+          </div>
         );
       case "Badges":
         return (
@@ -566,49 +624,54 @@ const Forum = () => {
 
   return (
     <div className="bg-gray-800">
-      <header className={`py-4 flex justify-between bg-black w-full px-20 items-center transition-all duration-300 ${isSidebarVisible ? "px-20" : "px-40"}`}>
+      <header className={`py-4 px-4 lg:px-20 flex justify-between bg-black w-full items-center transition-all duration-300 ${isSidebarVisible ? "md:px-20" : "md:md:px-40"}`}>
         <div className="flex items-center space-x-4">
           <FaBars size={44} onClick={toggleSidebar} className="hover:bg-slate-800 p-2 hover:cursor-pointer" />
-          <h1 className="text-2xl font-bold">FortifyLearning</h1>
+          <h1 className="text-2xl font-bold hidden sm:block">FortifyLearning</h1>
         </div>
         <div className="flex items-center space-x-4">
           <div className="relative">
-            <FaSearch className="absolute left-3 top-2 text-gray-400" />
+            <FaSearch className="absolute right-3 top-3 text-gray-400 hover:cursor-pointer"
+            onClick={handleSearchIconClick} />
             <input
               type="text"
               placeholder="Search..."
-              className="bg-gray-800 text-gray-300 pl-10 pr-4 py-2 rounded-lg"
+              className="bg-gray-800 w-32 sm:w-60 text-gray-300 pl-4 pr-4 py-2 rounded-lg"
               value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
+              onChange={handleSearchInput}
+              onKeyDown={handleSearchIconClick}
+              
             />
           </div>
-          <button className="flex items-center space-x-2 bg-blue-600 px-4 py-2 rounded-lg">
-            <FaUser />
-            <span>Log In</span>
-          </button>
+          <NavLink to='/login'>
+            <button className="flex items-center space-x-2 bg-blue-600 px-4 py-2 rounded-lg">
+              <FaUser className="hidden sm:block" />
+              <span>Log In</span>
+            </button>
+          </NavLink>
         </div>
       </header>
       <div className="flex w-full bg-gray-900 text-gray-200 pb-6 ">
         {/* Sidebar */}
-        <aside className={`w-1/4 bg-gray-900 pl-20 pr-4 pt-4 transition-all duration-300 ${isSidebarVisible ? "translate-x-0 z-0" : "translate-x-full z-2"}`}>
+        <aside className={`w-5/6 sm:w-2/5 md:w-1/3 bg-gray-900 pl-4 lg:pl-20 pr-2 lg:pr-4 pt-4 transition-all duration-300 ${isSidebarVisible ? "-translate-x-full md:translate-x-0 z-0 " : "translate-x-0 md:translate-x-full md:z-2 z-10 "}`}>
           <ul className="relative">
-            <li className="dropdown-hover flex gap-2 py-2 px-4 items-center rounded hover:bg-gray-800"
+            <li className="dropdown-hover flex gap-2 py-2 px-4 items-center rounded hover:bg-gray-800 md:hover:w-56"
               onClick={() => { setActiveItem(null); }}
             >
               <MdOutlineTopic /> Topics
             </li>
             <li
-              className=" dropdown-hover flex gap-2 py-2 px-4 items-center rounded hover:bg-gray-800 cursor-pointer"
+              className=" dropdown-hover flex gap-2 py-2 px-4 items-center rounded hover:bg-gray-800 md:hover:w-56 cursor-pointer"
               onClick={toggleDropdown}
             >
               <CiMenuKebab /> More
             </li>
             {isOpen && (
               <ul className="absolute top-full left-0 bg-gray-800 text-white py-2 rounded shadow-lg w-40">
-                <li className="px-4 py-2 hover:bg-gray-700 cursor-pointer" onClick={() => setActiveItem("About")}>About</li>
-                <li className="px-4 py-2 hover:bg-gray-700 cursor-pointer" onClick={() => setActiveItem("FAQ")}>FAQ</li>
-                <li className="px-4 py-2 hover:bg-gray-700 cursor-pointer" onClick={() => setActiveItem("Group")}>Group</li>
-                <li className="px-4 py-2 hover:bg-gray-700 cursor-pointer" onClick={() => setActiveItem("Badges")}>Badges</li>
+                <li className="px-4 py-2 hover:bg-gray-700 md:hover:w-56 cursor-pointer" onClick={() => setActiveItem("About")}>About</li>
+                <li className="px-4 py-2 hover:bg-gray-700 md:hover:w-56 cursor-pointer" onClick={() => setActiveItem("FAQ")}>FAQ</li>
+                <li className="px-4 py-2 hover:bg-gray-700 md:hover:w-56 cursor-pointer" onClick={() => setActiveItem("Group")}>Group</li>
+                <li className="px-4 py-2 hover:bg-gray-700 md:hover:w-56 cursor-pointer" onClick={() => setActiveItem("Badges")}>Badges</li>
               </ul>
             )}
           </ul>
@@ -619,7 +682,7 @@ const Forum = () => {
             {categories.slice(0, 5).map((cate, index) => (
               <li
                 key={index}
-                className="dropdown-hover flex gap-2 py-2 px-4 items-center rounded hover:bg-gray-800"
+                className="dropdown-hover flex gap-2 py-2 px-4 items-center rounded hover:bg-gray-800 md:hover:w-56"
                 onClick={() => {
                   setActiveCategory(cate.category);
                   setActiveItem(null); // Set the active category
@@ -629,7 +692,7 @@ const Forum = () => {
                 <div>{cate.category}</div>
               </li>
             ))}
-            <li className="text-gray-400 dropdown-hover flex gap-2 py-2 px-4 mb-2 items-center rounded hover:bg-gray-800"
+            <li className="text-gray-400 dropdown-hover flex gap-2 py-2 px-4 mb-2 items-center rounded hover:bg-gray-800 md:hover:w-56"
               onClick={() => {
                 setActiveCategory(null); // Show all categories
                 setActiveItem(null);
@@ -643,7 +706,7 @@ const Forum = () => {
           </h2>
           <ul>
             {tags.slice(0, 5).map((tag, index) => (
-              <li key={index} className="dropdown-hover flex gap-2 py-2 px-4 items-center rounded hover:bg-gray-800"
+              <li key={index} className="dropdown-hover flex gap-2 py-2 px-4 items-center rounded hover:bg-gray-800 md:hover:w-56"
                 onClick={() => {
                   setActiveTag(tag);
                   setActiveItem(null); // Set the active tag
@@ -652,7 +715,7 @@ const Forum = () => {
                 <BiSolidBookmarkAlt /> {tag}
               </li>
             ))}
-            <li className="text-gray-400 dropdown-hover flex gap-2 py-2 px-4 mb-2 items-center rounded hover:bg-gray-800"
+            <li className="text-gray-400 dropdown-hover flex gap-2 py-2 px-4 mb-2 items-center rounded hover:bg-gray-800 md:hover:w-56"
               onClick={() => {
                 setActiveTag(null);
                 setActiveItem(null); // Show all tags
@@ -662,9 +725,9 @@ const Forum = () => {
             </li>
           </ul>
         </aside>
-        <main className={`flex-1 border-l px-24 transition-all duration-300 ${isSidebarVisible ? "z-0" : "border-none z-10 -translate-x-44 bg-gray-900 "}`}>
+        <main className={`md:w-full relative w-screen -left-40 sm:-left-60 sm:px-2  md:-left-20 sm:translate-x-20 md:right-0 md:translate-x-0  md:flex-1 md:border-l px-8 lg:px-24 transition-all duration-300 ${isSidebarVisible ? "z-0" : "border-none md:z-10 z-2 md:-translate-x-44 md:-left-56 md:w-screen  bg-gray-900 "}`}>
           {/* Topics */}
-          <section className="w-full">
+          <section className="sm:w-screen md:w-full ">
             <ul className="flex py-4 gap-4">
               {/* Categories */}
               <li

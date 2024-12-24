@@ -26,6 +26,10 @@ import SkillsPath from "./pages/careerpath/SkillsPath";
 import DemoForm from "./loginSystem/DemoForm";
 import Catalog from "./pages/Catalog";
 import BlindNoSql from "./pages/course/BlindNoSql";
+import DoubleTrouble from "./pages/mission/threat/DoubleTrouble";
+import SpaceMission from "./pages/mission/course/SpaceMission";
+import AzureCloud from "./pages/careerpath/AzureCloud";
+import IncidentHandler from "./pages/careerpath/IncidentHandler";
 
 function App() {
   const location = useLocation();
@@ -44,12 +48,16 @@ function App() {
           <Route path="/career-path" element={<CareerPath />} />
           <Route path="/skill-paths" element={<SkillsPath />} />
           <Route path="career-path/network-engineer" element={<NetworkEngineer />} />
+          <Route path="career-path/microsoft-azure-cloud-engineer" element={<AzureCloud />} />
+          <Route path="career-path/incident-handler" element={<IncidentHandler />} />
           <Route path="threat-actor-campaign/weak-link-in-the-supply-chain" element={<SupplyChain />} />
+          <Route path="threat-actor-campaign/double-trouble-with-double-dragon" element={<DoubleTrouble />} />
           <Route path="course/cve-series-couchdb-rce-cve-2022-24706" element={<CouchDBRCE />} />
           <Route path="course/cve-series-blind-nosql-injection-cve-2021-22911" element={<BlindNoSql />} />
           <Route path="course/cve-series-grafana-directory-traversal-cve-2021-43798" element={<GrafanaDirectory />} />
           <Route path="course/cve-series-atlassian-bitbucket-command-injection-cve-2022-36804" element={<AtlassianBitbucket />} />
           <Route path="course/cve-series-apache-httpd-cve-2021-42013" element={<ApacheHttpd />} />
+          <Route path="/course/cybrary-challenge-space-mission1" element={<SpaceMission />} />
           <Route path="/mitre-attack" element={<MitreAttack />} />
           <Route path="/alliances" element={<Alliances />} />
           <Route path="/career-path/soc-analyst" element={<SocAnalyst />} />
@@ -60,7 +68,6 @@ function App() {
           <Route path="/instructor" element={<Instructors />} />
           <Route path="/demo-request" element={<DemoForm />} />
           <Route path="/catalog" element={<Catalog />} />
-          {/* <Route path="/catalog" element={< />} /> */}
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/forum" element={<Forum />} />
