@@ -31,11 +31,18 @@ import SpaceMission from "./pages/mission/course/SpaceMission";
 import AzureCloud from "./pages/careerpath/AzureCloud";
 import IncidentHandler from "./pages/careerpath/IncidentHandler";
 
+import MainHelpCenter from "./pages/MainHelpCenter";
+import Billing from "./pages/helpcenter/Billing";
+
 function App() {
   const location = useLocation();
 
   // Pages where Navbar and Footer should not appear
-  const hideNavbarAndFooter = ["/login2", "/forum"].includes(location.pathname);
+  const hideNavbarAndFooter = [
+    "/login2", 
+    "/forum",
+    "help-center",
+  ].includes(location.pathname);
 
   return (
     <>
@@ -71,6 +78,8 @@ function App() {
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/forum" element={<Forum />} />
+        <Route path="/help-center" element={<MainHelpCenter />} />
+        <Route path="/help-center/sections/33851861355923-Billing" element={<Billing />} />
       </Routes>
       {!hideNavbarAndFooter && <Footer />}
     </>
