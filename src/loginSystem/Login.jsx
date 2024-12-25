@@ -4,7 +4,7 @@ import reactLogo from '../assets/logo.svg';
 function Login() {
   return (
     <>
-      <div className="mt-40 min-h-screen flex flex-col items-center justify-between bg-gray-50 sm:bg-transparent px-4 sm:px-8">
+      <div className="min-h-screen flex flex-col items-center justify-between bg-white sm:bg-transparent px-4 sm:px-8">
         {/* Logo */}
         <div className="mb-4 text-center">
           <img
@@ -31,7 +31,7 @@ function Login() {
             {/* Email input */}
             <form className="space-y-6">
               <div>
-                <label htmlFor="email" className="block text-lg font-bold text-gray-700">
+                <label htmlFor="email" className="block text-lg font-bold ">
                   Email <span className="text-pink-600">*</span>
                 </label>
                 <input
@@ -46,7 +46,7 @@ function Login() {
               {/* Remember Me Checkbox */}
               <div className="flex items-center justify-start mt-4">
                 <input id="rememberMe" type="checkbox" className="h-5 w-5 text-pink-600 focus:ring-pink-500 border-gray-300 rounded" />
-                <label htmlFor="rememberMe" className="ml-3 block text-lg font-bold text-gray-900">
+                <label htmlFor="rememberMe" className="ml-3 block text-lg font-bold">
                   Remember Me
                 </label>
               </div>

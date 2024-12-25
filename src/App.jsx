@@ -22,7 +22,7 @@ import Forum from "./pages/Forum"; // Assuming you have a Forum page component
 import GrafanaDirectory from "./pages/course/GrafanaDirectory";
 import AtlassianBitbucket from "./pages/course/AtlassianBitbucket ";
 import ApacheHttpd from "./pages/course/ApacheHttpd";
-import SkillsPath from "./pages/careerpath/SkillsPath";
+import SkillsPath from "./pages/SkillsPath";
 import DemoForm from "./loginSystem/DemoForm";
 import Catalog from "./pages/Catalog";
 import BlindNoSql from "./pages/course/BlindNoSql";
@@ -33,15 +33,16 @@ import IncidentHandler from "./pages/careerpath/IncidentHandler";
 
 import MainHelpCenter from "./pages/MainHelpCenter";
 import Billing from "./pages/helpcenter/Billing";
+import Certifications from "./pages/Certifications";
 
 function App() {
   const location = useLocation();
 
   // Pages where Navbar and Footer should not appear
   const hideNavbarAndFooter = [
-    "/login2", 
+    "/login", 
     "/forum",
-    "help-center",
+    "/help-center",
   ].includes(location.pathname);
 
   return (
@@ -72,9 +73,11 @@ function App() {
           <Route path="/fortifylearning-impact-hub" element={<Impact />} />
           <Route path="/privacy-policy" element={<Privacy />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/upgrade" element={<Pricing />} />
           <Route path="/instructor" element={<Instructors />} />
           <Route path="/demo-request" element={<DemoForm />} />
           <Route path="/catalog" element={<Catalog />} />
+          <Route path="/certification-prep" element={<Certifications />} />
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/forum" element={<Forum />} />

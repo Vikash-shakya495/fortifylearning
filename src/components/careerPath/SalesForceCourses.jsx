@@ -79,7 +79,7 @@ const salesforceCourses = [
         format: 'Practical exercises and case studies',
     },
     {
-        img: 'https://www.techforceservices.com/wp-content/uploads/2024/05/Salesforce-Community-Cloud-Crafting-Dynamic-Online-Communities.webp',
+        img: 'https://imgs.search.brave.com/YgG5F1jm-ijJNnmtjCXgHUuMm6xajRUvOFfyxf8Sjgk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YXBleGhvdXJzLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/MC8wMy9TYWxlc2Zv/cmNlLUV4cGVyaWVu/Y2UtQ2xvdWQuanBn',
         title: 'Salesforce Community Cloud Essentials',
         overview: 'Learn to build and manage Salesforce Communities to enhance collaboration and engagement with external users.',
         duration: '5 hours',
@@ -94,20 +94,32 @@ function SalesforceCourses() {
                 Upskill at <span className='text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-pink-600 to-fuchsia-600'>Any Stage</span> of Your Career
             </h2>
             <p className='text-center w-2/3 mb-12 text-gray-400'>Explore FortifyLearning’s Career Paths designed to take you from novice to expert—and
-            anywhere in between.</p>
+                anywhere in between.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {salesforceCourses.map((course, index) => (
-                    <div key={index} className="bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-gray-600 ">
-                        <img src={course.img} alt="" className='h-[200px] w-full object-cover rounded-lg'/>
-                        <div className='p-6'>
-                            <h3 className="text-2xl font-semibold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-pink-600 to-fuchsia-600">{course.title}</h3>
-                            <p className="text-gray-400 mb-4">{course.overview}</p>
-                            <div className="text-gray-300 mb-1 text-lg py-2 px-4 border rounded-xl mb-2 bg-slate-900">
-                                <span className="font-semibold ">Duration:</span> {course.duration}
+                {salesforceCourses.map((course) => (
+                    <div
+                        key={course.title}
+                        className={`group relative rounded-lg border-gray-100 border shadow-lg bg-gray-900 overflow-hidden transition-all duration-300 hover:pb-16`}
+                    >
+                        <img className="h-48 w-full object-cover rounded-lg" src={course.img} alt={course.title} />
+                        <div className="p-4 transition-all duration-300">
+                            <div className="mb-4">
+                                <span className="text-xs font-bold bg-pink-600 py-2 px-3 rounded-full uppercase">
+                                    Course
+                                </span>
+                                <div className="flex gap-2 mt-6">
+                                    <span className="py-1 bg-black rounded-xl px-3">{course.duration}</span>
+                                    <span className="py-1 bg-black rounded-xl px-3">{course.format}</span>
+                                </div>
                             </div>
-                            <div className="text-lg py-2 px-4 border rounded-xl mb-2 text-gray-300">
-                                <span className="font-semibold">Format:</span> {course.format}
-                            </div>
+                            <p className="mt-6 text-2xl font-semibold">{course.title}</p>
+                            <p className="text-md mt-2 text-gray-300 line-clamp-3">{course.overview}</p>
+                        </div>
+                        {/* Learn More Button */}
+                        <div className="absolute bottom-4 left-0 right-0 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <button className="px-4 py-2 bg-gradient-to-r from-orange-600 via-pink-600 to-fuchsia-600 text-white rounded-lg hover:bg-pink-700">
+                                Learn More and Enroll
+                            </button>
                         </div>
                     </div>
                 ))}

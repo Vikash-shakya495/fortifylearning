@@ -58,7 +58,7 @@ function CustomDropDown() {
                 </Dropdown.Item>
 
                 <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg hover:bg-gray-800 items-center'>
-                    <Link to='mission-readiness' className='flex items-center'>
+                    <Link to='/mitre-attack' className='flex items-center'>
                         <PiTargetLight className='text-2xl mr-2 text-white' />
                         <div>
                             <h1 className='text-lg font-semibold text-white'>Mission Readiness</h1>
@@ -68,7 +68,7 @@ function CustomDropDown() {
                 </Dropdown.Item>
 
                 <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg hover:bg-gray-800 items-center'>
-                    <Link to='browse-catalog' className='flex items-center'>
+                    <Link to='catalog' className='flex items-center'>
                         <PiBrowsersLight className='text-2xl mr-2 text-white' />
                         <div>
                             <h1 className='text-lg font-semibold text-white'>Browse the Catalog</h1>
@@ -77,7 +77,7 @@ function CustomDropDown() {
                 </Dropdown.Item>
 
                 <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg hover:bg-gray-800 items-center'>
-                    <Link to='instructors' className='flex items-center'>
+                    <Link to='instructor' className='flex items-center'>
                         <RiQuestionAnswerLine className='text-2xl mr-2 text-white' />
                         <div>
                             <h1 className='text-lg font-semibold text-white'>Instructors</h1>
@@ -106,7 +106,7 @@ function CustomDropDown() {
                             <h1 className='text-lg text-white'>Foundations</h1>
                             <Dropdown.Submenu className='custom-submenu-submenu' position='right'>
                                 <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center '>
-                                    <Link to='it-cybersecurity' className='flex items-center'>
+                                    <Link to='career-path/foundations' className='flex items-center'>
                                         <div >
                                             <h1 className='text-lg text-white '>It and Cybersecurity Foundations</h1>
                                         </div>
@@ -128,30 +128,15 @@ function CustomDropDown() {
                             <h1 className='text-lg text-white'>Defensive Security</h1>
                             <Dropdown.Submenu className='custom-submenu-submenu' position='right'>
                                 <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
-                                    <Link to='it-cybersecurity' className='flex items-center'>
+                                    <Link to='career-path/incident-handler' className='flex items-center'>
                                         <div>
                                             <h1 className='text-lg text-white'>Become an incident handler</h1>
                                         </div>
                                     </Link>
                                 </Dropdown.Item>
+                        
                                 <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
-                                    <Link to='career-path/foundations' className='flex items-center'>
-                                        <div>
-                                            <h1 className='text-lg text-white '>Become an SOC Analyst - level 3
-                                            </h1>
-                                        </div>
-                                    </Link>
-                                </Dropdown.Item>
-                                <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
-                                    <Link to='career-path/foundations' className='flex items-center'>
-                                        <div>
-                                            <h1 className='text-lg text-white '>Become an SOC Analyst - level 2
-                                            </h1>
-                                        </div>
-                                    </Link>
-                                </Dropdown.Item>
-                                <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
-                                    <Link to='career-path/foundations' className='flex items-center'>
+                                    <Link to='career-path/soc-analyst' className='flex items-center'>
                                         <div>
                                             <h1 className='text-lg text-white '>Become an SOC Analyst - level 1
                                             </h1>
@@ -159,39 +144,17 @@ function CustomDropDown() {
                                     </Link>
                                 </Dropdown.Item>
                                 <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
-                                    <Link to='career-path/foundations' className='flex items-center'>
+                                    <Link to='career-path/incident-handler' className='flex items-center'>
                                         <div>
                                             <h1 className='text-lg text-white '>Incident Handler Collections
                                             </h1>
                                         </div>
                                     </Link>
                                 </Dropdown.Item>
+                        
+                            
                                 <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
-                                    <Link to='career-path/soc1' className='flex items-center'>
-                                        <div>
-                                            <h1 className='text-lg text-white '>SOC Analyst 1
-                                            </h1>
-                                        </div>
-                                    </Link>
-                                </Dropdown.Item>
-                                <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
-                                    <Link to='career-path/foundations' className='flex items-center'>
-                                        <div>
-                                            <h1 className='text-lg text-white '>SOC Analyst 2
-                                            </h1>
-                                        </div>
-                                    </Link>
-                                </Dropdown.Item>
-                                <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
-                                    <Link to='career-path/foundations' className='flex items-center'>
-                                        <div>
-                                            <h1 className='text-lg text-white '>SOC Analyst 3
-                                            </h1>
-                                        </div>
-                                    </Link>
-                                </Dropdown.Item>
-                                <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
-                                    <Link to='career-path/foundations' className='flex items-center'>
+                                    <Link to='career-path/soc-analyst' className='flex items-center'>
                                         <div>
                                             <h1 className='text-lg text-white '>soc analyst career path
                                             </h1>
@@ -254,38 +217,7 @@ function CustomDropDown() {
                                         </div>
                                     </Link>
                                 </Dropdown.Item>
-                                <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
-                                    <Link to='career-path/network-engineer' className='flex items-center'>
-                                        <div>
-                                            <h1 className='text-lg text-white '>Network Engineer Collections
-                                            </h1>
-                                        </div>
-                                    </Link>
-                                </Dropdown.Item>
-                                <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
-                                    <Link to='career-path/security-engineer' className='flex items-center'>
-                                        <div>
-                                            <h1 className='text-lg text-white '>Security Engineer Career Path
-                                            </h1>
-                                        </div>
-                                    </Link>
-                                </Dropdown.Item>
-                                <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
-                                    <Link to='career-path/microsoft-azure-cloud-engineer' className='flex items-center'>
-                                        <div>
-                                            <h1 className='text-lg text-white '>Azure Cloud Engineer Collections
-                                            </h1>
-                                        </div>
-                                    </Link>
-                                </Dropdown.Item>
-                                <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
-                                    <Link to='career-path/system-administrator' className='flex items-center'>
-                                        <div>
-                                            <h1 className='text-lg text-white '>System Administrator Collections
-                                            </h1>
-                                        </div>
-                                    </Link>
-                                </Dropdown.Item>
+                
                             </Dropdown.Submenu>
                         </Dropdown.Item>
                         <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
@@ -314,30 +246,7 @@ function CustomDropDown() {
                                         </div>
                                     </Link>
                                 </Dropdown.Item>
-                                <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
-                                    <Link to='career-path/leadership-and-management' className='flex items-center'>
-                                        <div>
-                                            <h1 className='text-lg text-white '>CISO Certifications, Training <br /> and Career Path
-                                            </h1>
-                                        </div>
-                                    </Link>
-                                </Dropdown.Item>
-                                <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
-                                    <Link to='career-path/50-ciso-security-controls' className='flex items-center'>
-                                        <div>
-                                            <h1 className='text-lg text-white '>50 CISO Security Controls
-                                            </h1>
-                                        </div>
-                                    </Link>
-                                </Dropdown.Item>
-                                <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
-                                    <Link to='career-path/12-competencies-of-the-effective-ciso' className='flex items-center'>
-                                        <div>
-                                            <h1 className='text-lg text-white '>12 Competencies of the Effective <br />Ciso
-                                            </h1>
-                                        </div>
-                                    </Link>
-                                </Dropdown.Item>
+        
                             </Dropdown.Submenu>
                         </Dropdown.Item>
                     </Dropdown.Submenu>
@@ -353,7 +262,7 @@ function CustomDropDown() {
                     </Link>
                 </Dropdown.Item>
                 <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg hover:bg-gray-800 items-center'>
-                    <Link to='free-access' className='flex items-center'>
+                    <Link to='free-content' className='flex items-center'>
                         <BsShieldCheck className='text-2xl mr-2 text-white' />
                         <div>
                             <h1 className='text-lg font-semibold text-white'>Free Access</h1>
@@ -381,7 +290,7 @@ function CustomDropDown() {
                     </Link>
                 </Dropdown.Item>
                 <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
-                    <Link to='insider-pro' className='flex items-center'>
+                    <Link to='upgrade' className='flex items-center'>
                         <DiGitCompare className='text-2xl mr-2 text-white' />
                         <div>
                             <h1 className='text-lg font-semibold text-white'>Compare Plans</h1>
@@ -390,7 +299,7 @@ function CustomDropDown() {
                     </Link>
                 </Dropdown.Item>
                 <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
-                    <Link to='insider-pro' className='flex items-center'>
+                    <Link to='' className='flex items-center'>
                         <IoMdPerson className='text-2xl mr-2 text-white' />
                         <div>
                             <h1 className='text-lg font-semibold text-white'>Individuals</h1>
@@ -398,7 +307,7 @@ function CustomDropDown() {
                     </Link>
                     <Dropdown.Submenu className='custom-submenu' position='right'>
                         <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
-                            <Link to='cybrary-insider' className='flex items-center'>
+                            <Link to='insider-pro' className='flex items-center'>
                                 <h1 className='text-lg text-white '>Cybrary Insider Pro</h1>
 
                             </Link>
@@ -523,7 +432,7 @@ function CustomDropDown() {
                                     </Link>
                                 </Dropdown.Item>
                                 <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
-                                    <Link to='course//cve-series-atlassian-bitbucket-command-injection-cve-2022-36804' className='flex items-center'>
+                                    <Link to='course/cve-series-atlassian-bitbucket-command-injection-cve-2022-36804' className='flex items-center'>
                                         <div>
                                             <h1 className='text-lg text-white'>CVE Series: Atlassian <br />Bitbucket  Command Injection <br /> (CVE-2022-36804)
                                             </h1>
@@ -667,7 +576,7 @@ function CustomDropDown() {
                     </Link>
                 </Dropdown.Item>
                 <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg hover:bg-gray-800 items-center'>
-                    <Link to='free-access' className='flex items-center'>
+                    <Link to='pricing' className='flex items-center'>
                         <MdCompareArrows className='text-2xl mr-2 text-white' />
                         <div>
                             <h1 className='text-lg font-semibold text-white'>Teams Pricing</h1>

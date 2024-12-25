@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaYoutube, FaTwitch } from 'react-icons/fa';
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import fortifyLearningLogo from '../assets/fortifyLearning.png'
 
 function Footer() {
     return (
@@ -12,7 +13,7 @@ function Footer() {
                     {/* Logo */}
                     <div className="text-xl font-bold mb-4 sm:mb-0">
                         {/* Replace with actual logo */}
-                        <img src="https://img.securityinfowatch.com/files/base/cygnus/siw/image/2022/11/Cybrary_logo.636d1736d4f10.png?auto=format,compress&fit=fill&fill=blur&w=1200&h=630" alt="Cybrary Logo" className="w-44" />
+                        <img src={fortifyLearningLogo} alt="Cybrary Logo" className="w-44" />
                     </div>
 
                     {/* Social Media Icons */}
@@ -85,7 +86,7 @@ function Footer() {
                                 Catalog
                                 <MdOutlineKeyboardArrowRight className='mt-1 ml-2 transition-transform duration-300 transform group-hover:translate-x-1' />
                             </NavLink></li>
-                            <li><NavLink to="/instructors" className="flex items-center mb-4 text-lg text-gray-400 hover:text-white group transition-colors">
+                            <li><NavLink to="/instructor" className="flex items-center mb-4 text-lg text-gray-400 hover:text-white group transition-colors">
                                 Instructors
                                 <MdOutlineKeyboardArrowRight className='mt-1 ml-2 transition-transform duration-300 transform group-hover:translate-x-1' />
                             </NavLink></li>

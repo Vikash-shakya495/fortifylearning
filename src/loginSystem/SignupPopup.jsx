@@ -6,6 +6,7 @@ import cybraryLogo from '../assets/cybraryLogo.png';
 
 import { FaRegQuestionCircle } from "react-icons/fa";
 import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from "react-icons/md";
+import { NavLink } from 'react-router-dom';
 
 function SignupPopup() {
     const dispatch = useDispatch();
@@ -142,7 +143,7 @@ function SignupPopup() {
                             </form>
 
                             <p className="mt-4 text-center text-white font-semibold">
-                                Already have an account? <a href="#" className="text-pink-500">Sign in</a>
+                                Already have an account? <NavLink href="/login" className="text-pink-500">Sign in</NavLink>
                             </p>
                             <p className="text-gray-400 text-center mt-8 text-xs md:text-sm">
                                 This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.

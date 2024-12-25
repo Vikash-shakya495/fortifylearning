@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { AiFillStar, AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import { FaBook } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
 const Instructors = () => {
   const [selected, setSelected] = useState(1); // State to track which button is selected
@@ -136,7 +137,7 @@ const Instructors = () => {
       image: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468bf6ce2f446d007ffeb36_IMG_0301.jpeg",
     }
   ];
-  
+
   // Function to load instructors based on the selected page
   const loadInstructors = (page) => {
     if (page === 2) {
@@ -168,9 +169,11 @@ const Instructors = () => {
           <button className="bg-gradient-to-r from-pink-600 via-pink-700 to-pink-800 text-white py-2 px-4 md:py-3 md:px-5 rounded-xl hover:opacity-90 text-sm md:text-lg hover:shadow-[2px_2px_12px_6px_rgba(219,39,119,0.4)] transition-shadow duration-300">
             Start Learning for Free
           </button>
-          <button className="text-white text-sm md:text-lg py-2 px-4 md:px-6 rounded-xl font-semibold border-[1px] border-gray-300 hover:border-white transition-all duration-300">
-            Explore Courses
-          </button>
+          <NavLink to='/catalog'>
+            <button className="text-white text-sm md:text-lg py-2 px-4 md:px-6 rounded-xl font-semibold border-[1px] border-gray-300 hover:border-white transition-all duration-300">
+              Explore Courses
+            </button>
+          </NavLink>
         </div>
       </div>
 
@@ -179,57 +182,57 @@ const Instructors = () => {
         <div className="flex flex-wrap gap-8 justify-center">
           {instructors.slice(startIndex, startIndex + 8).map((instructor, index) => (
             <div
-            key={index}
-            className="bg-gray-900 rounded-lg text-center shadow-lg w-full sm:w-[350px] md:w-[450px] lg:w-[560px] flex flex-col sm:flex-row lg:h-[250px]"
-          >
-            {/* Image Section */}
-            <div className="w-full sm:w-56 h-48 sm:h-full md:h-full flex-shrink-0">
-              <img
-                src={instructor.image}
-                alt={instructor.name}
-                className="w-full h-full object-cover rounded-t-lg sm:rounded-l-lg sm:rounded-t-none"
-              />
-            </div>
-          
-            {/* Content Section */}
-            <div className="p-4 flex flex-col justify-center">
-              {/* Role */}
-              <div className="flex justify-center sm:justify-start items-center gap-4 mb-2 sm:mb-4">
-                <span className="bg-gradient-to-r from-pink-600 via-pink-500 to-purple-900 text-white text-xs sm:text-sm px-3 py-1 rounded-full font-semibold">
-                  {instructor.role}
-                </span>
+              key={index}
+              className="bg-gray-900 rounded-lg text-center shadow-lg w-full sm:w-[350px] md:w-[450px] lg:w-[560px] flex flex-col sm:flex-row lg:h-[250px]"
+            >
+              {/* Image Section */}
+              <div className="w-full sm:w-56 h-48 sm:h-full md:h-full flex-shrink-0">
+                <img
+                  src={instructor.image}
+                  alt={instructor.name}
+                  className="w-full h-full object-cover rounded-t-lg sm:rounded-l-lg sm:rounded-t-none"
+                />
               </div>
-          
-              {/* Name */}
-              <div className="flex justify-center sm:justify-start items-center gap-4 mb-2 sm:mb-4">
-                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold">{instructor.name}</h3>
-              </div>
-          
-              {/* Title */}
-              {instructor.title && (
+
+              {/* Content Section */}
+              <div className="p-4 flex flex-col justify-center">
+                {/* Role */}
                 <div className="flex justify-center sm:justify-start items-center gap-4 mb-2 sm:mb-4">
-                  <span className="text-gray-200 text-sm sm:text-base font-semibold text-left">
-                    {instructor.title}
+                  <span className="bg-gradient-to-r from-pink-600 via-pink-500 to-purple-900 text-white text-xs sm:text-sm px-3 py-1 rounded-full font-semibold">
+                    {instructor.role}
                   </span>
                 </div>
-              )}
-          
-              <div className="flex flex-wrap justify-center sm:justify-start text-xs sm:text-sm gap-3">
-                {instructor.rating && (
-                  <span className="text-white flex items-center font-semibold bg-gray-800 py-1 px-3 rounded-full">
-                    <AiFillStar className="text-white mr-2" /> {instructor.rating} RATING
-                  </span>
+
+                {/* Name */}
+                <div className="flex justify-center sm:justify-start items-center gap-4 mb-2 sm:mb-4">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-semibold">{instructor.name}</h3>
+                </div>
+
+                {/* Title */}
+                {instructor.title && (
+                  <div className="flex justify-center sm:justify-start items-center gap-4 mb-2 sm:mb-4">
+                    <span className="text-gray-200 text-sm sm:text-base font-semibold text-left">
+                      {instructor.title}
+                    </span>
+                  </div>
                 )}
-          
-                {instructor.courses && (
-                  <span className="text-white flex items-center font-semibold bg-gray-800 py-1 px-3 rounded-full">
-                    <FaBook className="text-white-400 mr-1" /> {instructor.courses} COURSES
-                  </span>
-                )}
+
+                <div className="flex flex-wrap justify-center sm:justify-start text-xs sm:text-sm gap-3">
+                  {instructor.rating && (
+                    <span className="text-white flex items-center font-semibold bg-gray-800 py-1 px-3 rounded-full">
+                      <AiFillStar className="text-white mr-2" /> {instructor.rating} RATING
+                    </span>
+                  )}
+
+                  {instructor.courses && (
+                    <span className="text-white flex items-center font-semibold bg-gray-800 py-1 px-3 rounded-full">
+                      <FaBook className="text-white-400 mr-1" /> {instructor.courses} COURSES
+                    </span>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-          
+
           ))}
         </div>
 

@@ -335,25 +335,33 @@ function NetworkEngineer() {
                     anywhere in between.</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {salesforceCourses.map((course, index) => (
-                        <NavLink to={course.link} key={index}>
-                            <div className="relative bg-gray-800 rounded-lg shadow-lg group hover:shadow-xl transition-shadow border border-gray-600 flex flex-col items-between overflow-hidden">
-                                <img src={course.img} alt="" className="h-[200px] w-full object-cover rounded-t-lg" />
-                                <div className="py-4 px-4 pb-16">
-                                    <h3 className="text-2xl font-semibold mb-2 text-white">{course.title}</h3>
-                                    <p className="text-gray-400 mb-4">{course.overview}</p>
-                                    <div className="text-gray-300 mb-1 text-lg py-2 px-4 border rounded-xl mb-2 bg-slate-900">
-                                        <span className="font-semibold">Duration:</span> {course.duration}
+                        <div
+                            key={course.title}
+                            className={`group relative rounded-lg border-gray-100 border shadow-lg bg-gray-900 overflow-hidden transition-all duration-300 hover:pb-16`}
+                        >
+                            <NavLink to={course.link} key={index}>
+                                <img className="h-48 w-full object-cover rounded-lg" src={course.img} alt={course.title} />
+                                <div className="p-4 transition-all duration-300">
+                                    <div className="mb-4">
+                                        <span className="text-xs font-bold bg-pink-600 py-2 px-3 rounded-full uppercase">
+                                            Course
+                                        </span>
+                                        <div className="flex gap-2 mt-6">
+                                            <span className="py-1 bg-black rounded-xl px-3">{course.duration}</span>
+                                            <span className="py-1 bg-black rounded-xl px-3">{course.format}</span>
+                                        </div>
                                     </div>
-                                    <div className="text-lg py-2 px-4 border rounded-xl mb-2 text-gray-300">
-                                        <span className="font-semibold">Format:</span> {course.format}
-                                    </div>
+                                    <p className="mt-6 text-2xl font-semibold">{course.title}</p>
+                                    <p className="text-md mt-2 text-gray-300 line-clamp-3">{course.overview}</p>
                                 </div>
-                                {/* Button */}
-                                <button className="absolute bottom-0 left-0 w-full bg-gradient-to-r from-orange-600 via-pink-600 to-fuchsia-600 py-3 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 mt-12">
-                                    Learn More and Enroll
-                                </button>
-                            </div>
-                        </NavLink>
+                                {/* Learn More Button */}
+                                <div className="absolute bottom-4 left-0 right-0 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <button className="px-4 py-2 bg-gradient-to-r from-orange-600 via-pink-600 to-fuchsia-600 text-white rounded-lg hover:bg-pink-700">
+                                        Learn More and Enroll
+                                    </button>
+                                </div>
+                            </NavLink>
+                        </div>
                     ))}
                 </div>
             </div>
