@@ -235,13 +235,7 @@ function MitreAttack() {
                                         <p className="text-lg text-gray-400">
                                             {content[key].description}
                                         </p>
-                                        <NavLink
-                                            to="/your-target-route"
-                                            className="text-white mt-5 mb-6 text-md font-semibold inline-flex items-center space-x-1 transition-transform duration-200 transform"
-                                        >
-                                            <span>Get Started</span>
-                                            <i className="fa-solid fa-chevron-right text-xs hover:translate-x-1"></i>
-                                        </NavLink>
+
                                     </div>
                                 )}
                             </div>
@@ -396,9 +390,11 @@ function MitreAttack() {
                         Empower your team to excel in Salesforce with FortifyLearning. Request a demo today for access
                         to hands-on practice labs, assessments, custom content, and more.
                     </p>
-                    <button className="mt-8 bg-gradient-to-r from-red-500 to-fuchsia-500 py-3 px-8 text-white font-semibold rounded-2xl hover:shadow-lg transition-all">
-                        FortifyLearning for Teams
-                    </button>
+                    <NavLink to='/business'>
+                        <button className="mt-8 bg-gradient-to-r from-red-500 to-fuchsia-500 py-3 px-8 text-white font-semibold rounded-2xl hover:shadow-lg transition-all">
+                            FortifyLearning for Teams
+                        </button>
+                    </NavLink>
                 </div>
             </div>
             <div className="w-full mt-24 flex justify-center">

@@ -2,6 +2,7 @@
 import React from "react";
 import '../App.css';
 import Marquee from 'react-fast-marquee';
+import { useDispatch } from 'react-redux';
 
 // import Navbar from '../components/Navbar';
 // import Footer from '../components/Footer';
@@ -9,6 +10,8 @@ import LearnPractProve from '../components/home/LearnPractProve';
 import AdvanceYourCareer from '../components/home/AdvanceYourCareer';
 import TestimonialsCarousel from "../components/home/TestimonialsCarousel";
 import SignupComponent from "../components/home/SignupComponent";
+import { togglePopup } from '../store/signupPopupSlice';
+import SignupPopup from '../loginSystem/SignupPopup';
 
 import careerpath from '../assets/careerpath.png';
 import salesforceProgress from '../assets/salesforceProgressImage.png';
@@ -20,9 +23,11 @@ import { RiShieldStarLine } from "react-icons/ri";
 import { HiOutlinePuzzle } from "react-icons/hi";
 import { FaRegStar } from "react-icons/fa6";
 import { VscTypeHierarchySuper } from "react-icons/vsc";
+import { NavLink } from "react-router-dom";
 
 
 function Home() {
+  const dispatch = useDispatch();
   return (
     <div className="bg-black text-white min-h-screen flex flex-col items-center overflow-x-hidden">
       {/* <Navbar /> */}
@@ -43,13 +48,16 @@ function Home() {
             provide the best tools to enhance your business performance.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row justify-center  sm:justify-start items-center ">
-            <button className="bg-gradient-to-r from-orange-500 to-pink-500 px-8 py-3 rounded-md text-white hover:shadow-lg hover:shadow-pink-500/50 transition-shadow duration-300">
-              Fortify Learning for Business
-            </button>
+            <NavLink to='/business'>
+              <button className="bg-gradient-to-r from-orange-500 to-pink-500 px-8 py-3 rounded-md text-white hover:shadow-lg hover:shadow-pink-500/50 transition-shadow duration-300">
+                Fortify Learning for Business
+              </button>
+            </NavLink>
 
-            <a href="/" className="mt-4 sm:mt-0 sm:ml-4 text-white-400 hover:text-white">
+            <span className="mt-4 sm:mt-0 sm:ml-4 text-white-400 hover:text-white hover:cursor-pointer"
+              onClick={() => dispatch(togglePopup())}>
               Start Learning for Free &gt;
-            </a>
+            </span>
           </div>
         </div>
 
@@ -109,7 +117,8 @@ function Home() {
           <h1 className="text-[32px] sm:text-[42px] font-semibold leading-tight">
             Why Choose FortifyLearning for Salesforce Training?
           </h1>
-          <button className="bg-gradient-to-r from-orange-500 to-pink-500 px-8 py-3 rounded-md text-white hover:shadow-lg hover:shadow-pink-500/50 transition-shadow duration-300 mt-4 sm:mt-0">
+          <button className="bg-gradient-to-r from-orange-500 to-pink-500 px-8 py-3 rounded-md text-white hover:shadow-lg hover:shadow-pink-500/50 transition-shadow duration-300 mt-4 sm:mt-0"
+            onClick={() => dispatch(togglePopup())}>
             Get Started
           </button>
         </div>
@@ -217,9 +226,11 @@ function Home() {
             personalized learning plans. Request a demo and discover how FortifyLearning customizes our
             extensive library of training to meet your team’s unique needs.
           </p>
-          <button className="mt-10 bg-gradient-to-r from-orange-400 via-red-500 via-pink-600 to-fuchsia-600 text-white px-6 py-3 rounded-xl hover:shadow-lg hover:shadow-pink-500/50 transition-shadow duration-300">
-            Schedule a demo
-          </button>
+          <NavLink to='/demo-request'>
+            <button className="mt-10 bg-gradient-to-r from-orange-400 via-red-500 to-fuchsia-600 text-white px-6 py-3 rounded-xl hover:shadow-lg hover:shadow-pink-500/50 transition-shadow duration-300">
+              Schedule a demo
+            </button>
+          </NavLink>
         </div>
 
         {/* Image section */}

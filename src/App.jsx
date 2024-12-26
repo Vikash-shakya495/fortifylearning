@@ -45,6 +45,7 @@ import Government from "./pages/Footer/Government";
 import RaspberryRobin from "./pages/mission/threat/RaspberryRobin";
 import SystemAdministrator from "./pages/careerpath/SystemAdministrator";
 import BigIp from "./pages/course/BigIp";
+import Webinar from "./pages/Footer/Webinar";
 
 function App() {
   const location = useLocation();
@@ -106,6 +107,7 @@ function App() {
 
           <Route path="/careers" element={<Careers />} />
           <Route path="/podcast" element={<CybraryPodcast />} />
+          <Route path="/webinar" element={<Webinar />} />
 
           
         </Route>

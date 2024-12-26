@@ -15,6 +15,7 @@ const Instructors = () => {
       rating: "5",
       courses: "25",
       image: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468bfaffcf04101cf885b72_1573577794412.jpeg",
+      link: '/instructor/clint-kehr'
     },
     {
       name: "Corey Holzer",
@@ -23,6 +24,7 @@ const Instructors = () => {
       rating: "5",
       courses: "8",
       image: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468bf75fffbc7c304c76841_corey.jpeg",
+      link: '/instructor/corey-holzer'
     },
     {
       name: "Kelly Handerhan",
@@ -31,6 +33,7 @@ const Instructors = () => {
       rating: "5",
       courses: "35",
       image: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468b6358455658a941e581f_d2d81836134dde5dc59b0a08b349e827-bpfull.jpeg",
+      link: '/instructor/kelly-handerhan'
     },
     {
       name: "Matthew Mullins",
@@ -39,6 +42,7 @@ const Instructors = () => {
       rating: "0",
       courses: "41",
       image: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468bfbf1f5ef0847b92625b_Owen_Dubiel_Headshot.png",
+      link: '/instructor/matthew-mullins'
     },
     {
       name: "Marc Balingit",
@@ -47,6 +51,7 @@ const Instructors = () => {
       rating: "",
       courses: "7",
       image: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468bfe4006d9ed84b12d3b4_IMG_7641__1_.jpeg",
+      link: '/instructor/marc-balingit'
     },
     {
       name: "Anthony Fecondo",
@@ -55,6 +60,7 @@ const Instructors = () => {
       rating: "5",
       courses: "1",
       image: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468bf7d046b92b8127919b4_Anthony_Fecondo.jpeg",
+      link: '/instructor/anthony-fecondo'
     },
     {
       name: "Brad Rhodes",
@@ -63,6 +69,7 @@ const Instructors = () => {
       rating: "5",
       courses: "1",
       image: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468bfa2743e430cbf97c3b6_headshot.png",
+      link: '/instructor/brad-rhodes'
     },
     {
       name: "Brain Rogalski",
@@ -71,6 +78,7 @@ const Instructors = () => {
       rating: "5",
       courses: "1",
       image: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468bf29951cfced190ba875_Brian_Rogalski.jpeg",
+      link: '/instructor/brain-rogalski'
     },
     {
       name: "Carter Schoenberg",
@@ -79,6 +87,7 @@ const Instructors = () => {
       rating: "5",
       courses: "1",
       image: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468be551f5ef0847b913ce5_carter_shoenberg.jpeg",
+      link: '/instructor/carter-schoenberg'
     },
     {
       name: "Chris Kubecka",
@@ -87,6 +96,7 @@ const Instructors = () => {
       rating: "5",
       courses: "1",
       image: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468bf61046b92b81278ee50_IMG_20191008_192920.jpeg",
+      link: '/instructor/chris-kubecka'
     },
     {
       name: "Chris Stevens",
@@ -95,6 +105,7 @@ const Instructors = () => {
       rating: "5",
       courses: "1",
       image: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468bf85530a67fc41505e08_Stevens_Picture.png",
+      link: '/instructor/chris-stevens'
     },
     {
       name: "Christian D'Amico",
@@ -103,6 +114,7 @@ const Instructors = () => {
       rating: "5",
       courses: "1",
       image: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468beb20c3cb1ddf88d8ae2_0__1_.jpeg",
+      link: '/instructor/christian-d-amico'
     },
     {
       name: "Dary Kempa",
@@ -111,6 +123,7 @@ const Instructors = () => {
       rating: "5",
       courses: "1",
       image: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468bf38951cfced190bc6d0_Darcy_Kempa.jpeg",
+      link: '/instructor/dary-kempa'
     },
     {
       name: "Dustin Sachs",
@@ -119,6 +132,7 @@ const Instructors = () => {
       rating: "5",
       courses: "4",
       image: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/64dc8028cf3fd199cb230f66_Screenshot_2023-08-15_at_12.50.52_PM.png",
+      link: '/instructor/dustin-sachs'
     },
     {
       name: "Kevin Mayo",
@@ -127,6 +141,7 @@ const Instructors = () => {
       rating: "5",
       courses: "2",
       image: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468bed35841f3b080624f67_Kevin_Mayo.png",
+      link: '/instructor/kevin-mayo'
     },
     {
       name: "Lisa Martino",
@@ -135,6 +150,7 @@ const Instructors = () => {
       rating: "5",
       courses: "1",
       image: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468bf6ce2f446d007ffeb36_IMG_0301.jpeg",
+      link: '/instructor/lisa-martino'
     }
   ];
 
@@ -181,6 +197,7 @@ const Instructors = () => {
       <div className="overflow-x-auto py-10 sm:py-16 md:py-20 px-4 sm:px-8">
         <div className="flex flex-wrap gap-8 justify-center">
           {instructors.slice(startIndex, startIndex + 8).map((instructor, index) => (
+            <NavLink to={instructor.link}>
             <div
               key={index}
               className="bg-gray-900 rounded-lg text-center shadow-lg w-full sm:w-[350px] md:w-[450px] lg:w-[560px] flex flex-col sm:flex-row lg:h-[250px]"
@@ -232,6 +249,7 @@ const Instructors = () => {
                 </div>
               </div>
             </div>
+              </NavLink>
 
           ))}
         </div>

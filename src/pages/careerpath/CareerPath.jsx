@@ -10,9 +10,15 @@ import { GrGroup } from "react-icons/gr";
 import TestimonialsCarousel from '../../components/home/TestimonialsCarousel';
 import SignupComponent from '../../components/home/SignupComponent';
 import { Outlet, Link } from 'react-router-dom';
+
+import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { togglePopup } from '../../store/signupPopupSlice';
+import SignupPopup from '../../loginSystem/SignupPopup';
 // import Footer from '../../components/Footer';
 
 function CareerPath() {
+    const dispatch = useDispatch()
     return (
         <div className="bg-black text-white min-h-screen flex flex-col items-center overflow-x-hidden">
             {/* <Navbar /> */}
@@ -32,12 +38,14 @@ function CareerPath() {
                         more. What are you waiting for?
                     </p>
                     <div className="mt-8 flex flex-col sm:flex-row justify-center sm:justify-start items-center">
-                        <button className="bg-gradient-to-r from-orange-500 to-pink-500 px-8 py-3 rounded-md text-white hover:shadow-lg hover:shadow-pink-500/50 transition-shadow duration-300">
+                        <button className="bg-gradient-to-r from-orange-500 to-pink-500 px-8 py-3 rounded-md text-white hover:shadow-lg hover:shadow-pink-500/50 transition-shadow duration-300"
+                            onClick={() => dispatch(togglePopup())}>
                             Fortify Learning for Business
                         </button>
-                        <a href="/" className="mt-4 sm:mt-0 sm:ml-4 text-white-400 hover:text-white">
+                        <span className="mt-4 sm:mt-0 sm:ml-4 text-white-400 hover:text-white hover:cursor-pointer"
+                            onClick={() => dispatch(togglePopup())}>
                             Start Learning for Free &gt;
-                        </a>
+                        </span>
                     </div>
                 </div>
                 <div className="flex lg:w-4/5 justify-center py-0 mt-8 md:mt-16 relative">
@@ -97,7 +105,8 @@ function CareerPath() {
                         you will be awarded a shareable digital badge via Credly to showcase your expertise.
                     </p>
                     <div className="mt-8 flex flex-col sm:flex-row justify-center sm:justify-start items-center">
-                        <button className="bg-gradient-to-r from-orange-500 to-pink-500 px-8 py-3 rounded-md text-white hover:shadow-lg hover:shadow-pink-500/50 transition-shadow duration-300">
+                        <button className="bg-gradient-to-r from-orange-500 to-pink-500 px-8 py-3 rounded-md text-white hover:shadow-lg hover:shadow-pink-500/50 transition-shadow duration-300"
+                            onClick={() => dispatch(togglePopup())}>
                             Start learning for free
                         </button>
                     </div>
@@ -115,7 +124,9 @@ function CareerPath() {
                     </h2>
                     <p className='text-center w-2/3 mb-12 text-gray-400'> Upgrade to SkillAdvance Pro or SkillAdvance for Teams to gain access to our comprehensive
                         resources and support, designed to enhance your Salesforce skills and career growth.</p>
-                    <button className='bg-gradient-to-r from-orange-500 to-pink-500 px-8 py-3 rounded-md text-white hover:shadow-lg hover:shadow-pink-500/50 transition-shadow duration-300'>upgrade for full access</button>
+                    <NavLink to='/upgrade'>
+                        <button className='bg-gradient-to-r from-orange-500 to-pink-500 px-8 py-3 rounded-md text-white hover:shadow-lg hover:shadow-pink-500/50 transition-shadow duration-300'>upgrade for full access</button>
+                    </NavLink>
                 </div>
 
                 <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
@@ -190,12 +201,12 @@ function CareerPath() {
                 </div>
             </div>
             <div className="w-full mt-20">
-                <TestimonialsCarousel/>
+                <TestimonialsCarousel />
             </div>
             <div className="w-full mt-24 flex justify-center">
-                <SignupComponent/>
+                <SignupComponent />
             </div>
-            <Outlet/>
+            <Outlet />
         </div>
     );
 }

@@ -29,9 +29,9 @@ function AdvanceYourCareer() {
       <div className='flex mt-12 gap-2 flex-wrap justify-between'>
         {[
           { icon: <IoShieldCheckmarkOutline />, text: "Certification Prep", route: "/certification-prep" },
-          { icon: <SlGraph />, text: "Career Paths", route: "/career-paths" },
+          { icon: <SlGraph />, text: "Career Paths", route: "/career-path" },
           { icon: <BsBug />, text: "Skill Paths", route: "/skill-paths" },
-          { icon: <MdLiveTv />, text: "MITRA ATT&CK", route: "/mitra-attck" },
+          { icon: <MdLiveTv />, text: "MITRA ATT&CK", route: "/mitre-attack" },
           { icon: <IoBagCheck />, text: "Threat Actor Campaigns", route: "/threat-actor-campaigns" },
           { icon: <FaRegStar />, text: "CVE series", route: "/cve-series" }
         ].map((item, index) => (
@@ -58,7 +58,7 @@ function AdvanceYourCareer() {
           Start Learning for Free
         </button>
         <SignupPopup />
-        <NavLink to="/login">
+        <NavLink to="/business">
           <button className='flex items-center'>
             Train your team <MdOutlineKeyboardArrowRight className='mt-1' />
           </button>

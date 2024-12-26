@@ -168,7 +168,7 @@ function Pricing() {
                                 Stay ahead of existing threats and better protect your organization
                             </li>
                         </ul>
-                        <NavLink to='/for-teams'>
+                        <NavLink to='/business'>
                             <button className="px-6 py-3 w-full flex items-center justify-center mt-10 text-lg bg-transparent border rounded-2xl">
                                 Explore more <RiArrowRightSLine />
                             </button>
@@ -199,9 +199,9 @@ function Pricing() {
                 </div>
             </div>
 
-            <div className="mt-20 mx-auto bg-gradient-to-b from-gray-900 to-black text-white p">
-                <h1 className="text-4xl sm:text-5xl text-center mb-6 mt-10">Compare our plans</h1>
-                <div className="w-11/12 w-5/5 sm:w-4/5 mx-auto bg-gray-900 p-2 sm:p-10 rounded-3xl overflow-y-auto">
+            <div className="mt-20 mx-auto bg-gradient-to-b from-gray-900 to-black text-white py-12">
+                <h1 className="text-4xl sm:text-5xl text-center mb-10 mt-6">Compare our plans</h1>
+                <div className="w-11/12 w-5/5 sm:w-4/5 mx-auto bg-gray-950 p-2 sm:p-10 rounded-3xl overflow-y-auto">
                     <div className="overflow-x-auto">
                         <table className="w-full mt-3 border-b-2 mb-4 border-gray-700">
                             <thead>

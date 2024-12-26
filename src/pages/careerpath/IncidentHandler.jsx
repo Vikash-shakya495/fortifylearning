@@ -148,28 +148,30 @@ function IncidentHandler() {
       <div className="mt-44 flex flex-col items-center md:flex-row justify-center md:full  text-white py-8 px-12 md:px-16 lg:px-44 gap-12">
         <div className="w-full md:w-1/2 md:mb-0 text-center md:text-left flex flex-col">
           <h2 className="text-3xl sm:text-4xl md:mb-12 md:text-5xl">
-          Incident Handler Collection
+            Incident Handler Collection
           </h2>
           <p className="text-gray-300 mt-4">
-                As a network engineer, you will be responsible for administering
-                and maintaining an organization’s computer networks. The most
-                common duties for the network engineer role include maintaining
-                software, hardware, networks, and other related systems.
-                Additionally, you will be responsible for protecting
-                information, hardware, and software from threats and replacing
-                any defective hardware components when necessary. You will also
-                work closely with network users to identify any issues and
-                resolve them.
-              </p>
-          <div className="flex items-center justify-between mt-8 flex-wrap md:mt-0">
+            As a network engineer, you will be responsible for administering
+            and maintaining an organization’s computer networks. The most
+            common duties for the network engineer role include maintaining
+            software, hardware, networks, and other related systems.
+            Additionally, you will be responsible for protecting
+            information, hardware, and software from threats and replacing
+            any defective hardware components when necessary. You will also
+            work closely with network users to identify any issues and
+            resolve them.
+          </p>
+          <div className="flex items-center justify-between mt-8  flex-wrap md:mt-0">
             <button
-              onClick={() => console.log("Create account action")}
-              className="w-2/4 md:w-2/5 py-3 bg-gradient-to-r from-red-500 to-pink-500 rounded-2xl text-white font-semibold hover:shadow-[0px_0px_10px_purple,0px_0px_10px_#FF4D6D] duration-500"
+              onClick={() => dispatch(togglePopup())}
+              className="w-2/4 md:w-1/3 py-3 bg-gradient-to-r from-red-500 to-pink-500 rounded-2xl text-white font-semibold hover:shadow-[0px_0px_10px_purple,0px_0px_10px_#FF4D6D] duration-500"
             >
               Create a Free Account
             </button>
             <button className="w-2/4 md:w-3/5 px-6 py-4 rounded-xl bg-black border border-gray-500">
-              Need to train your team? Learn more
+              <NavLink to='/business'>
+                Need to train your team? Learn more
+              </NavLink>
             </button>
           </div>
           <div className="flex items-center text-xl text-gray-500 mt-4 gap-2">
@@ -314,17 +316,17 @@ function IncidentHandler() {
           <div className="mt-32 ">
             <h1 className="font-semibold text-2xl lg:text-3xl">Overview</h1>
             <div className="mt-12">
-             
-        
+
+
               <p className="text-gray-300 mt-4">
-              You will learn the incident response process, from building an incident response kit and developing an incident response team, to identifying, containing, and recovering from incidents. We then steer away from a traditional “defensive-only” approach to introduce you to the attacker’s world, covering basic information on reconnaissance, scanning and enumeration, attacks and maintaining persistence, evading antivirus, and maintaining stealth.
+                You will learn the incident response process, from building an incident response kit and developing an incident response team, to identifying, containing, and recovering from incidents. We then steer away from a traditional “defensive-only” approach to introduce you to the attacker’s world, covering basic information on reconnaissance, scanning and enumeration, attacks and maintaining persistence, evading antivirus, and maintaining stealth.
               </p>
               <p className="text-gray-300 mt-4">
-              Dave starts by walking you through pre-incident planning and developing an incident response team. He then walks you through the management of incidents, including identification, containment, and eradication. You then learn proper methods for recovering from incidents, and spend some time in hands-on labs getting familiar with incident response and digital forensic techniques. You will then get an introduction to the Mitre Att&ck Framework, including a deep dive into Threat Intelligence. Continuing the journey on the offensive side of things, you learn about scanning with NMAP and get some hands-on experience in a lab. You then learn about different attack types, ways to maintain persistence, evasion techniques, and how to be stealthier using techniques like Ghostwriting. The path wraps up with an overview of forensic tools.
+                Dave starts by walking you through pre-incident planning and developing an incident response team. He then walks you through the management of incidents, including identification, containment, and eradication. You then learn proper methods for recovering from incidents, and spend some time in hands-on labs getting familiar with incident response and digital forensic techniques. You will then get an introduction to the Mitre Att&ck Framework, including a deep dive into Threat Intelligence. Continuing the journey on the offensive side of things, you learn about scanning with NMAP and get some hands-on experience in a lab. You then learn about different attack types, ways to maintain persistence, evasion techniques, and how to be stealthier using techniques like Ghostwriting. The path wraps up with an overview of forensic tools.
               </p>
-             
-             
-    
+
+
+
             </div>
           </div>
         </div>
@@ -345,14 +347,14 @@ function IncidentHandler() {
           </div>
         </div>
       </div>
-      
-              
-            
-      
+
+
+
+
       <div className="mt-12">
         <TestimonialsCarousel />
       </div>
-      
+
     </>
   );
 }

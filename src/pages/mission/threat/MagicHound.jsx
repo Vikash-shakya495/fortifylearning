@@ -21,6 +21,7 @@ function MagicHound() {
             description: "This Course Covers Various Aspect of the Search Open Technical Database: Scan Database TTP...",
             duration: "0H:35M",
             ceus: "1 CEUS",
+            link:'/course/search-open-technical-databases-scan-databases'
         },
         {
             imgSrc: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c14aeeadf4bf7bb12374_TAC_MagicHound_2.png",
@@ -28,6 +29,7 @@ function MagicHound() {
             description: "This Course Covers The MITRE Technique T1190: Exploit Public-Facing Application. This technique...",
             duration: "18H:28M",
             ceus: "10 CEUS",
+            link: '/course/exploit-public-facing-application'
         },
         {
             imgSrc: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c14c2fb9a4a0ef34f15b_TAC_MagicHound_3.png",
@@ -35,6 +37,7 @@ function MagicHound() {
             description: "This Course Gives the Cybersequrity Professional in-depth knowledge of MITRE ATT&CK TTP T1105...",
             duration: "1H:56M",
             ceus: "2 CEUS",
+            link: '/course/ingress-tool-transfer'
         },
         {
             imgSrc: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c154776e941fe80d1942_TAC_MagicHound_4.png",
@@ -42,7 +45,7 @@ function MagicHound() {
             description: "This Course Covers The MITRE Technique T1041: Exfiltration Over C2 Channel. This technique...",
             duration: "8H:29M",
             ceus: "10 CEUS",
-            link: '/course/application-layer-protocol-for-c2-and-exfil-over-c2',
+            link: '/course/exfiltration-over-c2-channel',
         },
     ];
 

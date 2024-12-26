@@ -148,21 +148,23 @@ function AzureCloud() {
       <div className="mt-44 flex flex-col items-center md:flex-row justify-center md:full  text-white py-8 px-12 md:px-16 lg:px-44 gap-12">
         <div className="w-full md:w-1/2 md:mb-0 text-center md:text-left flex flex-col">
           <h2 className="text-3xl sm:text-4xl md:mb-12 md:text-5xl">
-          Azure Cloud Engineer Certification Path
+            Azure Cloud Engineer Certification Path
           </h2>
           <p className="mt-4 text-gray-400">
-          As one of the dominant cloud computing services, Microsoft Azure is responsible for more than 700,000 current job openings in the cloud industry. Whether you’re here to develop your Azure engineering skills or simply to learn about the cloud, Cybrary’s Azure Cloud Engineer collection will deliver best in class instruction to ensure you acquire the real-world skills needed to become a successful Azure cloud engineer.
-              </p>
+            As one of the dominant cloud computing services, Microsoft Azure is responsible for more than 700,000 current job openings in the cloud industry. Whether you’re here to develop your Azure engineering skills or simply to learn about the cloud, Cybrary’s Azure Cloud Engineer collection will deliver best in class instruction to ensure you acquire the real-world skills needed to become a successful Azure cloud engineer.
+          </p>
           <div className="flex items-center justify-between mt-8 flex-wrap md:mt-0">
             <button
-              onClick={() => console.log("Create account action")}
+              onClick={() => dispatch(togglePopup())}
               className="w-2/4 md:w-2/5 py-3 bg-gradient-to-r from-red-500 to-pink-500 rounded-2xl text-white font-semibold hover:shadow-[0px_0px_10px_purple,0px_0px_10px_#FF4D6D] duration-500"
             >
               Create a Free Account
             </button>
-            <button className="w-2/4 md:w-3/5 px-6 py-4 rounded-xl bg-black border border-gray-500">
-              Need to train your team? Learn more
-            </button>
+            <NavLink to='/business'  className="w-2/4 md:w-3/5 px-6 py-4 rounded-xl bg-black  border-gray-500">
+              <button>
+                Need to train your team? Learn more
+              </button>
+            </NavLink>
           </div>
           <div className="flex items-center text-xl text-gray-500 mt-4 gap-2">
             <FiShare2 className="text-3xl text-gray-300" />
@@ -422,7 +424,7 @@ function AzureCloud() {
                   <TbPointFilled className="text-white mt-1" /> Cloud Architect: A Cloud Architect plans the infrastructure and applications that will operate in the cloud. They use technical expertise and solid business acumen to design and optimize cloud computing blueprints of organizations.
                 </li>
                 <p className="flex gap-4 text-gray-400  mt-10 mb-6">
-                    The following job titles are also frequently available to Cloud Engineers:
+                  The following job titles are also frequently available to Cloud Engineers:
                 </p>
                 <li className="flex gap-4">
                   <TbPointFilled className="text-white mt-1" /> Cloud Support Associate
@@ -441,63 +443,63 @@ function AzureCloud() {
                   <TbPointFilled className="text-white mt-1" />DevOps Architect
                 </li>
                 <p className="mt-4 text-gray-400">
-                Cloud computing knowledge, including that of the Microsoft Azure platform, is not only important for jobs that have “cloud” in the title. These experts are also in demand for more traditional technology roles like software engineer, data scientist, and cybersecurity specialist as well.
-              </p>
-                
+                  Cloud computing knowledge, including that of the Microsoft Azure platform, is not only important for jobs that have “cloud” in the title. These experts are also in demand for more traditional technology roles like software engineer, data scientist, and cybersecurity specialist as well.
+                </p>
+
               </ul>
               <h3 className="text-3xl lg:text-5xl mt-12">
-              Why Pursue an Azure Cloud Certification?
+                Why Pursue an Azure Cloud Certification?
               </h3>
               <p className="text-gray-300 mt-4">
-              The Microsoft Azure cloud computing platform offers a vast range of cloud-based services and applications, giving users access to powerful computing capabilities and cutting-edge technological advancements that revolutionize their operations. As more organizations adopt Microsoft Azure for their cloud computing needs, the demand for professionals with an Azure Cloud Certification continues to grow. Currently, there is a significant shortage of qualified Azure experts to fill open positions, creating a strong advantage for skilled candidates in securing career opportunities and negotiating higher salaries.
+                The Microsoft Azure cloud computing platform offers a vast range of cloud-based services and applications, giving users access to powerful computing capabilities and cutting-edge technological advancements that revolutionize their operations. As more organizations adopt Microsoft Azure for their cloud computing needs, the demand for professionals with an Azure Cloud Certification continues to grow. Currently, there is a significant shortage of qualified Azure experts to fill open positions, creating a strong advantage for skilled candidates in securing career opportunities and negotiating higher salaries.
               </p>
               <p className="text-gray-300 mt-4">
-              Earning an Azure Cloud Engineer Certification not only validates a candidate's in-depth knowledge of the Azure platform but also highlights their commitment to continuous learning and staying current with technological trends. These are qualities that IT recruiters and hiring managers highly value when seeking IT professionals. With the increasing demand for Azure expertise, there has never been a better time to pursue an Azure Cloud Certification and advance your career in cloud computing.
+                Earning an Azure Cloud Engineer Certification not only validates a candidate's in-depth knowledge of the Azure platform but also highlights their commitment to continuous learning and staying current with technological trends. These are qualities that IT recruiters and hiring managers highly value when seeking IT professionals. With the increasing demand for Azure expertise, there has never been a better time to pursue an Azure Cloud Certification and advance your career in cloud computing.
               </p>
-             
-             
-             
+
+
+
             </div>
           </div>
         </div>
-       
-        
+
+
       </div>
       <div className="mt-20 text-white py-12 px-4 md:px-32 xl:px-68 flex flex-col items-center">
         <h2 className="text-3xl  md:text-4xl  mb-8">
-        Course Outline
-         
+          Course Outline
+
         </h2>
-      
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {salesforceCourses.map((course, index) => (
-            <NavLink to={course.link} key={index}>
-              <div className="relative bg-gray-800 rounded-lg shadow-lg group hover:shadow-xl transition-shadow border border-gray-600 flex flex-col items-between overflow-hidden">
-                <img
-                  src={course.img}
-                  alt=""
-                  className="h-[200px] w-full object-cover rounded-t-lg"
-                />
-                <div className="py-4 px-4 pb-16">
-                  <h3 className="text-2xl font-semibold mb-2 text-white">
-                    {course.title}
-                  </h3>
-                  <p className="text-gray-400 mb-4">{course.overview}</p>
-                  <div className="text-gray-300 text-lg py-2 px-4 border rounded-xl mb-2 bg-slate-900">
-                    <span className="font-semibold">Duration:</span>{" "}
-                    {course.duration}
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:w-5/6 mx-auto gap-6 px-5 md:px-10">
+          {salesforceCourses.map((course) => (
+            <div
+              key={course.id}
+              className={`group relative rounded-lg border-gray-100 border shadow-lg bg-gray-900 overflow-hidden transition-all duration-300 hover:pb-16`}
+            >
+              <NavLink to={course.link}>
+                <img className="rounded-lg h-48 w-full object-cover" src={course.img} alt={course.title} />
+                <div className="p-4 transition-all duration-300">
+                  <div className="mb-4">
+                    <span className="text-xs font-bold bg-pink-600 py-2 px-3 rounded-full uppercase">
+                      Course
+                    </span>
+                    <div className="flex gap-2 mt-6">
+                      <span className="py-1 bg-black rounded-xl px-3">{course.duration}</span>
+                      <span className="py-1 bg-black rounded-xl px-3">{course.format}</span>
+                    </div>
                   </div>
-                  <div className="text-lg py-2 px-4 border rounded-xl mb-2 text-gray-300">
-                    <span className="font-semibold">Format:</span>{" "}
-                    {course.format}
-                  </div>
+                  <p className="mt-6 text-2xl font-semibold">{course.title}</p>
+                  <p className="text-md mt-2 text-gray-300 line-clamp-3">{course.overview}</p>
                 </div>
-                {/* Button */}
-                <button className="absolute bottom-0 left-0 w-full bg-gradient-to-r from-orange-600 via-pink-600 to-fuchsia-600 py-3 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 mt-12">
-                  Learn More and Enroll
-                </button>
-              </div>
-            </NavLink>
+                {/* Learn More Button */}
+                <div className="absolute bottom-4 left-0 right-0 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <button className="px-4 py-2 bg-gradient-to-r from-orange-600 via-pink-600 to-fuchsia-600 text-white rounded-lg hover:bg-pink-700">
+                    Learn More and Enroll
+                  </button>
+                </div>
+              </NavLink>
+            </div>
           ))}
         </div>
       </div>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 function CybraryPodcast() {
   const podcasts = [
@@ -175,22 +176,26 @@ function CybraryPodcast() {
               {
                 imageSrc: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6458220cb4a8be824744e895_cybrary-intruder-alert.webp",
                 title: "Intruder Alert",
-                description: "Ready to take your cybersecurity knowledge to the next level? Look no further."
+                description: "Ready to take your cybersecurity knowledge to the next level? Look no further.",
+                link: '/podcast-series/intruder-alert'
               },
               {
                 imageSrc: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6458220ec1313f758121ec81_podcast_default.jpeg",
                 title: "Cybrary Podcasts",
-                description: "Listen in to the Cybrary Podcast where industry leaders and experts share insights."
+                description: "Listen in to the Cybrary Podcast where industry leaders and experts share insights.",
+                link: '/podcast-series/cybrary-podcasts'
               },
               {
                 imageSrc: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6458220fba90a51886821f60_delinea-401_Access_Denied_Podcast_Logo_dark-logos.jpeg",
                 title: "401 Access Denied",
-                description: "The award-winning 401 Access Denied Podcast brings you cybersecurity expertise."
+                description: "The award-winning 401 Access Denied Podcast brings you cybersecurity expertise.",
+                link: '/podcast-series/401-access-denied'
               },
               {
                 imageSrc: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/64582210a4850a3154ffa5bf_podcast_go.jpeg",
                 title: "Go For It",
-                description: "We’re excited to introduce Sarah, the President and Founder of Go For It."
+                description: "We’re excited to introduce Sarah, the President and Founder of Go For It.",
+                link: '/podcast-series/go-for-it'
               }
             ].map((podcast, index) => (
               <div
@@ -198,17 +203,19 @@ function CybraryPodcast() {
                 className="bg-gray-900 rounded-lg shadow-md overflow-hidden flex flex-col"
                 style={{ maxWidth: '280px', margin: '0 auto' }}
               >
-                <img
-                  src={podcast.imageSrc}
-                  alt={podcast.title}
-                  className="w-full h-45 object-cover"
-                />
-                <div className="p-4">
-                  <h3 className="text-white font-bold text-lg mb-2">{podcast.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">
-                    {podcast.description}
-                  </p>
-                </div>
+                <NavLink to={podcast.link}>
+                  <img
+                    src={podcast.imageSrc}
+                    alt={podcast.title}
+                    className="w-full h-45 object-cover"
+                  />
+                  <div className="p-4">
+                    <h3 className="text-white font-bold text-lg mb-2">{podcast.title}</h3>
+                    <p className="text-gray-400 text-sm leading-relaxed">
+                      {podcast.description}
+                    </p>
+                  </div>
+                </NavLink>
               </div>
             ))}
           </div>
@@ -223,30 +230,35 @@ function CybraryPodcast() {
                 title: "401 Access Denied Podcast Ep. 83 | The AI Revolution With Diana Kelley",
                 description: "Everybody’s talking about it - the AI revolution is here. But given the rapid evolution in this field, it’s hard to keep up with the sweeping effects this technology is causing. Luckily, Joe Carson is joined by longtime AI expert Diana Kelley to shed light on all of these changes. She addresses the many misconceptions and....",
                 date: "June 16, 2023",
+                link: '/podcast/401-access-denied-ep-83-the-ai-revolution-with-diana-kelley'
               },
               {
                 imageSrc: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6458220cb4a8be824744e895_cybrary-intruder-alert.webp",
                 title: "Intruder Alert Ep. 6 | Deconstructing Malware Attacks",
                 description: "In this episode of Intruder Alert, Marcus Hutchins is joined by cybersecurity expert Caitlin Sarian, known for her role as the Global Lead of Cybersecurity Advocacy and Culture at TikTok and her expertise in data protection and privacy compliance. Marcus and Caitlin provide technical insight into the latest US malware landscape.",
                 date: "June 12, 2023",
+                link: '/podcast/intruder-alert-ep-6-deconstructing-malwar-attacks'
               },
               {
                 imageSrc: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6458220fba90a51886821f60_delinea-401_Access_Denied_Podcast_Logo_dark-logos.jpeg",
                 title: "401 Access Denied Podcast Ep. 82 | Hacking The Government With Bryan Seely",
                 description: "In this eye-opening episode, dive into the captivating world of cybercrime and social engineering with our host, Joe Carson, and special guest Bryan Seely! Bryan, a keynote speaker and cybersecurity expert best known for his Secret Service exposé, discusses his journey from a young computer enthusiast to a prominent figure in cybersecurity.",
                 date: "June 10, 2023",
+                link: '/podcast/401-access-denied-ep-82-hacking-the-government-with-bryan-seely'
               },
               {
                 imageSrc: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6458220cb4a8be824744e895_cybrary-intruder-alert.webp",
                 title: "Intruder Alert Ep. 5 | Community Uprising: Unravelling The Reddit Blackout",
                 description: "In the latest episode of Intruder Alert, Marcus Hutchins and Cybrary blue teamer, Marc Balingit, delve into the recent news of social media uproar. They unravel the intricacies of Reddit’s contentious API changes, which have cornered third-party apps like Apollo, sparking a sweeping blackout protest across thousands of users.",
                 date: "June 8, 2023",
+                link: '/podcast/intruder-alert-ep-5-community-uprising-unraveling-reddit-blackout'
               },
               {
                 imageSrc: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6458220fba90a51886821f60_delinea-401_Access_Denied_Podcast_Logo_dark-logos.jpeg",
                 title: "401 Access Denied Podcast Ep. 81 | Open Source Intelligence With The Grugq",
                 description: "Given the complex and evolving nature of security, how do different countries approach cyber strategy on a global scale? In this episode of 401 Access Denied, Joe Carson is joined by the one and only Thaddeus E. Grugq (“The Grugq”), who brings along decades of security research and operational security experience.",
                 date: "May 30, 2023",
+                link: '/podcast/401-access-denied-ep-81-open-source-intelligence-with-the-grugq'
               },
             ].map((episode, index) => (
               <div key={index}>
@@ -255,7 +267,7 @@ function CybraryPodcast() {
                     <img
                       src={episode.imageSrc}
                       alt={episode.title}
-                      className="h-60 w-80 object-cover"
+                      className="h-80 w-96 object-cover"
                     />
                   </div>
                   <div className="h-auto w-px bg-gray-500"></div>
@@ -263,9 +275,11 @@ function CybraryPodcast() {
                     <p className="text-gray-400 text-sm mb-2">{episode.date}</p>
                     <h3 className="text-white font-semibold text-lg mb-2">{episode.title}</h3>
                     <p className="text-gray-400 text-sm leading-relaxed mb-4">{episode.description}</p>
-                    <button className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
-                      Listen or Watch
-                    </button>
+                    <NavLink to={episode.link} className="px-4 py-2 border text-white rounded hover:bg-pink-600">
+                      <button>
+                        Listen or Watch
+                      </button>
+                    </NavLink>
                   </div>
                 </div>
                 {index < 4 && <hr className="border-t border-gray-600 mt-5" />}
@@ -278,9 +292,8 @@ function CybraryPodcast() {
           <button
             onClick={prevPage}
             disabled={currentPage === 1}
-            className={`${
-              currentPage === 1 ? "opacity-50 cursor-not-allowed" : ""
-            } text-white border border-gray-500 rounded-full h-10 w-10 flex justify-center items-center hover:border-white`}
+            className={`${currentPage === 1 ? "opacity-50 cursor-not-allowed" : ""
+              } text-white border border-gray-500 rounded-full h-10 w-10 flex justify-center items-center hover:border-white`}
             aria-label="Previous Page"
           >
             &lt;
@@ -291,11 +304,10 @@ function CybraryPodcast() {
               <li key={i}>
                 <button
                   onClick={() => goToPage(i + 1)}
-                  className={`${
-                    currentPage === i + 1
-                      ? "bg-white text-black"
-                      : "bg-transparent border-gray-500 hover:border-white"
-                  } text-white border h-10 w-10 flex justify-center items-center rounded-full`}
+                  className={`${currentPage === i + 1
+                    ? "bg-white text-black"
+                    : "bg-transparent border-gray-500 hover:border-white"
+                    } text-white border h-10 w-10 flex justify-center items-center rounded-full`}
                 >
                   {i + 1} </button>
               </li>
@@ -305,9 +317,8 @@ function CybraryPodcast() {
           <button
             onClick={nextPage}
             disabled={currentPage === totalPages}
-            className={`${
-              currentPage === totalPages ? "opacity-50 cursor-not-allowed" : ""
-            } text-white border border-gray-500 rounded-full h-10 w-10 flex justify-center items-center hover:border-white`}
+            className={`${currentPage === totalPages ? "opacity-50 cursor-not-allowed" : ""
+              } text-white border border-gray-500 rounded-full h-10 w-10 flex justify-center items-center hover:border-white`}
             aria-label="Next Page"
           >
             &gt;

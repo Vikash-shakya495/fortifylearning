@@ -1,12 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { IoTvOutline } from "react-icons/io5";
-import { FaLaptopCode } from "react-icons/fa";
 import { VscTypeHierarchySuper } from 'react-icons/vsc';
-import { SiCodementor } from 'react-icons/si';
-import { PiCertificate, PiCertificateLight, PiLaptop, PiRocket } from 'react-icons/pi';
-import { GrGroup } from "react-icons/gr";
-import { MdOutlineOndemandVideo } from 'react-icons/md';
+import { PiCertificateLight, PiLaptop} from 'react-icons/pi';
 import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
 import { RiTeamLine } from 'react-icons/ri';
 import { GoShieldX } from 'react-icons/go';
@@ -14,8 +9,12 @@ import { TbBrandGithub } from 'react-icons/tb';
 import Marquee from 'react-fast-marquee';
 import TestimonialsCarousel from '../components/home/TestimonialsCarousel';
 import SignupComponent from '../components/home/SignupComponent';
+import { useDispatch } from 'react-redux';
+import { togglePopup } from '../store/signupPopupSlice';
+import SignupPopup from '../loginSystem/SignupPopup';
 
 function Certifications() {
+    const dispatch = useDispatch();
     const courses = [
         {
             id: 1,
@@ -277,7 +276,8 @@ function Certifications() {
                         organization's Salesforce environment, FortifyLearning has you covered.
                     </p>
                     <div className="mt-8 flex flex-col sm:flex-row justify-center sm:justify-start items-center">
-                        <button className="bg-gradient-to-r from-orange-500 to-pink-500 px-8 py-3 rounded-md text-white hover:shadow-lg hover:shadow-pink-500/50 transition-shadow duration-300">
+                        <button className="bg-gradient-to-r from-orange-500 to-pink-500 px-8 py-3 rounded-md text-white hover:shadow-lg hover:shadow-pink-500/50 transition-shadow duration-300"
+                        onClick={() => dispatch(togglePopup())}>
                             Start Learning for Free
                         </button>
                     </div>
@@ -325,7 +325,8 @@ function Certifications() {
                         learned with practice tests and interactive virtual labs for a fraction of what a boot camp costs.
                     </p>
                     <div className="mt-8 flex flex-col sm:flex-row justify-center sm:justify-start items-center">
-                        <button className="bg-gradient-to-r from-orange-500 to-pink-500 px-8 py-3 rounded-md text-white hover:shadow-lg hover:shadow-pink-500/50 transition-shadow duration-300">
+                        <button className="bg-gradient-to-r from-orange-500 to-pink-500 px-8 py-3 rounded-md text-white hover:shadow-lg hover:shadow-pink-500/50 transition-shadow duration-300"
+                        onClick={() => dispatch(togglePopup())}>
                             Start learning for free
                         </button>
                     </div>
@@ -516,12 +517,12 @@ function Certifications() {
                         Explore our on-demand courses developed by seasoned Salesforce experts, aligned with the
                         key learning objectives of Salesforce certification exams.
                     </p>
-                    <NavLink to='/business'>
                         <button
-                            className="mt-8 bg-gradient-to-r from-red-500 to-fuchsia-500 py-3 px-8 text-white font-semibold rounded-2xl hover:shadow-lg transition-all">
+                            className="mt-8 bg-gradient-to-r from-red-500 to-fuchsia-500 py-3 px-8 text-white font-semibold rounded-2xl hover:shadow-lg transition-all"
+                            onClick={() => dispatch(togglePopup())}>
                             Start Learning for free
                         </button>
-                    </NavLink>
+                
                 </div>
                 <div className="text-center flex flex-col items-center mt-10 lg:mt-20 px-4">
                     <div className="relative mt-8 md:mt-12 h-[100px] md:h-[150px] w-full max-w-6xl">

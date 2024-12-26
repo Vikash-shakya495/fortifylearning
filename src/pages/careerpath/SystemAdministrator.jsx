@@ -23,7 +23,7 @@ const SystemAdministrator = () => {
       duration: "8H:20M",
       ceus: "8 CEUS",
       image: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/64e784d38835d8cfd88b476b_SC-200_cover-p-500.png",
-      link:"/career-path/it-cybersecurity"
+      link: "/career-path/it-cybersecurity"
     },
     {
       title: "CompTIA Security+ Certification Prep",
@@ -33,7 +33,7 @@ const SystemAdministrator = () => {
       duration: "18H:28M",
       ceus: "10 CEUS",
       image: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c1717d5c861ce9d59709_CompTIA_Security_-p-500.png",
-      link:"/career-path/it-cybersecurity"
+      link: "/career-path/it-cybersecurity"
     },
     {
       title: "OWASP Top 10 - A08:2021 - Software and Data Integrity Failures",
@@ -43,7 +43,7 @@ const SystemAdministrator = () => {
       duration: "2H:37M",
       ceus: "3 CEUS",
       image: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c1717d5c861ce9d59709_CompTIA_Security_-p-500.png",
-      link:"/career-path/it-cybersecurity"
+      link: "/career-path/it-cybersecurity"
     },
     {
       title: "OWASP Top 10 - A04:2021 - Insecure Design",
@@ -53,7 +53,7 @@ const SystemAdministrator = () => {
       duration: "1H:34M",
       ceus: "2 CEUS",
       image: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c1717d5c861ce9d59709_CompTIA_Security_-p-500.png",
-      link:"/career-path/it-cybersecurity"
+      link: "/career-path/it-cybersecurity"
     },
     {
       title: "OWASP Top 10 - A04:2021 - Insecure Design",
@@ -63,7 +63,7 @@ const SystemAdministrator = () => {
       duration: "1H:34M",
       ceus: "2 CEUS",
       image: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c1717d5c861ce9d59709_CompTIA_Security_-p-500.png",
-      link:"/career-path/it-cybersecurity"
+      link: "/career-path/it-cybersecurity"
     },
     {
       title: "OWASP Top 10 - A04:2021 - Insecure Design",
@@ -73,7 +73,7 @@ const SystemAdministrator = () => {
       duration: "1H:34M",
       ceus: "2 CEUS",
       image: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c1717d5c861ce9d59709_CompTIA_Security_-p-500.png",
-      link:"/career-path/it-cybersecurity"
+      link: "/career-path/it-cybersecurity"
     },
     {
       title: "OWASP Top 10 - A04:2021 - Insecure Design",
@@ -83,7 +83,7 @@ const SystemAdministrator = () => {
       duration: "1H:34M",
       ceus: "2 CEUS",
       image: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c1717d5c861ce9d59709_CompTIA_Security_-p-500.png",
-      link:"/career-path/it-cybersecurity"
+      link: "/career-path/it-cybersecurity"
     },
     {
       title: "OWASP Top 10 - A04:2021 - Insecure Design",
@@ -93,7 +93,7 @@ const SystemAdministrator = () => {
       duration: "1H:34M",
       ceus: "2 CEUS",
       image: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c1717d5c861ce9d59709_CompTIA_Security_-p-500.png",
-      link:"/career-path/it-cybersecurity"
+      link: "/career-path/it-cybersecurity"
     },
   ];
 
@@ -130,14 +130,16 @@ const SystemAdministrator = () => {
           </p>
           <div className="flex items-center justify-between mt-8 flex-wrap md:mt-0">
             <button
-              onClick={() => console.log("Create account action")}
+              onClick={() => dispatch(togglePopup())}
               className="w-2/4 md:w-2/5 py-3 bg-gradient-to-r from-red-500 to-pink-500 rounded-2xl text-white font-semibold hover:shadow-[0px_0px_10px_purple,0px_0px_10px_#FF4D6D] duration-500"
             >
               Create a Free Account
             </button>
-            <button className="w-2/4 md:w-3/5 px-6 py-4 rounded-xl bg-black border border-gray-500">
-              Need to train your team? Learn more
-            </button>
+            <NavLink to='/business' className="w-2/4 md:w-3/5 px-6 py-4 rounded-xl bg-black  border-gray-500">
+              <button >
+                Need to train your team? Learn more
+              </button>
+            </NavLink>
           </div>
           <div className="flex items-center text-xl text-gray-500 mt-4 gap-2">
             <FiShare2 className="text-3xl text-gray-300" />
@@ -383,7 +385,7 @@ const SystemAdministrator = () => {
             </div>
           ))}
         </div>
-        
+
       </div>
       <div className="w-full mt-20">
         <TestimonialsCarousel />

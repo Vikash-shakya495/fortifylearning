@@ -551,21 +551,21 @@ function CustomDropDown() {
                             </Link>
                         </Dropdown.Item>
                         <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
-                            <Link to='business-resources#case-studies' className='flex items-center'>
+                            <Link to='business-resources#research-pages' className='flex items-center'>
                                 <div>
                                     <h1 className='text-lg text-white'>Research Pages</h1>
                                 </div>
                             </Link>
                         </Dropdown.Item>
                         <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
-                            <Link to='business-resources#case-studies' className='flex items-center'>
+                            <Link to='business-resources#articles' className='flex items-center'>
                                 <div>
                                     <h1 className='text-lg text-white'>Articles</h1>
                                 </div>
                             </Link>
                         </Dropdown.Item>
                         <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
-                            <Link to='business-resources#case-studies' className='flex items-center'>
+                            <Link to='business-resources#white-pages' className='flex items-center'>
                                 <div>
                                     <h1 className='text-lg text-white'>White Pages</h1>
                                 </div>

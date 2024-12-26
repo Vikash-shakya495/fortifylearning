@@ -167,7 +167,9 @@ const FrameworkAlignment = () => {
             and assets.
           </p>
           <button className="px-6 py-3 bg-gradient-to-r from-red-500 via-pink-600  to-fuchsia-600 text-white font-semibold text-lg rounded-lg hover:opacity-90 transition-opacity">
-            Get started
+            <NavLink to='/upgrade'>
+              Get Started
+            </NavLink>
           </button>
         </div>
         <div className="relative flex justify-center items-center">
@@ -305,7 +307,7 @@ const FrameworkAlignment = () => {
             className={`p-4 rounded-full bg-gray-800 text-white ${currentPage === 1 ? "opacity-50 cursor-not-allowed" : "hover:bg-gray-700"
               }`}
           >
-            <FiArrowLeft/>
+            <FiArrowLeft />
           </button>
           <span className="text-gray-400">
             Page {currentPage} of {totalPages}
@@ -318,7 +320,7 @@ const FrameworkAlignment = () => {
               : "hover:bg-gray-700"
               }`}
           >
-            <FiArrowRight/>
+            <FiArrowRight />
           </button>
         </div>
       </div>

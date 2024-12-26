@@ -210,10 +210,10 @@ function Impact() {
                     <p className="mt-4 text-gray-300  max-w-2xl">
                         Cybrary is committed to giving back to our community through volunteer initiatives that support those in marginalized areas as well as non-profit organizations. We believe our values extend beyond our company alone.
                     </p>
-                    <NavLink to='/join-our-team'>
+                    <NavLink to='/careers'>
                         <button
                         className="mt-8 bg-gradient-to-r from-red-500 to-fuchsia-500 py-3 px-8 text-white font-semibold rounded-2xl hover:shadow-lg transition-all">
-                            Start Learning for free
+                            Join our Team
                         </button>
                     </NavLink>
                 </div>

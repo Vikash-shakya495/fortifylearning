@@ -10,9 +10,14 @@ import TestimonialsCarousel from '../components/home/TestimonialsCarousel';
 import SignupComponent from '../components/home/SignupComponent';
 import { Outlet, Link, NavLink } from 'react-router-dom';
 import { MdOutlineOndemandVideo } from 'react-icons/md';
+import { useDispatch } from 'react-redux';
+import { togglePopup } from '../store/signupPopupSlice';
+import SignupPopup from '../loginSystem/SignupPopup';
+
 // import Footer from '../../components/Footer';
 
 function SkillsPath() {
+    const dispatch = useDispatch();
     return (
         <div className="bg-black text-white min-h-screen flex flex-col items-center overflow-x-hidden">
             {/* <Navbar /> */}
@@ -30,12 +35,16 @@ function SkillsPath() {
                         integration, and much more.s
                     </p>
                     <div className="mt-8 flex flex-col sm:flex-row justify-center sm:justify-start items-center">
-                        <button className="bg-gradient-to-r from-orange-500 to-pink-500 px-8 py-3 rounded-md text-white hover:shadow-lg hover:shadow-pink-500/50 transition-shadow duration-300">
+                        <button className="bg-gradient-to-r from-orange-500 to-pink-500 px-8 py-3 rounded-md text-white hover:shadow-lg hover:shadow-pink-500/50 transition-shadow duration-300"
+                            onClick={() => dispatch(togglePopup())}>
+
                             Start for Free
                         </button>
-                        <a href="/" className="mt-4 sm:mt-0 sm:ml-4 text-white-400 hover:text-white">
+                        <span className="mt-4 sm:mt-0 sm:ml-4 text-white-400 hover:text-white"
+                            onClick={() => dispatch(togglePopup())}>
+
                             Try SkillAcademy for Teams &gt;
-                        </a>
+                        </span>
                     </div>
                 </div>
                 <div className="flex lg:w-4/5 justify-center py-0 mt-8 md:mt-16 relative">
@@ -85,15 +94,16 @@ function SkillsPath() {
                         Skill Development Tailored to Your Needs
                     </h1>
                     <p className="mt-4 text-gray-400 max-w-full md:max-w-2xl text-center md:text-left">
-                    FortifyLearning Skill Paths allow learners to focus their attention on a single topic within a Career
- Path. Each Skill Path follows our Learn, Practice, Prove model and includes different activity
- types aligned to key topics within the Salesforce domain
+                        FortifyLearning Skill Paths allow learners to focus their attention on a single topic within a Career
+                        Path. Each Skill Path follows our Learn, Practice, Prove model and includes different activity
+                        types aligned to key topics within the Salesforce domain
                     </p>
                     <p className="mt-4 text-gray-400 max-w-full md:max-w-2xl text-center md:text-left">
                         As you learn a skill, your progress will be measured in real-time using Experience Points (XP), which serve as a comprehensive capability score for each topic. Upon completion, you will be rewarded with a shareable digital badge via Credly.
                     </p>
                     <div className="mt-8 flex flex-col sm:flex-row justify-center sm:justify-start items-center">
-                        <button className="bg-gradient-to-r from-orange-500 to-pink-500 px-8 py-3 rounded-md text-white hover:shadow-lg hover:shadow-pink-500/50 transition-shadow duration-300">
+                        <button className="bg-gradient-to-r from-orange-500 to-pink-500 px-8 py-3 rounded-md text-white hover:shadow-lg hover:shadow-pink-500/50 transition-shadow duration-300"
+                            onClick={() => dispatch(togglePopup())}>
                             Start learning for free
                         </button>
                     </div>
@@ -109,7 +119,9 @@ function SkillsPath() {
                     </h2>
                     <p className='text-center w-2/3 mb-12 text-gray-400'> Upgrade to FortifyLearning Pro or FortifyLearning for Teams to gain access to our comprehensive
                         resources and support, designed to enhance your Salesforce skills and career growth.</p>
-                    <button className='bg-gradient-to-r from-orange-500 to-pink-500 px-8 py-3 rounded-md text-white hover:shadow-lg hover:shadow-pink-500/50 transition-shadow duration-300'>upgrade for full access</button>
+                    <NavLink to='/upgrade'>
+                        <button className='bg-gradient-to-r from-orange-500 to-pink-500 px-8 py-3 rounded-md text-white hover:shadow-lg hover:shadow-pink-500/50 transition-shadow duration-300'>upgrade for full access</button>
+                    </NavLink>
                 </div>
 
                 <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">

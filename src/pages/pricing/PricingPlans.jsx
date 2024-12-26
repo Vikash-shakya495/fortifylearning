@@ -1,7 +1,12 @@
 import React from 'react';
 import { MdOutlineForum } from "react-icons/md";
 import { RiArrowRightSLine } from 'react-icons/ri';
+import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { togglePopup } from '../../store/signupPopupSlice';
+import SignupPopup from '../../loginSystem/SignupPopup';
 function PricingPlans() {
+    const dispatch = useDispatch();
     return (
         <div className='w-5/6 mx-auto'>
             <h1 className='text-6xl text-center'><span className='text-pink-800'>FortifyLearning</span> pricing plans</h1>
@@ -13,7 +18,8 @@ function PricingPlans() {
                     <div class="bg-gray-900 rounded-br-lg rounded-bl-lg p-8 h-6/6 ">
                         <h2 class="text-3xl font-semibold text-white">Cybrary Free Access</h2>
                         <p class="text-sm mb-10 mt-2">Built for individuals looking to explore Cybrary and learn more about cybersecurity.</p>
-                        <button class="px-6 py-3 w-full text-lg bg-transparent border border-orange-400 rounded-lg">
+                        <button class="px-6 py-3 w-full text-lg bg-transparent border border-orange-400 rounded-lg"
+                            onClick={() => dispatch(togglePopup())}>
                             Start for Free
                         </button>
                         <p className="text-4xl mt-6">Free</p>
@@ -42,7 +48,9 @@ function PricingPlans() {
                         <h2 class="text-3xl font-semibold text-white">Cybrary Insider Pro</h2>
                         <p class="text-sm mb-10 mt-4">Built for individuals looking for their next career opportunity in cybersecurity.</p>
                         <button class="px-6 py-3 w-full text-lg bg-transparent border border-pink-600 rounded-lg">
-                            Buy now
+                            <NavLink to='/upgrade/checkout'>
+                                Buy now
+                            </NavLink>
                         </button>
                         <p class="text-4xl mt-6">$49/mo</p>
                         <p class="text-s text-gray-400">billed annually
@@ -82,7 +90,9 @@ function PricingPlans() {
 
                         <p class="text-sm mb-10 mt-4">Built for organizations looking to reduce their cyber risk through hands-on training for their cybersecurity teams.</p>
                         <button class="px-6 py-3 w-full text-lg bg-transparent border border-pink-600 rounded-lg">
-                            Buy now
+                            <NavLink to='/upgrade/teams-checkout'>
+                                Buy now
+                            </NavLink>
                         </button>
                         <p class="text-4xl font-bold mt-6">$79/mo</p>
                         <p class="text-xs text-gray-400">Billed annually</p>
@@ -124,9 +134,11 @@ function PricingPlans() {
                     <div class="bg-gray-900 rounded-br-lg rounded-bl-lg p-6 h-6/6 ">
                         <h2 class="text-3xl font-semibold text-white">Cybrary For Enterprise</h2>
                         <p class="text-sm mb-10 mt-4">Tailored solutions for teams whose needs would benefit from our Success Team’s expertise. Your Team, Your Way.</p>
-                        <button class="flex items-center px-4 py-2 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-lg">
-                            Schedule a Demo <RiArrowRightSLine />
-                        </button>
+                        <NavLink to='/demo-request'>
+                            <button class="flex items-center px-4 py-2 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-lg">
+                                Schedule a Demo <RiArrowRightSLine />
+                            </button>
+                        </NavLink>
                         <p class="mt-10"><MdOutlineForum className='text-5xl' /> Contact Sales for Pricing</p>
                         <p className='mt-4 mb-10'>Get full access to the complete Cybrary catalog, all Teams features, and Enterprise-only options including:</p>
                         <ul class="mt-4 space-y-2 text-sm">

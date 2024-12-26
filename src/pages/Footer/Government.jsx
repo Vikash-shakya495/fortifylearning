@@ -4,7 +4,11 @@ import { GrCertificate } from "react-icons/gr";
 import { PiBooks } from "react-icons/pi";
 import { FaLaptop } from "react-icons/fa";
 import SignupComponent from "../../components/home/SignupComponent";
+import { useDispatch } from 'react-redux';
+import { togglePopup } from '../../store/signupPopupSlice';
+import SignupPopup from '../../loginSystem/SignupPopup';
 const Government = () => {
+  const dispatch = useDispatch();
   return (
     <div className="bg-black text-white py-16 px-0 ">
       <section className="relative w-full h-full">
@@ -38,6 +42,10 @@ const Government = () => {
             ● Strengthen security and compliance: Ensure data protection and adherence to
             government regulations.
           </p>
+          <button className="bg-gradient-to-r mt-4 from-red-500 via-pink-500 to-fuchsia-500 px-8 py-3 rounded-md text-white hover:shadow-lg hover:shadow-pink-500/50 transition-shadow duration-300"
+            onClick={() => dispatch(togglePopup())}>
+            Fortify Learning for Business
+          </button>
         </section>
       </section>
 
@@ -92,7 +100,9 @@ const Government = () => {
 
             {/* CTA Button */}
             <button className="px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold text-lg rounded-lg hover:opacity-90 transition-opacity">
-              Schedule a Demo
+              <NavLink to='/demo-request'>
+                Schedule a Demo
+              </NavLink>
             </button>
           </div>
         </div>
@@ -120,7 +130,9 @@ const Government = () => {
 
             {/* CTA Button */}
             <button className="px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold text-lg rounded-lg hover:opacity-90 transition-opacity">
-              Schedule a Demo
+              <NavLink to='/demo-request'>
+                Schedule a Demo
+              </NavLink>
             </button>
           </div>
 
@@ -151,7 +163,9 @@ const Government = () => {
           </p>
           {/* CTA Button */}
           <button className="px-6 py-3 mb-12 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold text-lg rounded-lg hover:opacity-90 transition-opacity">
-            Schedule a Demo
+            <NavLink to='/demo-request'>
+              Schedule a Demo
+            </NavLink>  
           </button>
         </div>
 

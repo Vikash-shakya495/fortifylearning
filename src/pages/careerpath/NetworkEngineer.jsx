@@ -142,13 +142,15 @@ function NetworkEngineer() {
                     </h2>
                     <div className='flex items-center justify-between mt-8 flex-wrap md:mt-0'>
                         <button
-                            onClick={() => console.log('Create account action')}
-                            className="w-2/4 md:w-2/5 py-3 bg-gradient-to-r from-red-500 to-pink-500 rounded-2xl text-white font-semibold hover:shadow-[0px_0px_10px_purple,0px_0px_10px_#FF4D6D] duration-500">
+                            onClick={() => dispatch(togglePopup())}
+                            className="w-2/4 md:w-1/3 py-3 bg-gradient-to-r from-red-500 to-pink-500 rounded-2xl text-white font-semibold hover:shadow-[0px_0px_10px_purple,0px_0px_10px_#FF4D6D] duration-500">
                             Create a Free Account
                         </button>
-                        <button className='w-2/4 md:w-3/5 px-6 py-4 rounded-xl bg-black border border-gray-500'>
+                        <NavLink to='/business' className='w-2/4 md:w-3/5 px-10 py-4 rounded-xl bg-black border border-gray-500'>
+
                             Need to train your team? Learn more
-                        </button>
+
+                        </NavLink>
                     </div>
                     <div className='flex items-center text-xl text-gray-500 mt-4 gap-2'>
                         <FiShare2 className='text-3xl text-gray-300' />
