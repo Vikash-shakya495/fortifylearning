@@ -1,0 +1,37 @@
+ <div className="w-3/3 sm:w-2/3 text-left">
+        {/* Badge */}
+        <div className="mb-4">
+          <span className="bg-pink-600 text-white text-sm font-semibold py-1 px-2 sm:px-4 rounded-full">
+            CYBRARY FOR GOVERNMENT
+          </span>
+        </div>
+
+        {/* Heading */}
+        <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-6">
+        Salesforce Training for Military and Government Personnel
+        </h1>
+
+        {/* Description */}
+        <p className="text-gray-400 text-lg mb-8">
+        SkillAdvance offers comprehensive Salesforce training designed to meet the unique needs of
+government and military organizations. Our curriculum is tailored to enhance efficiency, improve
+data management, and support mission-critical operations.
+By providing a blend of hands-on exercises and in-depth instruction, our training programs
+empower your workforce to:
+● Modernize operations: Leverage Salesforce to streamline processes and optimize
+resource allocation.
+● Enhance data-driven decision making: Utilize Salesforce analytics for informed
+strategic planning.
+● Strengthen security and compliance: Ensure data protection and adherence to
+government regulations.
+
+        </p>
+
+        {/* CTA Button */}
+        <div>
+        <button className="bg-gradient-to-r from-orange-500 via-red-400 to-fuchsia-500 px-8 py-3 rounded-md text-white hover:shadow-lg hover:shadow-pink-500/50 transition-shadow duration-300">
+
+            Schedule a Demo
+          </button>
+        </div>
+      </div>

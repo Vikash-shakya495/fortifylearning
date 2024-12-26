@@ -1,4 +1,4 @@
-/* Target the dropdown container */
+Target the dropdown container
 .dropdowns .dropdown-container {
   color: white;
   transition: color 0.3s ease-in;
@@ -6,7 +6,7 @@
 
 /* Style the dropdown items */
 .dropdowns .dropdown-item {
-  padding: 10px 15px;
+  padding: 4px 4px;
   color: #d5caca;
   cursor: pointer;
   max-width: 200px;
@@ -23,7 +23,7 @@
 }
 
 .dropdown-container:hover {
-  color: #e866f2;
+  color: #9f13dc;
   /* Change the background color when hovering */
 }
 
@@ -80,9 +80,10 @@
 
 .dropdowns .custom-submenu{
   padding: 6px;
-  width: 300px;
+  width: 280px;
 }
 
 .dropdowns .custom-submenu-submenu{
   width: 350px;
+  padding: 6px;
 }

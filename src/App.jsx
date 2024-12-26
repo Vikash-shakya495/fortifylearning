@@ -34,6 +34,17 @@ import IncidentHandler from "./pages/careerpath/IncidentHandler";
 import MainHelpCenter from "./pages/MainHelpCenter";
 import Billing from "./pages/helpcenter/Billing";
 import Certifications from "./pages/Certifications";
+import MagicHound from "./pages/mission/threat/MagicHound";
+import FreeAccess from "./pages/FreeAccess";
+import Careers from "./pages/Footer/Careers";
+import CybraryPodcast from "./pages/Footer/CybraryPodcast";
+import FellowMonster from "./pages/mission/course/FellowMonster";
+import Message from "./pages/mission/course/Message";
+import FrameworkAlignment from "./pages/FrameworkAlignment";
+import Government from "./pages/Footer/Government";
+import RaspberryRobin from "./pages/mission/threat/RaspberryRobin";
+import SystemAdministrator from "./pages/careerpath/SystemAdministrator";
+import BigIp from "./pages/course/BigIp";
 
 function App() {
   const location = useLocation();
@@ -55,20 +66,34 @@ function App() {
           <Route path="/register" element={<SignupPopup />} />
           <Route path="/career-path" element={<CareerPath />} />
           <Route path="/skill-paths" element={<SkillsPath />} />
+          <Route path="/free-content" element={<FreeAccess />} />
+
           <Route path="career-path/network-engineer" element={<NetworkEngineer />} />
           <Route path="career-path/microsoft-azure-cloud-engineer" element={<AzureCloud />} />
           <Route path="career-path/incident-handler" element={<IncidentHandler />} />
+          <Route path="career-path/system-administrator" element={<SystemAdministrator />} />
+          <Route path="career-path/soc-analyst" element={<SocAnalyst />} />
+
           <Route path="threat-actor-campaign/weak-link-in-the-supply-chain" element={<SupplyChain />} />
           <Route path="threat-actor-campaign/double-trouble-with-double-dragon" element={<DoubleTrouble />} />
+          <Route path="threat-actor-campaign/raspberry-robin" element={<RaspberryRobin />} />
+          <Route path="threat-actor-campaign/magic-hound" element={<MagicHound />} />
+
           <Route path="course/cve-series-couchdb-rce-cve-2022-24706" element={<CouchDBRCE />} />
+          <Route path="course/cve-series-f5-big-ip-cve-2022-1388" element={<BigIp />} />
           <Route path="course/cve-series-blind-nosql-injection-cve-2021-22911" element={<BlindNoSql />} />
           <Route path="course/cve-series-grafana-directory-traversal-cve-2021-43798" element={<GrafanaDirectory />} />
           <Route path="course/cve-series-atlassian-bitbucket-command-injection-cve-2022-36804" element={<AtlassianBitbucket />} />
           <Route path="course/cve-series-apache-httpd-cve-2021-42013" element={<ApacheHttpd />} />
+
           <Route path="/course/cybrary-challenge-space-mission1" element={<SpaceMission />} />
+          <Route path="/course/cybrary-challenge-saving-a-fellow-monster" element={<FellowMonster />} />
+          <Route path="/course/cybrary-challenge-a-message-within-a-message" element={<Message />} />
+
           <Route path="/mitre-attack" element={<MitreAttack />} />
           <Route path="/alliances" element={<Alliances />} />
-          <Route path="/career-path/soc-analyst" element={<SocAnalyst />} />
+          <Route path="/industry" element={<FrameworkAlignment />} />
+          <Route path="/government" element={<Government />} />
           <Route path="/practice-lab/log-analysis-basics" element={<SocAnalyst />} />
           <Route path="/fortifylearning-impact-hub" element={<Impact />} />
           <Route path="/privacy-policy" element={<Privacy />} />
@@ -78,6 +103,11 @@ function App() {
           <Route path="/demo-request" element={<DemoForm />} />
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/certification-prep" element={<Certifications />} />
+
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/podcast" element={<CybraryPodcast />} />
+
+          
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/forum" element={<Forum />} />
