@@ -46,6 +46,19 @@ import RaspberryRobin from "./pages/mission/threat/RaspberryRobin";
 import SystemAdministrator from "./pages/careerpath/SystemAdministrator";
 import BigIp from "./pages/course/BigIp";
 import Webinar from "./pages/Footer/Webinar";
+import SecurityPlus from "./pages/certifications/beginner/SecurityPlus";
+import ComptiaProjectPlus from "./pages/certifications/beginner/ComptiaProjectPlus";
+import AzureFundamentals from "./pages/certifications/beginner/AzureFundamentals";
+import ComptiaAPlus from "./pages/certifications/beginner/ComptiaAPlus";
+import CisaCertifications from "./pages/certifications/intermediate/CisaCertifications";
+import CertNexus from "./pages/certifications/intermediate/CertNexus";
+import CloudSecurity from "./pages/certifications/intermediate/CloudSecurity";
+import AwsSecurity from "./pages/certifications/intermediate/AwsSecurity";
+import CriscCertifications from "./pages/certifications/advance/CriscCerifications";
+import ComptiaCasp from "./pages/certifications/advance/ComptiaCasp";
+import CisspCertifications from "./pages/certifications/advance/CisspCertifications";
+import MitreAttackFramework from "./pages/course/MitreAttackFramework";
+import CyberSecurityEngineer from "./pages/careerpath/CyberSecurity";
 
 function App() {
   const location = useLocation();
@@ -69,11 +82,26 @@ function App() {
           <Route path="/skill-paths" element={<SkillsPath />} />
           <Route path="/free-content" element={<FreeAccess />} />
 
+          <Route path="/certification-prep-courses/security-plus" element={<SecurityPlus />} />
+          <Route path="/course/comptia-project-plus-pk0-004" element={<ComptiaProjectPlus />} />
+          <Route path="/certification-prep-courses/microsoft-azure-fundamentals" element={<AzureFundamentals />} />
+          <Route path="/course/comptia-a-plus" element={<ComptiaAPlus />} />
+          <Route path="/certification-prep-courses/certified-information-systems-auditor" element={<CisaCertifications />} />
+          <Route path="/certification-prep-courses/cybersec-first-responder" element={<CertNexus />} />
+          <Route path="/certification-prep-courses/certified-cloud-security-professional" element={<CloudSecurity />} />
+          <Route path="/certification-prep-courses/aws-certified-security-specialty" element={<AwsSecurity />} />
+          <Route path="/certification-prep-courses/certified-in-risk-and-information-systems-control-crisc" element={<CriscCertifications />} />
+          <Route path="/certification-prep-courses/designing-microsoft-azure-infrastructure-solutions" element={<CriscCertifications />} />
+          <Route path="/certification-prep-courses/casp-plus" element={<ComptiaCasp />} />
+          <Route path="/course/certified-information-systems-security-professional" element={<CisspCertifications />} />
+          <Route path="course/application-of-the-mitre-attack-framework" element={<MitreAttackFramework />} />
+
           <Route path="career-path/network-engineer" element={<NetworkEngineer />} />
           <Route path="career-path/microsoft-azure-cloud-engineer" element={<AzureCloud />} />
           <Route path="career-path/incident-handler" element={<IncidentHandler />} />
           <Route path="career-path/system-administrator" element={<SystemAdministrator />} />
           <Route path="career-path/soc-analyst" element={<SocAnalyst />} />
+          <Route path="career-path/security-engineer" element={<CyberSecurityEngineer />} />
 
           <Route path="threat-actor-campaign/weak-link-in-the-supply-chain" element={<SupplyChain />} />
           <Route path="threat-actor-campaign/double-trouble-with-double-dragon" element={<DoubleTrouble />} />
