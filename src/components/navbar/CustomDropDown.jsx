@@ -1,4 +1,4 @@
-import React, { useState} from 'react'; 
+import React, { useState } from 'react';
 import Dropdown from 'react-multilevel-dropdown';
 // import "react-multilevel-dropdown/style.css";
 import './dropdownStyles.css'; // Custom CSS for hover behavior
@@ -20,7 +20,7 @@ function CustomDropDown() {
         <div className='w-full flex justify-evenly items-center p-2 dropdowns'
             onMouseEnter={() => setIsHovered(!true)}
             onMouseLeave={() => setIsHovered(!false)}
-            >
+        >
             <Dropdown title='Catalog ↴' className="dropdown-container "
                 menuClassName="dropdown-menu p-2 catalog"
                 itemClassName="dropdown-item "
@@ -55,6 +55,120 @@ function CustomDropDown() {
                             <p className='text-sm text-gray-400 '>Prepare for and maintain leading <br />cybersecurity certifications.</p>
                         </div>
                     </Link>
+                    <Dropdown.Submenu className='custom-submenu' position='right'>
+                        <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                            <h1 className='text-lg text-white'>Beginner</h1>
+                            <Dropdown.Submenu className='custom-submenu-submenu' position='right'>
+                                <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center '>
+                                    <Link to='certification-prep-courses/security-plus' className='flex items-center'>
+                                        <div >
+                                            <h1 className='text-lg text-white '>Comptia Security+ Certification Prep</h1>
+                                        </div>
+                                    </Link>
+                                </Dropdown.Item>
+                                <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                                    <Link to='course/comptia-project-plus-pk0-004' className='flex items-center'>
+                                        <div>
+                                            <h1 className='text-lg text-white '>CompTIA Project+ Certification <br /> Training (PKO-004)
+                                            </h1>
+                                        </div>
+                                    </Link>
+                                </Dropdown.Item>
+                                <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                                    <Link to='certification-prep-courses/microsoft-azure-fundamentals' className='flex items-center'>
+                                        <div>
+                                            <h1 className='text-lg text-white '>AZ 900 Azure Fundamentals
+                                            </h1>
+                                        </div>
+                                    </Link>
+                                </Dropdown.Item>
+                                <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                                    <Link to='course/comptia-a-plus' className='flex items-center'>
+                                        <div>
+                                            <h1 className='text-lg text-white '>CompTIA A+ Certification Course <br /> & Training
+                                            </h1>
+                                        </div>
+                                    </Link>
+                                </Dropdown.Item>
+                            </Dropdown.Submenu>
+                        </Dropdown.Item>
+                        <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                            <h1 className='text-lg text-white'>Intermediate</h1>
+                            <Dropdown.Submenu className='custom-submenu-submenu' position='right'>
+                                <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                                    <Link to='certification-prep-courses/certified-information-systems-auditor' className='flex items-center'>
+                                        <div>
+                                            <h1 className='text-lg text-white'>CISA Certification Prep</h1>
+                                        </div>
+                                    </Link>
+                                </Dropdown.Item>
+
+                                <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                                    <Link to='certification-prep-courses/cybersec-first-responder' className='flex items-center'>
+                                        <div>
+                                            <h1 className='text-lg text-white '>CertNexus Cybersec First Responder <br /> Certification Prep
+                                            </h1>
+                                        </div>
+                                    </Link>
+                                </Dropdown.Item>
+                                <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                                    <Link to='certification-prep-courses/certified-cloud-security-professional' className='flex items-center'>
+                                        <div>
+                                            <h1 className='text-lg text-white '>Certified Cloud Security Professional <br /> (CCSP) Certification Prep
+                                            </h1>
+                                        </div>
+                                    </Link>
+                                </Dropdown.Item>
+
+
+                                <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                                    <Link to='certification-prep-courses/aws-certified-security-specialty' className='flex items-center'>
+                                        <div>
+                                            <h1 className='text-lg text-white '>AWS Certified Security Specialty <br /> Certification Prep
+                                            </h1>
+                                        </div>
+                                    </Link>
+                                </Dropdown.Item>
+                            </Dropdown.Submenu>
+                        </Dropdown.Item>
+                        <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                            <h1 className='text-lg text-white'>Advance</h1>
+                            <Dropdown.Submenu className='custom-submenu-submenu' position='right'>
+                                <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                                    <Link to='certification-prep-courses/certified-in-risk-and-information-systems-control-crisc' className='flex items-center'>
+                                        <div>
+                                            <h1 className='text-lg text-white '>CRISC Certification Prep</h1>
+                                        </div>
+                                    </Link>
+                                </Dropdown.Item>
+                                <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                                    <Link to='certification-prep-courses/designing-microsoft-azure-infrastructure-solutions' className='flex items-center'>
+                                        <div>
+                                            <h1 className='text-lg text-white '>AZ-305 Designing Microsoft Azure <br /> Infrastructure Solutions <br /> Certification Prep
+                                            </h1>
+                                        </div>
+                                    </Link>
+                                </Dropdown.Item>
+                                <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                                    <Link to='certification-prep-courses/casp-plus' className='flex items-center'>
+                                        <div>
+                                            <h1 className='text-lg text-white '>CompTIA CASP+ Certification Prep
+                                            </h1>
+                                        </div>
+                                    </Link>
+                                </Dropdown.Item>
+                                <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                                    <Link to='course/certified-information-systems-security-professional' className='flex items-center'>
+                                        <div>
+                                            <h1 className='text-lg text-white '>CISSP Certification Prep
+                                            </h1>
+                                        </div>
+                                    </Link>
+                                </Dropdown.Item>
+                            </Dropdown.Submenu>
+                        </Dropdown.Item>
+
+                    </Dropdown.Submenu>
                 </Dropdown.Item>
 
                 <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg hover:bg-gray-800 items-center'>
@@ -65,6 +179,13 @@ function CustomDropDown() {
                             <p className='text-sm text-gray-400 '>Learn how to detect and mitigate the <br />latest threats and vulnerabilities.</p>
                         </div>
                     </Link>
+                    <Dropdown.Submenu className='custom-submenu' position='right'>
+                        <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                            <Link to='course/application-of-the-mitre-attack-framework' className='flex items-center'>
+                                <h1 className='text-lg text-white '>Application of the  MITRE <br /> ATT&CK  Framework</h1>
+                            </Link>
+                        </Dropdown.Item>
+                    </Dropdown.Submenu>
                 </Dropdown.Item>
 
                 <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg hover:bg-gray-800 items-center'>
@@ -134,7 +255,7 @@ function CustomDropDown() {
                                         </div>
                                     </Link>
                                 </Dropdown.Item>
-                        
+
                                 <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
                                     <Link to='career-path/soc-analyst' className='flex items-center'>
                                         <div>
@@ -151,8 +272,8 @@ function CustomDropDown() {
                                         </div>
                                     </Link>
                                 </Dropdown.Item>
-                        
-                            
+
+
                                 <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
                                     <Link to='career-path/soc-analyst' className='flex items-center'>
                                         <div>
@@ -217,7 +338,7 @@ function CustomDropDown() {
                                         </div>
                                     </Link>
                                 </Dropdown.Item>
-                
+
                             </Dropdown.Submenu>
                         </Dropdown.Item>
                         <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
@@ -246,7 +367,7 @@ function CustomDropDown() {
                                         </div>
                                     </Link>
                                 </Dropdown.Item>
-        
+
                             </Dropdown.Submenu>
                         </Dropdown.Item>
                     </Dropdown.Submenu>
@@ -270,7 +391,7 @@ function CustomDropDown() {
                         </div>
                     </Link>
                 </Dropdown.Item>
-                
+
                 <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
                     <Link to='insider-pro' className='flex items-center'>
                         <GiProgression className='text-2xl mr-2 text-white' />
@@ -334,7 +455,7 @@ function CustomDropDown() {
             <Dropdown title='for Business ↴' className="dropdown-container"
                 menuClassName="dropdown-menu p-2"
                 itemClassName="dropdown-item"
-                submenuClassName="dropdown-submenu" 
+                submenuClassName="dropdown-submenu"
                 openOnHover={isHovered}
                 position='right'>
                 <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg hover:bg-gray-800 items-center'>
@@ -627,6 +748,200 @@ function CustomDropDown() {
                         </Dropdown.Item>
                     </Dropdown.Submenu>
                 </Dropdown.Item>
+
+            </Dropdown>
+            <Dropdown title='Resources ↴' className="dropdown-container"
+                menuClassName="dropdown-menu p-2"
+                itemClassName="dropdown-item"
+                submenuClassName="dropdown-submenu"
+                openOnHover={isHovered}
+                position='right'>
+                <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg hover:bg-gray-800 items-center'>
+                    <Link to='' className='flex items-center'>
+                        <BiSolidBusiness className='text-2xl mr-2 text-white' />
+                        <div>
+                            <h1 className='text-lg font-semibold text-white'>Career Resources</h1>
+                            <p className='text-sm text-gray-400'>Discover all the information you need to <br />launch a cybersecurity career.</p>
+                        </div>
+                    </Link>
+                    <Dropdown.Submenu className='custom-submenu' position='right'>
+                        <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                            <Link to='business-resources/how-to-retool-it-skills-for-cybersecurity-roles' className='flex items-center'>
+                                <div>
+                                    <h1 className='text-lg text-white'>How to Retool IT Skills for <br />Cybersecurity Roles</h1>
+                                </div>
+                            </Link>
+                        </Dropdown.Item>
+                        <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                            <Link to='resources/cybersecurity-career-guide' className='flex items-center'>
+                                <div>
+                                    <h1 className='text-lg text-white'>The Complete Cybersecurity <br /> Career Playbook</h1>
+                                </div>
+                            </Link>
+                        </Dropdown.Item>
+                    </Dropdown.Submenu>
+                </Dropdown.Item>
+                <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg hover:bg-gray-800 items-center'>
+                    <Link to='podcast' className='flex items-center'>
+                        <SiFramework className='text-2xl mr-2 text-white' />
+                        <div>
+                            <h1 className='text-lg font-semibold text-white'>Podcasts</h1>
+                            <p className='text-sm text-gray-400'>Listen to industry experts talk about <br /> the latest news and trends in security.</p>
+                        </div>
+                    </Link>
+                    <Dropdown.Submenu className='custom-submenu' position='right'>
+                        <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                            <Link to='podcast-series/go-for-it' className='flex items-center'>
+                                <div>
+                                    <h1 className='text-lg text-white'>Go For It</h1>
+                                </div>
+                            </Link>
+                        </Dropdown.Item>
+                        <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                            <Link to='podcast-series/401-access-denied' className='flex items-center'>
+                                <div>
+                                    <h1 className='text-lg text-white'>401 Access Denied</h1>
+                                </div>
+                            </Link>
+                        </Dropdown.Item>
+                        <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                            <Link to='podcast' className='flex items-center'>
+                                <div>
+                                    <h1 className='text-lg text-white'>Cybrary Podcasts</h1>
+                                </div>
+                            </Link>
+                        </Dropdown.Item>
+                        <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                            <Link to='podcast-series/intruder-alert' className='flex items-center'>
+                                <div>
+                                    <h1 className='text-lg text-white'>Intruder Alert: Conversations <br />with Cybrary's Hackers</h1>
+                                </div>
+                            </Link>
+                        </Dropdown.Item>
+                    </Dropdown.Submenu>
+                </Dropdown.Item>
+                <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg hover:bg-gray-800 items-center'>
+                    <Link to='' className='flex items-center'>
+                        <RiTeamFill className='text-2xl mr-2 text-white' />
+                        <div>
+                            <h1 className='text-lg font-semibold text-white'>Study Guides</h1>
+                            <p className='text-sm text-gray-400'>Supplement Certification Prep courses <br /> to prepare for exams.</p>
+                        </div>
+                    </Link>
+                    <Dropdown.Submenu className='custom-submenu' position='right'>
+                        <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                            <Link to='study-guide/comptia-a-plus' className='flex items-center'>
+                                <div>
+                                    <h1 className='text-lg text-white'>CompTIA A+</h1>
+
+                                </div>
+                            </Link>
+                        </Dropdown.Item>
+                        <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                            <Link to='study-guide/chfi' className='flex items-center'>
+                                <div>
+                                    <h1 className='text-lg text-white'>Computer Hacking Forensic <br />investigator</h1>
+                                </div>
+                            </Link>
+                        </Dropdown.Item>
+                        <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                            <Link to='study-guide/comptia-security-plus' className='flex items-center'>
+                                <div>
+                                    <h1 className='text-lg text-white'>CompTIA Sec+</h1>
+                                </div>
+                            </Link>
+                        </Dropdown.Item>
+                        <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                            <Link to='study-guide/ccna' className='flex items-center'>
+                                <div>
+                                    <h1 className='text-lg text-white'>Cisco CCNA</h1>
+                                </div>
+                            </Link>
+                        </Dropdown.Item>
+                        <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                            <Link to='study-guide/comptia-network-plus' className='flex items-center'>
+                                <div>
+                                    <h1 className='text-lg text-white'>CompTIA Network+</h1>
+                                </div>
+                            </Link>
+                        </Dropdown.Item>
+                        <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                            <Link to='study-guide/pmp' className='flex items-center'>
+                                <div>
+                                    <h1 className='text-lg text-white'>Project Management Professional</h1>
+                                </div>
+                            </Link>
+                        </Dropdown.Item>
+                        <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                            <Link to='study-guide/casp' className='flex items-center'>
+                                <div>
+                                    <h1 className='text-lg text-white'>CompTIA CASP</h1>
+                                </div>
+                            </Link>
+                        </Dropdown.Item>
+                        <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                            <Link to='study-guide/ceh' className='flex items-center'>
+                                <div>
+                                    <h1 className='text-lg text-white'>Certified Ethical Hacker</h1>
+                                </div>
+                            </Link>
+                        </Dropdown.Item>
+                        <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                            <Link to='study-guide/cissp' className='flex items-center'>
+                                <div>
+                                    <h1 className='text-lg text-white'>ISC2 CISSP</h1>
+                                </div>
+                            </Link>
+                        </Dropdown.Item>
+                    </Dropdown.Submenu>
+                </Dropdown.Item>
+                <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg hover:bg-gray-800 items-center'>
+                    <Link to='webinar' className='flex items-center'>
+                        <MdCompareArrows className='text-2xl mr-2 text-white' />
+                        <div>
+                            <h1 className='text-lg font-semibold text-white'>Webinar</h1>
+                            <p className='text-sm text-gray-400'>Get industry advice straight from <br /> the experts' mouths.</p>
+                        </div>
+                    </Link>
+                    <Dropdown.Submenu className='custom-submenu' position='right'>
+                        <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                            <Link to='webinar#ctig' className='flex items-center'>
+                                <div>
+                                    <h1 className='text-lg text-white'>Cybrary Threat Intelligence <br /> Group (CTIG)</h1>
+                                </div>
+                            </Link>
+                        </Dropdown.Item>
+                        <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                            <Link to='webinar#team-management' className='flex items-center'>
+                                <div>
+                                    <h1 className='text-lg text-white'>Team Management</h1>
+                                </div>
+                            </Link>
+                        </Dropdown.Item>
+                        <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                            <Link to='webinar#career-skills-development' className='flex items-center'>
+                                <div>
+                                    <h1 className='text-lg text-white'>Career and Skills Development</h1>
+                                </div>
+                            </Link>
+                        </Dropdown.Item>
+                        <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                            <Link to='webinar#certifications' className='flex items-center'>
+                                <div>
+                                    <h1 className='text-lg text-white'>Certifications</h1>
+                                </div>
+                            </Link>
+                        </Dropdown.Item>
+                        <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
+                            <Link to='webinar#news-events' className='flex items-center'>
+                                <div>
+                                    <h1 className='text-lg text-white'>New and Events</h1>
+                                </div>
+                            </Link>
+                        </Dropdown.Item>
+                    </Dropdown.Submenu>
+                </Dropdown.Item>
+              
 
             </Dropdown>
             <li className="text-[18px] cursor-pointer flex items-center">Pricing </li>

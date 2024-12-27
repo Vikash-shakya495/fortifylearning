@@ -17,7 +17,40 @@ const dropdownData = {
     catalog: [
         { icon: <RiShoppingBag4Fill className='text-2xl mr-2' />, name: 'Career Paths', description: 'Launch or advance your career with curated collections of courses, labs, and more.', link: '/career-path' },
         { icon: <GiSkills className='text-2xl mr-2' />, name: 'Skill Paths', description: 'Launch or advance your career with curated collections of courses, labs, and more.', link: '/skill-paths' },
-        { icon: <PiCertificateBold className='text-2xl mr-2' />, name: 'Certification Prep', description: 'Prepare for and maintain leading cybersecurity certifications.', link: '/certifications' },
+        { icon: <PiCertificateBold className='text-2xl mr-2' />, name: 'Certification Prep', description: 'Prepare for and maintain leading cybersecurity certifications.', link: '/certification-prep', 
+            subItems: [
+                {
+                    name: 'Beginner',
+                    subItems: [
+                        { name: 'Comptia Security+ Certification Prep', link: '/certification-prep-courses/security-plus' },
+                        { name: 'CompTIA Project+ Certification Training (PKO-004)', link: '/course/comptia-project-plus-pk0-004' },
+                        { name: 'AZ 900 Azure Fundamentals', link: '/certification-prep-courses/microsoft-azure-fundamentals' },
+                        { name: 'CompTIA A+ Certification Course & Training', link: '/course/comptia-a-plus' },
+                    ],
+                },
+                {
+                    name: 'Intermediate',
+                    // link: '/subitem-2',
+                    subItems: [
+                        { name: 'CISA Certification Prep', link: '/certification-prep-courses/certified-information-systems-auditor' },
+                        { name: 'CertNexus Cybersec First Responder', link: '/certification-prep-courses/cybersec-first-responder' },
+                        { name: 'Certified Cloud Security Professional (CCSP) Certification Prep', link: '/certification-prep-courses/certified-cloud-security-professional' },
+                        { name: 'AWS Certified Security Specialty Certification Prep', link: '/certification-prep-courses/aws-certified-security-specialty' },
+                    ],
+                },
+                {
+                    name: 'Advance',
+                    // link: '/subitem-2',
+                    subItems: [
+                        { name: 'CRISC Certification Prep', link: '/certification-prep-courses/certified-in-risk-and-information-systems-control-crisc' },
+                        { name: 'AZ-305 Designing Microsoft Azure Infrastructure Solutions Certification Prep', link: '/certification-prep-courses/designing-microsoft-azure-infrastructure-solutions' },
+                        { name: 'CompTIA CASP+ Certification Prep', link: '/certification-prep-courses/casp-plus' },
+                        { name: 'CISSP Certification Prep', link: '/course/certified-information-systems-security-professional' },
+                    ],
+                },
+            
+            ],
+        },
         { icon: <PiTargetLight className='text-2xl mr-2' />, name: 'Mission Readiness', description: 'Learn how to detect and mitigate the latest threats and vulnerabilities.', link: '/mitre-attack' },
         { icon: <PiBrowserLight className='text-2xl mr-2' />, name: 'Browse the Catalog', link: '/catalog' },
         { icon: <RiQuestionAnswerFill className='text-2xl mr-2' />, name: 'Instructors', link: '/instructor' },
@@ -158,6 +191,47 @@ const dropdownData = {
             ],
         },
     ],
+
+    resources: [
+        { icon: <PiCertificateBold className='text-2xl mr-2' />, name: 'Career Resources', description: 'Discover all the information you need to launch a cybersecurity career.', 
+            subItems: [
+                { name: 'How to Retool IT Skills for Cybersecurity Roles', link: '/business-resources/how-to-retool-it-skills-for-cybersecurity-roles' },
+                { name: 'The Complete Cybersecurity Career Playbook', link: '/resources/cybersecurity-career-guide' },
+            ],
+            
+        },
+        { icon: <PiTargetLight className='text-2xl mr-2' />, name: 'Podcasts', description: 'Listen to industry experts talk about the latest news and trends in security.', link: '/podcast',
+            subItems: [
+                { name: 'Go For It', link: '/podcast-series/go-for-it' },
+                { name: '401 Access Denied', link: '/podcast-series/401-access-denied' },
+                { name: 'Cybrary Podcasts', link: '/podcast' },
+                { name: "Intruder Alert: Conversations with Cybrary's Hackers", link: '/podcast-series/intruder-alert' },
+            ],
+         },
+        { icon: <PiBrowserLight className='text-2xl mr-2' />, name: 'Study Guides', description: "Supplement Certification Prep courses to prepare for exams",
+            subItems: [
+                { name: 'CompTIA A+', link: '/study-guide/comptia-a-plus' },
+                { name: 'Computer Hacking Forensic investigator', link: '/study-guide/chfi' },
+                { name: 'CompTIA Sec+', link: '/study-guide/comptia-security-plus' },
+                { name: "Cisco CCNA", link: '/study-guide/ccna' },
+                { name: "CompTIA Network+", link: '/study-guide/comptia-network-plus' },
+                { name: "Project Management Professional", link: '/study-guide/pmp' },
+                { name: "CompTIA CASP", link: '/study-guide/casp' },
+                { name: "Certified Ethical Hacker", link: '/study-guide/ceh' },
+                { name: "ISC2 CISSP", link: '/study-guide/cissp' },
+            ],
+         },
+        { icon: <RiQuestionAnswerFill className='text-2xl mr-2' />, name: 'Webinar', description:"Get industry advice straight from the experts' mouths", link: '/webinar',
+            subItems: [
+                { name: 'Cybrary Threat Intelligence', link: '/webinar#ctig' },
+                { name: 'Team Management', link: '/webinar#team-management' },
+                { name: 'Career and Skills Development', link: '/webinar#career-skills-development' },
+                { name: "Certifications", link: '/webinar#certifications' },
+                { name: "New and Events", link: '/webinar#news-events' },
+            ],
+         },
+    ],
+
 };
 
 const HamburgerMenu = ({ toggleMenu, isMenuOpen }) => {
@@ -236,6 +310,69 @@ const HamburgerMenu = ({ toggleMenu, isMenuOpen }) => {
                                                 </div>
                                             </NavLink>
                                         </div>
+                                        {nestedDropdown === item.name && item.subItems && (
+                                            <div className="ml-4 mt-2">
+                                                <button
+                                                    className="text-sm text-gray-400 mb-2"
+                                                    onClick={() => setNestedDropdown(null)}
+                                                >
+                                                    &larr; Back
+                                                </button>
+                                                <ul className="space-y-2">
+                                                    {item.subItems.map((subItem, subIndex) => (
+                                                        <li key={subIndex} className="flex flex-col">
+                                                            <div
+                                                                className="p-2 hover:bg-gray-800 rounded-lg cursor-pointer"
+                                                                onClick={() =>
+                                                                    subItem.subItems
+                                                                        ? handleSubNestedDropdownToggle(
+                                                                            subItem.name
+                                                                        )
+                                                                        : null
+                                                                }
+                                                            >
+                                                                <NavLink to={subItem.link}>
+                                                                    {subItem.name}
+                                                                </NavLink>
+                                                            </div>
+                                                            {subNestedDropdown === subItem.name && subItem.subItems && (
+                                                                <div className="ml-4 mt-2">
+                                                                    <button
+                                                                        className="text-sm text-gray-400 mb-2"
+                                                                        onClick={() => setSubNestedDropdown(null)}
+                                                                    >
+                                                                        &larr; Back
+                                                                    </button>
+                                                                    <ul className="space-y-2">
+                                                                        {subItem.subItems.map(
+                                                                            (
+                                                                                subSubItem,
+                                                                                subSubIndex
+                                                                            ) => (
+                                                                                <NavLink
+                                                                                    to={
+                                                                                        subSubItem.link
+                                                                                    }
+                                                                                    key={
+                                                                                        subSubIndex
+                                                                                    }
+                                                                                >
+                                                                                    <li className="p-2 hover:bg-gray-800 rounded-lg">
+                                                                                        {
+                                                                                            subSubItem.name
+                                                                                        }
+                                                                                    </li>
+                                                                                </NavLink>
+                                                                            )
+                                                                        )}
+                                                                    </ul>
+                                                                </div>
+                                                            )}
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        )}
                                     </li>
                                 ))}
                             </ul>
@@ -363,6 +500,109 @@ const HamburgerMenu = ({ toggleMenu, isMenuOpen }) => {
                         {openDropdown === 'business' && (
                             <ul className="pl-4 mt-2 space-y-2 text-white">
                                 {dropdownData.business.map((item, index) => (
+                                    <li key={index} className="flex flex-col">
+                                        <div
+                                            className="flex gap-2 p-2 hover:bg-gray-800 rounded-lg items-start cursor-pointer"
+                                            onClick={() =>
+                                                item.subItems
+                                                    ? handleNestedDropdownToggle(item.name)
+                                                    : null
+                                            }
+                                        >
+                                            <NavLink to={item.link}>
+                                                {item.icon}
+                                                <div>
+                                                    <p className="font-bold">{item.name}</p>
+                                                    {item.description && (
+                                                        <p className="text-sm">{item.description}</p>
+                                                    )}
+                                                </div>
+                                            </NavLink>
+                                        </div>
+                                        {nestedDropdown === item.name && item.subItems && (
+                                            <div className="ml-4 mt-2">
+                                                <button
+                                                    className="text-sm text-gray-400 mb-2"
+                                                    onClick={() => setNestedDropdown(null)}
+                                                >
+                                                    &larr; Back
+                                                </button>
+                                                <ul className="space-y-2">
+                                                    {item.subItems.map((subItem, subIndex) => (
+                                                        <li key={subIndex} className="flex flex-col">
+                                                            <div
+                                                                className="p-2 hover:bg-gray-800 rounded-lg cursor-pointer"
+                                                                onClick={() =>
+                                                                    subItem.subItems
+                                                                        ? handleSubNestedDropdownToggle(
+                                                                            subItem.name
+                                                                        )
+                                                                        : null
+                                                                }
+                                                            >
+                                                                <NavLink to={subItem.link}>
+                                                                    {subItem.name}
+                                                                </NavLink>
+                                                            </div>
+                                                            {subNestedDropdown === subItem.name && subItem.subItems && (
+                                                                <div className="ml-4 mt-2">
+                                                                    <button
+                                                                        className="text-sm text-gray-400 mb-2"
+                                                                        onClick={() => setSubNestedDropdown(null)}
+                                                                    >
+                                                                        &larr; Back
+                                                                    </button>
+                                                                    <ul className="space-y-2">
+                                                                        {subItem.subItems.map(
+                                                                            (
+                                                                                subSubItem,
+                                                                                subSubIndex
+                                                                            ) => (
+                                                                                <NavLink
+                                                                                    to={
+                                                                                        subSubItem.link
+                                                                                    }
+                                                                                    key={
+                                                                                        subSubIndex
+                                                                                    }
+                                                                                >
+                                                                                    <li className="p-2 hover:bg-gray-800 rounded-lg">
+                                                                                        {
+                                                                                            subSubItem.name
+                                                                                        }
+                                                                                    </li>
+                                                                                </NavLink>
+                                                                            )
+                                                                        )}
+                                                                    </ul>
+                                                                </div>
+                                                            )}
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        )}
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
+                    </div>
+                </div>
+                <div className="flex flex-col items-start space-y-4 mt-4 pl-6">
+                    <div className="border-t py-2 border-gray-800 w-5/6">
+                        <p
+                            className="text-[18px] cursor-pointer flex items-center"
+                            onClick={() => handleDropdownToggle('resources')}
+                        >
+                            Resources{' '}
+                            <i
+                                className={`fa-solid fa-angle-down ml-2 ${openDropdown === 'resources' ? 'rotate-180' : ''
+                                    }`}
+                            ></i>
+                        </p>
+                        {openDropdown === 'resources' && (
+                            <ul className="pl-4 mt-2 space-y-2 text-white">
+                                {dropdownData.resources.map((item, index) => (
                                     <li key={index} className="flex flex-col">
                                         <div
                                             className="flex gap-2 p-2 hover:bg-gray-800 rounded-lg items-start cursor-pointer"
