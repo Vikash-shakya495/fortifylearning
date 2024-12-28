@@ -74,7 +74,7 @@ import ScheduledTask from "./pages/mitreattack/ScheduledTask";
 import RegistryRunKeys from "./pages/mitreattack/RegistryRunKeys";
 import SoftwareDataIntegrity from "./pages/framework/SoftwareDataIntegrity";
 import InsecureDesign from "./pages/framework/InsecureDesign";
-import SecurityLogging from "./pages/framework/securityLogging";
+import SecurityLogging from "./pages/framework/SecurityLogging";
 import ServerSideRequest from "./pages/framework/ServerSideRequest";
 import SecurityMisconfigration from "./pages/framework/SecurityMisconfigration";
 import CryptographicFailures from "./pages/framework/CryptographicFailures";
