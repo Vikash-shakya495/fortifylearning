@@ -33,8 +33,8 @@ function Certifications() {
             format: "Interactive labs",
             description:
                 "Dive into advanced admin topics like custom objects, complex workflows, and data management",
-            img: 'https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c320276e5718758b7549_CISSP.png',
-            link: '/course/certified-information-systems-security-professional'
+            img: 'https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c29b84b7c5e183ae27ce_HCISPP-p-500.png',
+            link: '/course/hcispp'
         },
         {
             id: 3,
@@ -43,7 +43,7 @@ function Certifications() {
             format: "Hands-on projects",
             description:
                 "Learn core development skills for building and customizing Salesforce applications using Apex and Visualforce.",
-            img: 'https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c320276e5718758b7549_CISSP.png',
+            img: 'https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c049d9cffd9ef8a3264c_itil_4.png',
             link: '/course/certified-information-systems-security-professional'
         },
         {
@@ -53,7 +53,7 @@ function Certifications() {
             format: "Case studies and exercises",
             description:
                 "Explore integration methods and tools for connecting Salesforce with other systems, including APIs and middleware.",
-            img: 'https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c320276e5718758b7549_CISSP.png',
+            img: 'https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c18fcdcdea28d6ad369b_ComputerHacking.png',
             link: '/course/certified-information-systems-security-professional'
         },
         {
@@ -63,8 +63,8 @@ function Certifications() {
             format: "Live demonstrations",
             description:
                 "Master data import, export, and transformation techniques for smooth data migration into Salesforce.",
-            img: 'https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c320276e5718758b7549_CISSP.png',
-            link: '/course/certified-information-systems-security-professional'
+            img: 'https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c0e87d5c861ce9d5318d_AWS_Certified_Security-Specialty_CertPrep.png',
+            link: '/certification-prep-courses/aws-certified-security-specialty'
         },
         {
             id: 6,
@@ -72,8 +72,8 @@ function Certifications() {
             duration: "3 hours",
             format: "On-demand video tutorials",
             description: "Transition from Classic to Lightning Experience, focusing on new features and functionalities.",
-            img: 'https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c320276e5718758b7549_CISSP.png',
-            link: '/course/salesforce-lightning-experience'
+            img: 'https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c30097e20ef212d05e3f_CCSP.png',
+            link: '/certification-prep-courses/certified-cloud-security-professional'
         },
         {
             id: 7,
@@ -81,8 +81,8 @@ function Certifications() {
             duration: "6 hours",
             format: "Interactive scenarios",
             description: "Enhance skills in managing customer service operations with Salesforce Service Cloud, including case management and automation.",
-            img: 'https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c320276e5718758b7549_CISSP.png',
-            link: '/course/salesforce-service-cloud-mastery'
+            img: 'https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c3c2276e5718758c0582_CompTIA_CASP_.png',
+            link: '/certification-prep-courses/casp-plus'
         },
         {
             id: 8,
@@ -90,8 +90,8 @@ function Certifications() {
             duration: "5 hours",
             format: "Case studies and exercises",
             description: "Learn advanced marketing automation and analytics within Salesforce Marketing Cloud.",
-            img: 'https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c320276e5718758b7549_CISSP.png',
-            link: '/course/salesforce-marketing-cloud-insights'
+            img: 'https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c068ff95b6cfe7790e29_AZ-305_CertPrep.png',
+            link: '/certification-prep-courses/designing-microsoft-azure-infrastructure-solutions'
         },
         {
             id: 9,

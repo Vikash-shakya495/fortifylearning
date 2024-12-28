@@ -49,6 +49,7 @@ import Webinar from "./pages/Footer/Webinar";
 import SecurityPlus from "./pages/certifications/beginner/SecurityPlus";
 import ComptiaProjectPlus from "./pages/certifications/beginner/ComptiaProjectPlus";
 import AzureFundamentals from "./pages/certifications/beginner/AzureFundamentals";
+import Az305Designing from "./pages/certifications/advance/Az305Designing";
 import ComptiaAPlus from "./pages/certifications/beginner/ComptiaAPlus";
 import CisaCertifications from "./pages/certifications/intermediate/CisaCertifications";
 import CertNexus from "./pages/certifications/intermediate/CertNexus";
@@ -59,6 +60,24 @@ import ComptiaCasp from "./pages/certifications/advance/ComptiaCasp";
 import CisspCertifications from "./pages/certifications/advance/CisspCertifications";
 import MitreAttackFramework from "./pages/course/MitreAttackFramework";
 import CyberSecurityEngineer from "./pages/careerpath/CyberSecurity";
+import HCispp from "./pages/course/HCispp";
+import ProtocolTunneling from "./pages/mitreattack/ProtocolTunneling";
+import Exfilteration from "./pages/mitreattack/Exfilteration";
+import SSHAuthorized from "./pages/mitreattack/SSHAuthorized";
+import OpenSSL from "./pages/mitreattack/OpenSSL";
+import ApplicationLayer from "./pages/mitreattack/ApplicationLayer";
+import LateralMovement from "./pages/mitreattack/LateralMovement";
+import WindowsService from "./pages/mitreattack/WindowsService";
+import BinaryProxy from "./pages/mitreattack/BinaryProxy";
+import SpinningWebShell from "./pages/mitreattack/SpinningWebShell";
+import ScheduledTask from "./pages/mitreattack/ScheduledTask";
+import RegistryRunKeys from "./pages/mitreattack/RegistryRunKeys";
+import SoftwareDataIntegrity from "./pages/framework/SoftwareDataIntegrity";
+import InsecureDesign from "./pages/framework/InsecureDesign";
+import SecurityLogging from "./pages/framework/securityLogging";
+import ServerSideRequest from "./pages/framework/ServerSideRequest";
+import SecurityMisconfigration from "./pages/framework/SecurityMisconfigration";
+import CryptographicFailures from "./pages/framework/CryptographicFailures";
 
 function App() {
   const location = useLocation();
@@ -86,12 +105,13 @@ function App() {
           <Route path="/course/comptia-project-plus-pk0-004" element={<ComptiaProjectPlus />} />
           <Route path="/certification-prep-courses/microsoft-azure-fundamentals" element={<AzureFundamentals />} />
           <Route path="/course/comptia-a-plus" element={<ComptiaAPlus />} />
+          <Route path="/course/hcispp" element={<HCispp />} />
           <Route path="/certification-prep-courses/certified-information-systems-auditor" element={<CisaCertifications />} />
           <Route path="/certification-prep-courses/cybersec-first-responder" element={<CertNexus />} />
           <Route path="/certification-prep-courses/certified-cloud-security-professional" element={<CloudSecurity />} />
           <Route path="/certification-prep-courses/aws-certified-security-specialty" element={<AwsSecurity />} />
           <Route path="/certification-prep-courses/certified-in-risk-and-information-systems-control-crisc" element={<CriscCertifications />} />
-          <Route path="/certification-prep-courses/designing-microsoft-azure-infrastructure-solutions" element={<CriscCertifications />} />
+          <Route path="/certification-prep-courses/designing-microsoft-azure-infrastructure-solutions" element={<Az305Designing />} />
           <Route path="/certification-prep-courses/casp-plus" element={<ComptiaCasp />} />
           <Route path="/course/certified-information-systems-security-professional" element={<CisspCertifications />} />
           <Route path="course/application-of-the-mitre-attack-framework" element={<MitreAttackFramework />} />
@@ -102,6 +122,25 @@ function App() {
           <Route path="career-path/system-administrator" element={<SystemAdministrator />} />
           <Route path="career-path/soc-analyst" element={<SocAnalyst />} />
           <Route path="career-path/security-engineer" element={<CyberSecurityEngineer />} />
+
+          <Route path="course/cyber-network-security" element={<ProtocolTunneling />} />
+          <Route path="practice-lab/secure-network-access" element={<Exfilteration />} />
+          <Route path="practice-lab/configure-a-virtual-network-service-endpoint" element={<SSHAuthorized />} />
+          <Route path="practice-lab/configure-linux-firewall-acl-rules" element={<OpenSSL />} />
+          <Route path="practice-lab/configure-ip-routing-with-linux-on-azure" element={<ApplicationLayer />} />
+          <Route path="practice-lab/configure-network-connectivity-for-linux-on-azure" element={<LateralMovement />} />
+          <Route path="practice-lab/deploy-ubuntu-linux-virtual-machines-in-the-microsoft-azure" element={<WindowsService />} />
+          <Route path="practice-lab/can-you-use-pki-to-secure-a-network-environment-expert" element={<BinaryProxy />} />
+          <Route path="practice-lab/configure-a-network-security-group-in-a-virtual-network" element={<SpinningWebShell />} />
+          <Route path="practice-lab/identify-non-secure-network-traffic" element={<ScheduledTask />} />
+          <Route path="course/mitre-attack-registry-run-keys" element={<RegistryRunKeys />} />
+
+          <Route path="course/owasp-software-and-data-integrity-failures" element={<SoftwareDataIntegrity />} />
+          <Route path="course/owasp-insecure-design" element={<InsecureDesign />} />
+          <Route path="course/owasp-security-logging-and-monitoring-failures" element={<SecurityLogging />} />
+          <Route path="course/owasp-server-side-request-forgery" element={<ServerSideRequest />} />
+          <Route path="course/owasp-security-misconfiguration" element={<SecurityMisconfigration />} />
+          <Route path="course/owasp-cryptographic-failures" element={<CryptographicFailures />} />
 
           <Route path="threat-actor-campaign/weak-link-in-the-supply-chain" element={<SupplyChain />} />
           <Route path="threat-actor-campaign/double-trouble-with-double-dragon" element={<DoubleTrouble />} />

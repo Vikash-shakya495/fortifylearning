@@ -53,7 +53,7 @@ const FrameworkAlignment = () => {
       duration: "8H:20M",
       ceus: "8 CEUS",
       image: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/64e784d38835d8cfd88b476b_SC-200_cover-p-500.png",
-      link: '/course/sc-200-microsoft-security-operations-analyst'
+      link: '/course/comptia-a-plus'
     },
     {
       title: "CompTIA Security+ Certification Prep",
@@ -64,7 +64,7 @@ const FrameworkAlignment = () => {
       duration: "18H:28M",
       ceus: "10 CEUS",
       image: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c1717d5c861ce9d59709_CompTIA_Security_-p-500.png",
-      link: '/course/sc-200-microsoft-security-operations-analyst'
+      link: '/certification-prep-courses/security-plus'
     },
     {
       title: "OWASP Top 10 - A08:2021 - Software and Data Integrity Failures",
@@ -73,7 +73,7 @@ const FrameworkAlignment = () => {
       duration: "2H:37M",
       ceus: "3 CEUS",
       image: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c1717d5c861ce9d59709_CompTIA_Security_-p-500.png",
-      link: '/course/sc-200-microsoft-security-operations-analyst'
+      link: '/course/owasp-software-and-data-integrity-failures'
     },
     {
       title: "OWASP Top 10 - A04:2021 - Insecure Design",
@@ -83,7 +83,7 @@ const FrameworkAlignment = () => {
       duration: "1H:34M",
       ceus: "2 CEUS",
       image: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c1717d5c861ce9d59709_CompTIA_Security_-p-500.png",
-      link: '/course/sc-200-microsoft-security-operations-analyst'
+      link: '/course/owasp-insecure-design'
     },
     {
       title: "OWASP Top 10 - A09:2021 - Security Logging and Monitoring Failures",
@@ -93,7 +93,7 @@ const FrameworkAlignment = () => {
       duration: "2H:4M",
       ceus: "2 CEUS",
       image: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c1717d5c861ce9d59709_CompTIA_Security_-p-500.png",
-      link: '/course/sc-200-microsoft-security-operations-analyst'
+      link: '/course/owasp-security-logging-and-monitoring-failures'
     },
     {
       title: " OWASP Top 10 - A10:2021 - Server-Side Request Forgery (SSRF) (2 Hours, 10 Minutes, 2CEUs)",
@@ -103,7 +103,7 @@ const FrameworkAlignment = () => {
       duration: "2H:10M",
       ceus: "2 CEUS",
       image: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c1717d5c861ce9d59709_CompTIA_Security_-p-500.png",
-      link: '/course/sc-200-microsoft-security-operations-analyst'
+      link: '/course/owasp-server-side-request-forgery'
     },
     {
       title: "OWASP Top 10 - A05:2021 - Security Misconfiguration",
@@ -113,7 +113,7 @@ const FrameworkAlignment = () => {
       duration: "2H:46M",
       ceus: "4 CEUS",
       image: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c1717d5c861ce9d59709_CompTIA_Security_-p-500.png",
-      link: '/course/sc-200-microsoft-security-operations-analyst'
+      link: '/course/owasp-security-misconfiguration'
     },
     {
       title: " OWASP Top 10 - A02:2021 - Cryptographic Failures",
@@ -123,7 +123,7 @@ const FrameworkAlignment = () => {
       duration: "2H:19M",
       ceus: "3 CEUS",
       image: "https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c1717d5c861ce9d59709_CompTIA_Security_-p-500.png",
-      link: '/course/sc-200-microsoft-security-operations-analyst'
+      link: '/course/owasp-cryptographic-failures'
     },
   ];
 

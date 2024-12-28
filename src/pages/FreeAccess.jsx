@@ -226,30 +226,30 @@ const FreeAccess = () => {
                             ceus: "10 CEUS",
                             link: '/course/salesforce-security-compliance'
                         },
-                    ].map((course, index) => (
+                    ].map((course) => (
                         <div
-                            key={index}
-                            className="bg-[#1a1a1a] text-gray-300 rounded-2xl shadow-md border border-gray-500 overflow-hidden flex flex-col group transition-all duration-300"
+                            key={course.id}
+                            className={`group relative rounded-lg border-gray-100 border shadow-lg bg-gray-900 overflow-hidden transition-all duration-300 hover:pb-16`}
                         >
                             <NavLink to={course.link}>
-                                <img src={course.imgSrc} alt={course.title} className="w-full h-40 object-cover" />
-                                <div className="p-6 flex flex-col flex-grow transition-all duration-300 group-hover:pb-10">
-                                    <div className="flex gap-2 mb-4">
-                                        <span className="bg-pink-500 text-white text-xs font-medium px-3 py-1 rounded-full">
-                                            COURSE
+                                <img className="rounded-lg" src={course.imgSrc} alt={course.title} />
+                                <div className="p-4 transition-all duration-300">
+                                    <div className="mb-4">
+                                        <span className="text-xs font-bold bg-pink-600 py-2 px-3 rounded-full uppercase">
+                                            Course
                                         </span>
-                                        <span className="bg-black text-white text-xs font-medium px-3 py-1 rounded-full">
-                                            {course.duration}
-                                        </span>
-                                        <span className="bg-black text-white text-xs font-medium px-3 py-1 rounded-full">
-                                            {course.ceus}
-                                        </span>
+                                        <div className="flex gap-2 mt-6">
+                                            <span className="py-1 bg-black rounded-xl px-3">{course.duration}</span>
+                                            <span className="py-1 bg-black rounded-xl px-3">{course.ceus}</span>
+                                        </div>
                                     </div>
-                                    <h3 className="text-lg font-semibold mb-4">{course.title}</h3>
-                                    <p className="text-sm mb-4 flex-grow">{course.description}</p>
-                                    {/* Button with opacity and transition */}
-                                    <button className="px-6 py-3 bg-gradient-to-r from-red-500 via-pink-500 to-fuchsia-500 rounded-2xl text-white font-semibold mx-auto md:mx-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100">
-                                        Learn More & Enroll
+                                    <p className="mt-6 text-2xl font-semibold">{course.title}</p>
+                                    <p className="text-md mt-2 text-gray-300 line-clamp-3">{course.description}</p>
+                                </div>
+                                {/* Learn More Button */}
+                                <div className="absolute bottom-4 left-0 right-0 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <button className="px-4 py-2 bg-gradient-to-r from-orange-600 via-pink-600 to-fuchsia-600 text-white rounded-lg hover:bg-pink-700">
+                                        Learn More and Enroll
                                     </button>
                                 </div>
                             </NavLink>

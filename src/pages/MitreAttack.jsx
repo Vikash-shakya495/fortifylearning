@@ -13,7 +13,7 @@ import SignupComponent from "../components/home/SignupComponent";
 function MitreAttack() {
     const salesforceCourses = [
         {
-            img: 'https://isodoc.co.uk/wp-content/uploads/2023/06/training-procedure.jpg',
+            img: 'https://cdn.prod.website-files.com/63eef1be981a383fb127661f/648c453a2e58311bafd02845_TAC_Royal_Ransomware_Group_1.png',
             title: 'Salesforce Administrator Certification',
             overview: ' In this course, you will learn the basics of managing and configuring Salesforce. You will review key features and functionalities, such as user management, security settings, and data management. This course will prepare you for the Salesforce Administrator certification exam',
             duration: '4 hours',
@@ -21,7 +21,7 @@ function MitreAttack() {
             link: '/course/cyber-network-security'
         },
         {
-            img: 'https://cdn.shopaccino.com/igmguru/products/salesforce-training-igmguru_1400382585_l.jpg?v=500',
+            img: 'https://cdn.prod.website-files.com/63eef1be981a383fb127661f/648c45286f76cd78e7a6a0b5_TAC_Royal_Ransomware_Group_3.png',
             title: 'Salesforce Advanced Administrator Certification',
             overview: 'Dive deeper into Salesforce administration with advanced topics such as automation, process builder, and custom reporting. This course is designed for those who have mastered the basics and are looking to enhance their administrative skills and earn the Advanced Administrator certification.',
             duration: '6 hours',
@@ -29,7 +29,7 @@ function MitreAttack() {
             link: '/practice-lab/secure-network-access'
         },
         {
-            img: 'https://dianapps.com/blog/wp-content/uploads/2022/12/Reasons-Why-Every-Company-Needs-a-Dedicated-Salesforce-Developer.png',
+            img: 'https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c33ad1f6c9a99bb377c8_SSH_Authorized_Keys.png',
             title: 'Salesforce Platform App Builder Certification',
             overview: 'This course covers the essentials of developing custom applications on the Salesforce platform. Learn about data modeling, user interface design, and business logic. It’s perfect for those looking to pass the Salesforce Platform App Builder certification exam.',
             duration: '8 hours',
@@ -37,7 +37,7 @@ function MitreAttack() {
             link: '/practice-lab/configure-a-virtual-network-service-endpoint'
         },
         {
-            img: 'https://www.apexhours.com/wp-content/uploads/2021/06/Factors-Influencing-Salesforce-Org-Strategy.png',
+            img: 'https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c024743e430cbf97f7d0_CVE_OpenSSLInfiniteLoop.png',
             title: 'Salesforce Sales Cloud Consultant Certification',
             overview: 'Specialize in Salesforce Sales Cloud with this course that focuses on sales processes, opportunity management, and forecasting. This training prepares you for the Sales Cloud onsultant certification exam, helping you optimize sales performance in your organization',
             duration: '5 hours',
@@ -45,7 +45,7 @@ function MitreAttack() {
             link: '/practice-lab/configure-linux-firewall-acl-rules'
         },
         {
-            img: 'https://360degreecloud.com/wp-content/uploads/2024/03/Salesforce-Data-Migration-Why-Its-Time-to-Make-the-Move-1024x535.jpg',
+            img: 'https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c0f5b299c17024b4fd96_TAC_RaspberryRobin_5.png',
             title: '*Salesforce Service Cloud Consultant Certification',
             overview: ' Master Salesforce Service Cloud to improve customer service and support operations. Topics include case management, service console, and knowledge management. This course is aimed at preparing you for the Service Cloud Consultant certification exam.',
             duration: '4 hours',
@@ -53,7 +53,7 @@ function MitreAttack() {
             link: '/practice-lab/configure-ip-routing-with-linux-on-azure'
         },
         {
-            img: 'https://ceptes.com/wp-content/uploads/2020/02/Top-10-lightning-features-1-1.jpg',
+            img: 'https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c079d9cffd9ef8a351ea_WeakLinkInTheSupplyChain_4.png',
             title: 'Salesforce Marketing Cloud Certification',
             overview: 'Explore Salesforce Marketing Cloud features like email marketing, automation, and data management. This course is ideal for those aiming to become certified Marketing Cloud professionals and enhance their marketing capabilities.',
             duration: '3 hours',
@@ -61,7 +61,7 @@ function MitreAttack() {
             link: '/practice-lab/configure-network-connectivity-for-linux-on-azure'
         },
         {
-            img: 'https://www.mastersoftwaresolutions.com/wp-content/uploads/2024/02/mss-founded-by-ravi-garg-website-insights-key-components-and-features-of-salesforce-service-cloud.webp',
+            img: 'https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c0b5046b92b8127ae9b1_TAC_2022_Double_Dragon_2.png',
             title: '*Salesforce Field Service Certification',
             overview: 'Learn how to implement and manage Salesforce Field Service to optimize field operations. This course covers scheduling, mobile workforce, and service resources, preparing you for the Salesforce Field Service certification exam.',
             duration: '6 hours',
@@ -69,7 +69,7 @@ function MitreAttack() {
             link: '/practice-lab/deploy-ubuntu-linux-virtual-machines-in-the-microsoft-azure'
         },
         {
-            img: 'https://www.ksolves.com/wp-content/uploads/Blog-3.jpg',
+            img: 'https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c0b02fb9a4a0ef347129_TAC_2022_Double_Dragon_1.png',
             title: 'Salesforce Integration Architecture Designer Certification',
             overview: ' Gain expertise in integrating Salesforce with other systems. This course covers integration patterns, APIs, and security considerations, helping you prepare for the Integration Architecture Designer certification exam',
             duration: '5 hours',
@@ -77,7 +77,7 @@ function MitreAttack() {
             link: '/practice-lab/can-you-use-pki-to-secure-a-network-environment-expert'
         },
         {
-            img: 'https://www.techforceservices.com/wp-content/uploads/2021/03/top-5-salesforce-security-best-practices.webp',
+            img: 'https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c01694fdd269537ab8e1_Server_Software_Component__Web_Shell.png',
             title: 'Salesforce Data Architect Certification',
             overview: ' Focus on data modeling, data management, and data quality with Salesforce. This course prepares you for the Salesforce Data Architect certification exam by covering advanced data handling and architecture concepts.',
             duration: '4 hours',
@@ -85,7 +85,7 @@ function MitreAttack() {
             link: '/practice-lab/configure-a-network-security-group-in-a-virtual-network'
         },
         {
-            img: 'https://dwlrs858nh2or.cloudfront.net/wp-content/uploads/2024/02/14195041/Salesforce-CPQ-Basics.webp',
+            img: 'https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c00d743e430cbf97f5f4_Scheduled_Task.png',
             title: 'Salesforce Development & Coding',
             overview: 'This course provides an in-depth look at Salesforce development using Apex, Visualforce, and Lightning components. Ideal for aspiring Salesforce developers who want to build custom applications and enhance their coding skills.',
             duration: '5 hours',
@@ -93,12 +93,12 @@ function MitreAttack() {
             link: '/practice-lab/identify-non-secure-network-traffic'
         },
         {
-            img: 'https://sunshineskill.com/wp-content/uploads/2024/07/analytics-cloud.jpg',
+            img: 'https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468c00494fdd269537ab6c9_Registry_Run_Keys.png',
             title: 'Salesforce Lightning Experience',
             overview: 'Understand the Lightning Experience interface and how to migrate from Classic to Lightning This course covers customization, new features, and best practices to fully leverage Salesforce Lightning.',
             duration: '5 hours',
             format: 'Practical exercises and case studies',
-            link: '/practice-lab/identify-non-secure-network-traffic'
+            link: '/course/mitre-attack-registry-run-keys'
         },
     ];
 
@@ -263,7 +263,7 @@ function MitreAttack() {
                 </p>
 
                 {/* Cards Section */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:w-5/6 mx-auto gap-6 px-5 md:px-0 ">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:w-5/6 mx-auto gap-6 px-5 md:px-0 ">
                     {currentCards.map((course) => (
                         <div
                             key={course.id}
