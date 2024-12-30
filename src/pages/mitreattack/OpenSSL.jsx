@@ -285,10 +285,11 @@ function OpenSSL() {
                         <h1>Instructed by</h1>
                     </div>
                     <div className='p-8 flex items-center gap-4 border bg-slate-900 rounded-xl mt-12'>
-                        <LiaChalkboardTeacherSolid className='w-1/3 text-3xl lg:text-6xl' />
-                        <div className='w-2/3 text-center'>
-                            <h2 className='text-lg lg:text-xl bg-gradient-to-r from-red-600 via-pink-500 to-fuchsia-700 rounded-xl p-1'>Instructor</h2>
-                            <p className='text-xl mt-4'>Raymond Evans</p>
+                        <img className='w-1/3 rounded-full' src="https://cdn.prod.website-files.com/63eef1be981a383fb127661f/6468bfd41f5ef0847b926681_Chris_Daywalt_Pic.jpeg" alt="" />
+                        <div className='w-2/3 '>
+                            <h2 className='text-lg text-center lg:text-xl bg-gradient-to-r from-red-600 via-pink-500 to-fuchsia-700 rounded-xl p-1'>Senior Instructor</h2>
+                            <p className='text-xl mt-4'>Chris Daywalt</p>
+                            <p className='mt-2 text-gray-400 line-clamp-3'>After too many years of security operations work, Chris Daywalt tries to turn his phone off at 5:00 pm EST. While there are a bunch of training classes and education somewhere on his resume, much of what he has to teach was learned at the school of hard knocks, often at the expense of his previous clients. He wants to help you spend more time detecting and denying adversaries and less time banging your head against your keyboard. He dips his blueberry donuts in orange juice.</p>
                         </div>
                     </div>
                     <div className='flex flex-col mt-12'>
