@@ -78,6 +78,15 @@ import SecurityLogging from "./pages/framework/SecurityLogging";
 import ServerSideRequest from "./pages/framework/ServerSideRequest";
 import SecurityMisconfigration from "./pages/framework/SecurityMisconfigration";
 import CryptographicFailures from "./pages/framework/CryptographicFailures";
+import CveSeries from "./pages/CveSeries";
+import Press from "./pages/Footer/Press";
+import IntruderAlert from "./pages/podcasts/IntruderAlert";
+import ThreatActorCompaign from "./pages/ThreatActorCompaign";
+import DoNotBelieve from "./pages/mission/course/DoNotBelieve";
+import Checkout from "./pages/pricing/Checkout";
+import EffectiveCISO from "./pages/careerpath/EffectiveCISO";
+import ItCybersecurity from "./pages/careerpath/ItCybersecurity";
+import GoForIt from "./pages/podcasts/GoForIt";
 
 function App() {
   const location = useLocation();
@@ -87,6 +96,7 @@ function App() {
     "/login", 
     "/forum",
     "/help-center",
+    "/upgrade/checkout"
   ].includes(location.pathname);
 
   return (
@@ -100,6 +110,8 @@ function App() {
           <Route path="/career-path" element={<CareerPath />} />
           <Route path="/skill-paths" element={<SkillsPath />} />
           <Route path="/free-content" element={<FreeAccess />} />
+          <Route path="/cve-series" element={<CveSeries />} />
+          <Route path="/threat-actor-campaigns" element={<ThreatActorCompaign />} />
 
           <Route path="/certification-prep-courses/security-plus" element={<SecurityPlus />} />
           <Route path="/course/comptia-project-plus-pk0-004" element={<ComptiaProjectPlus />} />
@@ -122,6 +134,8 @@ function App() {
           <Route path="career-path/system-administrator" element={<SystemAdministrator />} />
           <Route path="career-path/soc-analyst" element={<SocAnalyst />} />
           <Route path="career-path/security-engineer" element={<CyberSecurityEngineer />} />
+          <Route path="career-path/12-competencies-of-the-effective-ciso" element={<EffectiveCISO />} />
+          <Route path="career-path/foundations" element={<ItCybersecurity />} />
 
           <Route path="course/cyber-network-security" element={<ProtocolTunneling />} />
           <Route path="practice-lab/secure-network-access" element={<Exfilteration />} />
@@ -157,6 +171,7 @@ function App() {
           <Route path="/course/cybrary-challenge-space-mission1" element={<SpaceMission />} />
           <Route path="/course/cybrary-challenge-saving-a-fellow-monster" element={<FellowMonster />} />
           <Route path="/course/cybrary-challenge-a-message-within-a-message" element={<Message />} />
+          <Route path="/course/cybrary-challenge-donot-believe-what-you-hear" element={<DoNotBelieve />} />
 
           <Route path="/mitre-attack" element={<MitreAttack />} />
           <Route path="/alliances" element={<Alliances />} />
@@ -175,12 +190,15 @@ function App() {
           <Route path="/careers" element={<Careers />} />
           <Route path="/podcast" element={<CybraryPodcast />} />
           <Route path="/webinar" element={<Webinar />} />
-
+          <Route path="/press" element={<Press />} />
+          <Route path="/podcast-series/intruder-alert" element={<IntruderAlert />} />
+          <Route path="/podcast-series/go-for-it" element={<GoForIt />} />
           
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/forum" element={<Forum />} />
         <Route path="/help-center" element={<MainHelpCenter />} />
+          <Route path="/upgrade/checkout" element={<Checkout />} />
         <Route path="/help-center/sections/33851861355923-Billing" element={<Billing />} />
       </Routes>
       {!hideNavbarAndFooter && <Footer />}
