@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import { togglePopup } from '../../store/signupPopupSlice';
 import SignupPopup from '../../loginSystem/SignupPopup';
 import { FiShare2 } from "react-icons/fi";
@@ -27,7 +28,7 @@ function CouchDBRCE() {
 
     // popUp share button
     const dispatch = useDispatch();
-    const url = 'https://www.cybrary.it/career-path/network-engineer';
+    const url = `https://www.fortifylearning.it${location.pathname}`
 
     const [showPopup, setShowPopup] = useState(false);
 
@@ -88,16 +89,24 @@ function CouchDBRCE() {
                                 </h3>
                                 <div className="flex gap-4">
                                     <button className="border p-3 rounded-full">
-                                        <FaFacebookSquare className="text-2xl sm:text-3xl text-white" />
+                                        <NavLink to='https://facebook.com'>
+                                            <FaFacebookSquare className="text-2xl sm:text-3xl text-white" />
+                                        </NavLink>
                                     </button>
                                     <button className="border p-3 rounded-full">
-                                        <FaSquareTwitter className="text-2xl sm:text-3xl text-white" />
+                                        <NavLink to='https://twitter.com'>
+                                            <FaSquareTwitter className="text-2xl sm:text-3xl text-white" />
+                                        </NavLink>
                                     </button>
                                     <button className="border p-3 rounded-full">
-                                        <BsLinkedin className="text-2xl sm:text-3xl text-white" />
+                                        <NavLink to='https://linkedin.com'>
+                                            <BsLinkedin className="text-2xl sm:text-3xl text-white" />
+                                        </NavLink>
                                     </button>
                                     <button className="border p-3 rounded-full">
-                                        <MdOutlineMarkEmailRead className="text-2xl sm:text-3xl text-white" />
+                                        <NavLink to='https://gmail.com'>
+                                            <MdOutlineMarkEmailRead className="text-2xl sm:text-3xl text-white" />
+                                        </NavLink>
                                     </button>
                                 </div>
                                 <div className="flex items-center gap-4">
