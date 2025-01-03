@@ -1,8 +1,7 @@
 // course/cve-series-couchdb-rce-cve-2022-24706
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { useLocation } from 'react-router-dom';
 import { togglePopup } from '../../store/signupPopupSlice';
 import SignupPopup from '../../loginSystem/SignupPopup';
 import { FiShare2 } from "react-icons/fi";
@@ -28,7 +27,7 @@ function CouchDBRCE() {
 
     // popUp share button
     const dispatch = useDispatch();
-    const url = `https://www.fortifylearning.it${location.pathname}`
+    const url = `${location.origin}${location.pathname}`;
 
     const [showPopup, setShowPopup] = useState(false);
 
