@@ -379,7 +379,7 @@ function CustomDropDown() {
                     </NavLink>
                 </Dropdown.Item>
                 <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
-                    <NavLink to='for-teams' className='flex items-center'>
+                    <NavLink to='business' className='flex items-center'>
                         <RiTeamFill className='text-2xl mr-2 text-white' />
                         <div>
                             <h1 className='text-lg font-semibold text-white'>For Teams</h1>
@@ -911,7 +911,11 @@ function CustomDropDown() {
                     </Dropdown.Submenu>
                 </Dropdown.Item>
             </Dropdown>
-            <li className="text-[18px] cursor-pointer flex items-center">Pricing </li>
+            <li className="text-[18px] cursor-pointer flex items-center">
+                <NavLink to='pricing'>
+                    Pricing
+                </NavLink>
+            </li>
         </div >
 
     );

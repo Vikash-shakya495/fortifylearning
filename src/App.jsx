@@ -87,14 +87,21 @@ import Checkout from "./pages/pricing/Checkout";
 import EffectiveCISO from "./pages/careerpath/EffectiveCISO";
 import ItCybersecurity from "./pages/careerpath/ItCybersecurity";
 import GoForIt from "./pages/podcasts/GoForIt";
+import Baseline from "./pages/Baseline";
+import ExfilterationCourse from "./pages/mission/threat/ExfilterationCourse";
+import GobbleGobble from "./pages/mission/course/GobbleGobble";
+import Business from "./pages/Business";
+import ForgotPassword from "./loginSystem/ForgotPassword";
+import SuccessStories from "./pages/SuccessStories";
 
 function App() {
   const location = useLocation();
 
   // Pages where Navbar and Footer should not appear
   const hideNavbarAndFooter = [
-    "/login", 
+    "/login",
     "/forum",
+    "/forgot-password",
     "/help-center",
     "/upgrade/checkout"
   ].includes(location.pathname);
@@ -160,6 +167,7 @@ function App() {
           <Route path="threat-actor-campaign/double-trouble-with-double-dragon" element={<DoubleTrouble />} />
           <Route path="threat-actor-campaign/raspberry-robin" element={<RaspberryRobin />} />
           <Route path="threat-actor-campaign/magic-hound" element={<MagicHound />} />
+          <Route path="threat-actor-campaign/exfiltration-and-extortion" element={<ExfilterationCourse />} />
 
           <Route path="course/cve-series-couchdb-rce-cve-2022-24706" element={<CouchDBRCE />} />
           <Route path="course/cve-series-f5-big-ip-cve-2022-1388" element={<BigIp />} />
@@ -172,6 +180,7 @@ function App() {
           <Route path="/course/cybrary-challenge-saving-a-fellow-monster" element={<FellowMonster />} />
           <Route path="/course/cybrary-challenge-a-message-within-a-message" element={<Message />} />
           <Route path="/course/cybrary-challenge-donot-believe-what-you-hear" element={<DoNotBelieve />} />
+          <Route path="/course/cybrary-challenge-gobble-gobble-conceal-and-deceive" element={<GobbleGobble />} />
 
           <Route path="/mitre-attack" element={<MitreAttack />} />
           <Route path="/alliances" element={<Alliances />} />
@@ -186,6 +195,10 @@ function App() {
           <Route path="/demo-request" element={<DemoForm />} />
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/certification-prep" element={<Certifications />} />
+          <Route path="/baseline" element={<Baseline />} />
+          <Route path="/business" element={<Business />} />
+          <Route path="/success-stories" element={<SuccessStories />} />
+
 
           <Route path="/careers" element={<Careers />} />
           <Route path="/podcast" element={<CybraryPodcast />} />
@@ -193,12 +206,13 @@ function App() {
           <Route path="/press" element={<Press />} />
           <Route path="/podcast-series/intruder-alert" element={<IntruderAlert />} />
           <Route path="/podcast-series/go-for-it" element={<GoForIt />} />
-          
+
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/forum" element={<Forum />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/help-center" element={<MainHelpCenter />} />
-          <Route path="/upgrade/checkout" element={<Checkout />} />
+        <Route path="/upgrade/checkout" element={<Checkout />} />
         <Route path="/help-center/sections/33851861355923-Billing" element={<Billing />} />
       </Routes>
       {!hideNavbarAndFooter && <Footer />}
