@@ -12,9 +12,6 @@ import { MdOutlineMarkEmailRead } from "react-icons/md";
 import { FaArrowRight } from "react-icons/fa6";
 import { RxBorderDashed } from "react-icons/rx";
 import SignupComponent from '../../../components/home/SignupComponent';
-// import { GrDatabase } from "react-icons/gr";
-// import { TbPointFilled } from "react-icons/tb";
-
 function SupplyChain() {
     const salesforceCourses = [
         {
