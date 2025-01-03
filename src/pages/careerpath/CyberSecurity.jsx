@@ -40,7 +40,7 @@ function CyberSecurityEngineer() {
 
 
     const dispatch = useDispatch();
-    const url = `https://www.fortifylearning.it${location.pathname}`
+    const url = `${location.origin}${location.pathname}`;
 
     const [showPopup, setShowPopup] = useState(false);
 

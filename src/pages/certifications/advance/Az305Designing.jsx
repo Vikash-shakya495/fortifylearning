@@ -23,7 +23,6 @@ function Az305Designing() {
     ]
     return (
         <div className='mt-40'>
-    
             <div className="mt-20 text-white py-12 px-4 md:px-32 xl:px-72 flex flex-col items-center">
                 <h2 className="text-3xl md:text-5xl text-center mb-8">
                     Campaign Outline
