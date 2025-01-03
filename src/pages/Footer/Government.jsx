@@ -7,6 +7,7 @@ import SignupComponent from "../../components/home/SignupComponent";
 import { useDispatch } from 'react-redux';
 import { togglePopup } from '../../store/signupPopupSlice';
 import SignupPopup from '../../loginSystem/SignupPopup';
+
 const Government = () => {
   const dispatch = useDispatch();
   return (
