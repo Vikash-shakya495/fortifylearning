@@ -8,10 +8,7 @@ import { NavLink } from "react-router-dom";
 import { FiArrowRight } from "react-icons/fi";
 import TestimonialsCarousel from "../components/home/TestimonialsCarousel";
 import SignupComponent from "../components/home/SignupComponent";
-// Sample images (replace with your actual images)
-// import learnImage from "../../assets/learnImage.png";
-// import practiceImage from "../../assets/practiceImage.png";
-// import proveImage from "../../assets/proveImage.png";
+
 function Catalog() {
 
   const instructors = [

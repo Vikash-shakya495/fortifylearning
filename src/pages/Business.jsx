@@ -2,10 +2,6 @@
 import React, { useState } from "react";
 import "../App.css";
 import Marquee from "react-fast-marquee";
-
-// import Navbar from '../components/Navbar';
-// import Footer from '../components/Footer';
-
 import SignupComponent from "../components/home/SignupComponent";
 
 const cards = [

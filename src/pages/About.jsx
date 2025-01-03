@@ -1,11 +1,10 @@
-
 import React, { useState } from 'react';
 import { FaLaptop } from "react-icons/fa";
 import { AiOutlineGlobal } from "react-icons/ai";
 import { PiUsersThree } from "react-icons/pi";
 import { FaRegFlag } from "react-icons/fa6";
 import { AiOutlineAim } from "react-icons/ai";
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { togglePopup } from '../store/signupPopupSlice';
 import SignupPopup from '../loginSystem/SignupPopup';
@@ -54,7 +53,7 @@ const About = () => {
 
   // popUp share button
   const dispatch = useDispatch();
-  const url = 'https://www.cybrary.it/career-path/network-engineer';
+  const url = `${location.origin}${location.pathname}`;
 
   const [showPopup, setShowPopup] = useState(false);
 

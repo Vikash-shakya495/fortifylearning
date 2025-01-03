@@ -18,7 +18,7 @@ import Privacy from "./pages/Privacy";
 import Pricing from "./pages/Pricing";
 import Login from "./loginSystem/Login";
 import Instructors from "./pages/Instructors";
-import Forum from "./pages/Forum"; // Assuming you have a Forum page component
+import Forum from "./pages/forum/Forum"; // Assuming you have a Forum page component
 import GrafanaDirectory from "./pages/course/GrafanaDirectory";
 import AtlassianBitbucket from "./pages/course/AtlassianBitbucket ";
 import ApacheHttpd from "./pages/course/ApacheHttpd";
