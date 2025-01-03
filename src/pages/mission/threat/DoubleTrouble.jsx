@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { togglePopup } from "../../../store/signupPopupSlice";
 import SignupPopup from "../../../loginSystem/SignupPopup";
@@ -12,8 +12,7 @@ import { MdOutlineMarkEmailRead } from "react-icons/md";
 import { FaArrowRight } from "react-icons/fa6";
 import { RxBorderDashed } from "react-icons/rx";
 import SignupComponent from "../../../components/home/SignupComponent";
-// import { GrDatabase } from "react-icons/gr";
-// import { TbPointFilled } from "react-icons/tb";
+
 
 function DoubleTrouble() {
   const salesforceCourses = [
@@ -64,7 +63,7 @@ function DoubleTrouble() {
     },
   ];
   const dispatch = useDispatch();
-  const url = "https://www.cybrary.it/career-path/network-engineer";
+  const url = `${location.origin}${location.pathname}`;
 
   const [showPopup, setShowPopup] = useState(false);
 

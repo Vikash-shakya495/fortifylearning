@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { togglePopup } from '../../../store/signupPopupSlice';
 import SignupPopup from '../../../loginSystem/SignupPopup';
@@ -59,7 +59,7 @@ function SupplyChain() {
         },
     ]
     const dispatch = useDispatch();
-    const url = 'https://www.cybrary.it/career-path/network-engineer';
+    const url = `${location.origin}${location.pathname}`;
 
     const [showPopup, setShowPopup] = useState(false);
 
