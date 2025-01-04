@@ -1,11 +1,5 @@
 import React, { useState } from "react";
-import {
-    RiArrowRightSLine,
-    RiGraduationCapFill,
-    //   RiUserCommunityFill,
-    RiTeamLine,
-    RiCommunityLine,
-} from "react-icons/ri";
+import { RiArrowRightSLine, RiGraduationCapFill, RiTeamLine, RiCommunityLine} from "react-icons/ri";
 import { RxDiscordLogo } from "react-icons/rx";
 import { LiaChartBarSolid } from "react-icons/lia";
 import { PiBuildingsBold, PiCertificateLight } from "react-icons/pi";
@@ -13,7 +7,6 @@ import { GiSkills } from "react-icons/gi";
 import { NavLink } from "react-router-dom";
 import PricingPlans from './pricing/PricingPlans';
 import SignupComponent from "../components/home/SignupComponent";
-// import {  } from "react-icons/ri";
 
 
 function Pricing() {
