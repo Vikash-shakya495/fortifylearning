@@ -12,7 +12,7 @@ function Registerandlogin() {
 
   const relatedArticles = [
     "How to Get Started: How Do I Get Started in Cybersecurity?",
-    "How to: Add Multiple Emails To an Account",
+    "How to: Add Multiple Emails To an Account ? ",
     "How To Get Started! Forgot Your Password?",
     "How to Get Started! Account Profile",
     "How to Get Started! Account Profile",
