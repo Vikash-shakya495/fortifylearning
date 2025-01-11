@@ -93,6 +93,8 @@ import GobbleGobble from "./pages/mission/course/GobbleGobble";
 import Business from "./pages/Business";
 import ForgotPassword from "./loginSystem/ForgotPassword";
 import SuccessStories from "./pages/SuccessStories";
+import ComptiaNetworkPlus from "./pages/studyguides/ComptiaNetworkPlus";
+import PenetrationTester from "./pages/careerpath/PenetrationTester";
 
 function App() {
   const location = useLocation();
@@ -143,6 +145,7 @@ function App() {
           <Route path="career-path/security-engineer" element={<CyberSecurityEngineer />} />
           <Route path="career-path/12-competencies-of-the-effective-ciso" element={<EffectiveCISO />} />
           <Route path="career-path/foundations" element={<ItCybersecurity />} />
+          <Route path="career-path/penetration-tester" element={<PenetrationTester />} />
 
           <Route path="course/cyber-network-security" element={<ProtocolTunneling />} />
           <Route path="practice-lab/secure-network-access" element={<Exfilteration />} />
@@ -206,6 +209,8 @@ function App() {
           <Route path="/press" element={<Press />} />
           <Route path="/podcast-series/intruder-alert" element={<IntruderAlert />} />
           <Route path="/podcast-series/go-for-it" element={<GoForIt />} />
+
+          <Route path="/study-guide/comptia-network-plus" element={<ComptiaNetworkPlus />} />
 
         </Route>
         <Route path="/login" element={<Login />} />
