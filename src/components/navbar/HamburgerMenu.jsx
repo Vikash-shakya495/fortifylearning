@@ -15,9 +15,9 @@ import { IoMdPerson } from 'react-icons/io';
 const dropdownData = {
 
     catalog: [
-        { icon: <RiShoppingBag4Fill className='text-2xl mr-2' />, name: 'Career Paths', description: 'Launch or advance your career with curated collections of courses, labs, and more.', link: '/career-path' },
-        { icon: <GiSkills className='text-2xl mr-2' />, name: 'Skill Paths', description: 'Launch or advance your career with curated collections of courses, labs, and more.', link: '/skill-paths' },
-        { icon: <PiCertificateBold className='text-2xl mr-2' />, name: 'Certification Prep', description: 'Prepare for and maintain leading cybersecurity certifications.', link: '/certification-prep', 
+        { icon: <RiShoppingBag4Fill size={28} className='mr-2' />, name: 'Career Paths', description: 'Launch or advance your career with curated collections of courses, labs, and more.', link: '/career-path' },
+        { icon: <GiSkills size={28} className='mr-2' />, name: 'Skill Paths', description: 'Launch or advance your career with curated collections of courses, labs, and more.', link: '/skill-paths' },
+        { icon: <PiCertificateBold size={28} className='mr-2' />, name: 'Certification Prep', description: 'Prepare for and maintain leading cybersecurity certifications.', link: '/certification-prep', 
             subItems: [
                 {
                     name: 'Beginner',
@@ -51,14 +51,14 @@ const dropdownData = {
             
             ],
         },
-        { icon: <PiTargetLight className='text-2xl mr-2' />, name: 'Mission Readiness', description: 'Learn how to detect and mitigate the latest threats and vulnerabilities.', link: '/mitre-attack' },
-        { icon: <PiBrowserLight className='text-2xl mr-2' />, name: 'Browse the Catalog', link: '/catalog' },
-        { icon: <RiQuestionAnswerFill className='text-2xl mr-2' />, name: 'Instructors', link: '/instructor' },
+        { icon: <PiTargetLight size={28} className='mr-2' />, name: 'Mission Readiness', description: 'Learn how to detect and mitigate the latest threats and vulnerabilities.', link: '/mitre-attack' },
+        { icon: <PiBrowserLight size={28} className='mr-2' />, name: 'Browse the Catalog', link: '/catalog' },
+        { icon: <RiQuestionAnswerFill size={28} className='mr-2' />, name: 'Instructors', link: '/instructor' },
     ],
 
     individuals: [
         {
-            icon: <RiShoppingBag2Line className='text-2xl mr-2' />, name: 'Career Paths', description: 'Launch or advance your career with curated collections of courses, labs, and more.', link: '/career-path',
+            icon: <RiShoppingBag2Line size={28} className='mr-2' />, name: 'Career Paths', description: 'Launch or advance your career with curated collections of courses, labs, and more.', link: '/career-path',
             subItems: [
                 {
                     name: 'Foundations',
@@ -112,13 +112,13 @@ const dropdownData = {
                 },
             ],
         },
-        { icon: <MdOutlineForum className='text-2xl mr-2' />, name: 'Forums', description: 'Discuss all things cybersecurity for free among the vast Cybrary community.', link: '/forum' },
-        { icon: <BsShieldCheck className='text-2xl mr-2' />, name: 'Free Access', description: 'Get a taste of the catalog with certification prep, introductory courses, and more.', link: '/free-content' },
-        { icon: <GiProgression className='text-2xl mr-2' />, name: 'Insider Pro', description: 'Everything you need to learn, practice, and prove your cybersecurity skills.', link: '/cybrary-insider-pro' },
-        { icon: <RiTeamFill className='text-2xl mr-2' />, name: 'For Teams', description: 'Build your team’s cybersecurity skills and achieve new certifications, all in one place.', link: '/business' },
-        { icon: <DiGitCompare className='text-2xl mr-2' />, name: 'Compare Plans', description: 'Compare features across all plans.', link: '/upgrade' },
+        { icon: <MdOutlineForum size={28} className='mr-2' />, name: 'Forums', description: 'Discuss all things cybersecurity for free among the vast Cybrary community.', link: '/forum' },
+        { icon: <BsShieldCheck size={28} className='mr-2' />, name: 'Free Access', description: 'Get a taste of the catalog with certification prep, introductory courses, and more.', link: '/free-content' },
+        { icon: <GiProgression size={28} className='mr-2' />, name: 'Insider Pro', description: 'Everything you need to learn, practice, and prove your cybersecurity skills.', link: '/cybrary-insider-pro' },
+        { icon: <RiTeamFill size={28} className='mr-2' />, name: 'For Teams', description: 'Build your team’s cybersecurity skills and achieve new certifications, all in one place.', link: '/business' },
+        { icon: <DiGitCompare size={28} className='mr-2' />, name: 'Compare Plans', description: 'Compare features across all plans.', link: '/upgrade' },
         {
-            icon: <IoMdPerson className='text-2xl mr-2' />, name: 'Individual', subItems: [
+            icon: <IoMdPerson size={28} className='mr-2' />, name: 'Individual', subItems: [
                 { name: 'Cybrary Insider Pro', link: '/cybrary-insider-pro' },
                 { name: 'Free access', link: '/free-content' },
                 { name: 'Career Path', link: '/career-path' },
@@ -127,10 +127,10 @@ const dropdownData = {
         },
     ],
     business: [
-        { icon: <GiTeamIdea className='text-2xl mr-2' />, name: 'Teams Features', description: 'Build your team’s cybersecurity skills and achieve new certifications, all in one place.', link: '/business' },
-        { icon: <GiFamilyHouse className='text-2xl mr-2' />, name: 'For Government', description: 'Support your organization with a custom plan that works for your organization.', link: '/government' },
+        { icon: <GiTeamIdea size={28} className='mr-2' />, name: 'Teams Features', description: 'Build your team’s cybersecurity skills and achieve new certifications, all in one place.', link: '/business' },
+        { icon: <GiFamilyHouse size={28} className='mr-2' />, name: 'For Government', description: 'Support your organization with a custom plan that works for your organization.', link: '/government' },
         {
-            icon: <TbTargetArrow className="text-2xl mr-2" />,
+            icon: <TbTargetArrow size={28} className="mr-2" />,
             name: 'Mission Readiness',
             description: 'Learn how to detect and mitigate the latest threats and vulnerabilities.',
             subItems: [
@@ -173,17 +173,17 @@ const dropdownData = {
             ],
         },
         {
-            icon: <BiSolidBusiness className='text-2xl mr-2' />, name: 'Business Resources', description: 'Learn how Cybrary can help your team thrive.', subItems: [
+            icon: <BiSolidBusiness size={28} className='mr-2' />, name: 'Business Resources', description: 'Learn how Cybrary can help your team thrive.', subItems: [
                 { name: 'Case Studies', link: '/business-resources#case-studies' },
                 { name: 'Research Papers', link: '/business-resources#research-papers' },
                 { name: 'Articles', link: '/business-resources#articles' },
                 { name: 'White Papers', link: '/business-resources#white-papers' },
             ],
         },
-        { icon: <SiFramework className='text-2xl mr-2' />, name: 'Framework Alignment', description: 'Learn how Cybrary aligns to established industry frameworks.', link: '/upgrade?team=true' },
-        { icon: <MdCompareArrows className='text-2xl mr-2' />, name: 'Teams Pricing', description: 'Compare features across all plans.' },
+        { icon: <SiFramework size={28} className='mr-2' />, name: 'Framework Alignment', description: 'Learn how Cybrary aligns to established industry frameworks.', link: '/upgrade?team=true' },
+        { icon: <MdCompareArrows size={28} className='mr-2' />, name: 'Teams Pricing', description: 'Compare features across all plans.' },
         {
-            icon: <RiTeamFill className='text-2xl mr-2' />, name: 'Teams', subItems: [
+            icon: <RiTeamFill size={28} className='mr-2' />, name: 'Teams', subItems: [
                 { name: 'For Security Teams', link: '/business' },
                 { name: 'Baselining', link: '/baseline' },
                 { name: 'For Government', link: '/government' },
@@ -193,14 +193,14 @@ const dropdownData = {
     ],
 
     resources: [
-        { icon: <PiCertificateBold className='text-2xl mr-2' />, name: 'Career Resources', description: 'Discover all the information you need to launch a cybersecurity career.', 
+        { icon: <PiCertificateBold size={28} className='mr-2' />, name: 'Career Resources', description: 'Discover all the information you need to launch a cybersecurity career.', 
             subItems: [
                 { name: 'How to Retool IT Skills for Cybersecurity Roles', link: '/business-resources/how-to-retool-it-skills-for-cybersecurity-roles' },
                 { name: 'The Complete Cybersecurity Career Playbook', link: '/resources/cybersecurity-career-guide' },
             ],
             
         },
-        { icon: <PiTargetLight className='text-2xl mr-2' />, name: 'Podcasts', description: 'Listen to industry experts talk about the latest news and trends in security.', link: '/podcast',
+        { icon: <PiTargetLight size={28} className='mr-2' />, name: 'Podcasts', description: 'Listen to industry experts talk about the latest news and trends in security.', link: '/podcast',
             subItems: [
                 { name: 'Go For It', link: '/podcast-series/go-for-it' },
                 { name: '401 Access Denied', link: '/podcast-series/401-access-denied' },
@@ -208,7 +208,7 @@ const dropdownData = {
                 { name: "Intruder Alert: Conversations with Cybrary's Hackers", link: '/podcast-series/intruder-alert' },
             ],
          },
-        { icon: <PiBrowserLight className='text-2xl mr-2' />, name: 'Study Guides', description: "Supplement Certification Prep courses to prepare for exams",
+        { icon: <PiBrowserLight size={28} className='mr-2' />, name: 'Study Guides', description: "Supplement Certification Prep courses to prepare for exams",
             subItems: [
                 { name: 'CompTIA A+', link: '/study-guide/comptia-a-plus' },
                 { name: 'Computer Hacking Forensic investigator', link: '/study-guide/chfi' },
@@ -221,7 +221,7 @@ const dropdownData = {
                 { name: "ISC2 CISSP", link: '/study-guide/cissp' },
             ],
          },
-        { icon: <RiQuestionAnswerFill className='text-2xl mr-2' />, name: 'Webinar', description:"Get industry advice straight from the experts' mouths", link: '/webinar',
+        { icon: <RiQuestionAnswerFill size={28} className='mr-2' />, name: 'Webinar', description:"Get industry advice straight from the experts' mouths", link: '/webinar',
             subItems: [
                 { name: 'Cybrary Threat Intelligence', link: '/webinar#ctig' },
                 { name: 'Team Management', link: '/webinar#team-management' },
@@ -263,7 +263,7 @@ const HamburgerMenu = ({ toggleMenu, isMenuOpen }) => {
             />
 
             <div
-                className={`fixed top-0 left-0 w-3/4 h-full bg-gray-900 bg-opacity-90 transform transition-transform duration-300 z-30 overflow-y-auto px-2 ${isMenuOpen ? 'translate-y-0' : '-translate-y-full'
+                className={`fixed top-0 left-0 w-5/6 sm:w-3/4 h-full bg-gray-900 bg-opacity-90 transform transition-transform duration-300 z-30 overflow-y-auto px-2 ${isMenuOpen ? 'translate-y-0' : '-translate-y-full'
                     }`}
             >
                 <div className="flex justify-between px-4">
@@ -276,7 +276,7 @@ const HamburgerMenu = ({ toggleMenu, isMenuOpen }) => {
                     </button>
                 </div>
 
-                <div className="flex flex-col items-start space-y-4 mt-4 pl-6">
+                <div className="flex flex-col items-start space-y-4 mt-4 pl-2 sm:pl-6">
                     <div className="border-t py-2 border-gray-800 w-5/6">
                         <p
                             className="text-[18px] cursor-pointer flex items-center"
@@ -289,7 +289,7 @@ const HamburgerMenu = ({ toggleMenu, isMenuOpen }) => {
                             ></i>
                         </p>
                         {openDropdown === 'catalog' && (
-                            <ul className="pl-4 mt-2 space-y-2 text-white">
+                            <ul className="pl-2 sm:pl-4 mt-2 space-y-2 text-white">
                                 {dropdownData.catalog.map((item, index) => (
                                     <li key={index} className="flex flex-col">
                                         <div
@@ -300,12 +300,12 @@ const HamburgerMenu = ({ toggleMenu, isMenuOpen }) => {
                                                     : null
                                             }
                                         >
-                                            <NavLink to={item.link}>
+                                            <NavLink to={item.link} className='flex'>
                                                 {item.icon}
                                                 <div>
                                                     <p className="font-bold">{item.name}</p>
                                                     {item.description && (
-                                                        <p className="text-sm">{item.description}</p>
+                                                        <p className="text-sm line-clamp-3">{item.description}</p>
                                                     )}
                                                 </div>
                                             </NavLink>
@@ -381,7 +381,7 @@ const HamburgerMenu = ({ toggleMenu, isMenuOpen }) => {
                 </div>
 
                 {/* For individuals */}
-                <div className="flex flex-col items-start space-y-4 mt-4 pl-6">
+                <div className="flex flex-col items-start space-y-4 mt-4 pl-2 sm:pl-6">
                     <div className="border-t py-2 border-gray-800 w-5/6">
                         <p
                             className="text-[18px] cursor-pointer flex items-center"
@@ -394,7 +394,7 @@ const HamburgerMenu = ({ toggleMenu, isMenuOpen }) => {
                             ></i>
                         </p>
                         {openDropdown === 'individuals' && (
-                            <ul className="pl-4 mt-2 space-y-2 text-white">
+                            <ul className="pl-2 sm:pl-4 mt-2 space-y-2 text-white">
                                 {dropdownData.individuals.map((item, index) => (
                                     <li key={index} className="flex flex-col">
                                         <div
@@ -405,12 +405,12 @@ const HamburgerMenu = ({ toggleMenu, isMenuOpen }) => {
                                                     : null
                                             }
                                         >
-                                            <NavLink to={item.link}>
+                                            <NavLink to={item.link} className='flex'>
                                                 {item.icon}
                                                 <div>
                                                     <p className="font-bold">{item.name}</p>
                                                     {item.description && (
-                                                        <p className="text-sm">{item.description}</p>
+                                                        <p className="text-sm line-clamp-3">{item.description}</p>
                                                     )}
                                                 </div>
                                             </NavLink>
@@ -485,7 +485,7 @@ const HamburgerMenu = ({ toggleMenu, isMenuOpen }) => {
                     </div>
                 </div>
 
-                <div className="flex flex-col items-start space-y-4 mt-4 pl-6">
+                <div className="flex flex-col items-start space-y-4 mt-4 pl-2 sm:pl-6">
                     <div className="border-t py-2 border-gray-800 w-5/6">
                         <p
                             className="text-[18px] cursor-pointer flex items-center"
@@ -498,7 +498,7 @@ const HamburgerMenu = ({ toggleMenu, isMenuOpen }) => {
                             ></i>
                         </p>
                         {openDropdown === 'business' && (
-                            <ul className="pl-4 mt-2 space-y-2 text-white">
+                            <ul className="pl-2 sm:pl-4 mt-2 space-y-2 text-white">
                                 {dropdownData.business.map((item, index) => (
                                     <li key={index} className="flex flex-col">
                                         <div
@@ -509,12 +509,12 @@ const HamburgerMenu = ({ toggleMenu, isMenuOpen }) => {
                                                     : null
                                             }
                                         >
-                                            <NavLink to={item.link}>
+                                            <NavLink to={item.link} className='flex'>
                                                 {item.icon}
                                                 <div>
                                                     <p className="font-bold">{item.name}</p>
                                                     {item.description && (
-                                                        <p className="text-sm">{item.description}</p>
+                                                        <p className="text-sm line-clamp-3">{item.description}</p>
                                                     )}
                                                 </div>
                                             </NavLink>
@@ -588,7 +588,7 @@ const HamburgerMenu = ({ toggleMenu, isMenuOpen }) => {
                         )}
                     </div>
                 </div>
-                <div className="flex flex-col items-start space-y-4 mt-4 pl-6">
+                <div className="flex flex-col items-start space-y-4 mt-4 pl-2 sm:pl-6">
                     <div className="border-t py-2 border-gray-800 w-5/6">
                         <p
                             className="text-[18px] cursor-pointer flex items-center"
@@ -601,7 +601,7 @@ const HamburgerMenu = ({ toggleMenu, isMenuOpen }) => {
                             ></i>
                         </p>
                         {openDropdown === 'resources' && (
-                            <ul className="pl-4 mt-2 space-y-2 text-white">
+                            <ul className="pl-2 sm:pl-4 mt-2 space-y-2 text-white">
                                 {dropdownData.resources.map((item, index) => (
                                     <li key={index} className="flex flex-col">
                                         <div
@@ -612,12 +612,12 @@ const HamburgerMenu = ({ toggleMenu, isMenuOpen }) => {
                                                     : null
                                             }
                                         >
-                                            <NavLink to={item.link}>
+                                            <NavLink to={item.link} className='flex'>
                                                 {item.icon}
                                                 <div>
                                                     <p className="font-bold">{item.name}</p>
                                                     {item.description && (
-                                                        <p className="text-sm">{item.description}</p>
+                                                        <p className="text-sm line-clamp-3">{item.description}</p>
                                                     )}
                                                 </div>
                                             </NavLink>
@@ -692,7 +692,7 @@ const HamburgerMenu = ({ toggleMenu, isMenuOpen }) => {
                     </div>
                 </div>
                 <NavLink to='/pricing'>
-                    <p className="text-[18px] cursor-pointer border-t py-6 px-6 border-gray-800 w-5/6">Pricing</p>
+                    <p className="text-[18px] cursor-pointer border-t py-6 px-2 sm:px-6 border-gray-800 w-5/6">Pricing</p>
                 </NavLink>
                 <div className="flex flex-col items-center space-y-4 p-8">
                     <NavLink to='/register'>
